@@ -14,6 +14,7 @@
 #import "SecondViewModel.h"
 #import "GPSecondDetailViewController.h"
 #import "SecondVCGetData.h"
+#import "SecondViewCellModel.h"
 
 @interface GPSecondDetailListVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -137,19 +138,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self getDetailVCGlideImageArrWithIndexPath:indexPath];
     GPSecondDetailViewController *vc = [GPSecondDetailViewController new];
+    vc.cellModel = [SecondViewCellModel cellModelWithDict:self.listModel.body[indexPath.row]];
     vc.imageArray = self.glideImageArr;
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    if (self.listTableView.contentOffset.y == 0) {
-        return;
-    }else {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        SecondHomeCell *cell = [self.listTableView cellForRowAtIndexPath:indexPath];
-    }
-    
 }
 
 - (void)getDetailVCGlideImageArrWithIndexPath:(NSIndexPath *)indexPath {

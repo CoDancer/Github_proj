@@ -418,6 +418,8 @@
 		E48F07771C4DF009005A2513 /* loading_095.png in Resources */ = {isa = PBXBuildFile; fileRef = E48F06B71C4DF008005A2513 /* loading_095.png */; };
 		E48F077B1C4E0D72005A2513 /* NSDictionary+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E48F077A1C4E0D72005A2513 /* NSDictionary+Category.m */; };
 		E48F077E1C4E2AA7005A2513 /* EachItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48F077D1C4E2AA7005A2513 /* EachItemDetailViewController.m */; };
+		E4DE16971C4F24F500E00722 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DE16961C4F24F500E00722 /* Launch Screen.storyboard */; };
+		E4DE169A1C4F3ADF00E00722 /* SecondInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE16991C4F3ADF00E00722 /* SecondInfoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -984,6 +986,9 @@
 		E48F077A1C4E0D72005A2513 /* NSDictionary+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Category.m"; path = "Category/NSDictionary+Category.m"; sourceTree = "<group>"; };
 		E48F077C1C4E2AA7005A2513 /* EachItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EachItemDetailViewController.h; path = Controllers/MainController/GPSecondController/EachItemDetailViewController.h; sourceTree = "<group>"; };
 		E48F077D1C4E2AA7005A2513 /* EachItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EachItemDetailViewController.m; path = Controllers/MainController/GPSecondController/EachItemDetailViewController.m; sourceTree = "<group>"; };
+		E4DE16961C4F24F500E00722 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E4DE16981C4F3ADF00E00722 /* SecondInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondInfoCell.h; path = SecondVCCell/SecondInfoCell.h; sourceTree = "<group>"; };
+		E4DE16991C4F3ADF00E00722 /* SecondInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondInfoCell.m; path = SecondVCCell/SecondInfoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1187,6 +1192,8 @@
 				92479F4E1C4BA3EE00C73B06 /* CustomBookCell.m */,
 				928900431C3818DA00092A85 /* SecondHomeCell.h */,
 				928900441C3818DA00092A85 /* SecondHomeCell.m */,
+				E4DE16981C4F3ADF00E00722 /* SecondInfoCell.h */,
+				E4DE16991C4F3ADF00E00722 /* SecondInfoCell.m */,
 			);
 			name = SecondVCCell;
 			sourceTree = "<group>";
@@ -1354,6 +1361,7 @@
 				E47799AC1C058DE10084E67D /* Vendors */,
 				E477997C1C058A360084E67D /* Assets.xcassets */,
 				E47799811C058A360084E67D /* Info.plist */,
+				E4DE16961C4F24F500E00722 /* Launch Screen.storyboard */,
 				E47799701C058A360084E67D /* Supporting Files */,
 			);
 			path = GraduationProject;
@@ -3023,6 +3031,7 @@
 				9289FF791C37A7E200092A85 /* food.png in Resources */,
 				E48F07701C4DF009005A2513 /* Contents.json in Resources */,
 				E48F06EF1C4DF008005A2513 /* loading_027.png in Resources */,
+				E4DE16971C4F24F500E00722 /* Launch Screen.storyboard in Resources */,
 				E48F06CF1C4DF008005A2513 /* loading_011.png in Resources */,
 				E48F06F11C4DF008005A2513 /* loading_028.png in Resources */,
 				E48F07061C4DF008005A2513 /* Contents.json in Resources */,
@@ -3347,6 +3356,7 @@
 				928900271C38166000092A85 /* SecondViewModel.m in Sources */,
 				E48F077E1C4E2AA7005A2513 /* EachItemDetailViewController.m in Sources */,
 				9289003F1C38170300092A85 /* NSObject+MJKeyValue.m in Sources */,
+				E4DE169A1C4F3ADF00E00722 /* SecondInfoCell.m in Sources */,
 				92BD7E261C2691AC0050E8FD /* TLAlertView.m in Sources */,
 				E48F05851C4DEEE1005A2513 /* MJRefreshHeader.m in Sources */,
 				9289FFF41C37AC7300092A85 /* SDImageCache.m in Sources */,
@@ -3509,7 +3519,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/onwer/Desktop/Github_proj/GraduationProject/GraduationProject/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/onwer/Desktop/Github_proj/GraduationProject/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = GraduationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -3528,7 +3538,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/onwer/Desktop/Github_proj/GraduationProject/GraduationProject/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/onwer/Desktop/Github_proj/GraduationProject/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = GraduationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
