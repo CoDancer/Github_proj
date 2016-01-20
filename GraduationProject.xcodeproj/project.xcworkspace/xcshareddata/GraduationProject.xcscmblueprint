@@ -1,0 +1,24 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "7698e39a-fcd4-4b51-aec0-4ad1ea859386++3840" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7698e39a-fcd4-4b51-aec0-4ad1ea859386++3840" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "56D218E1-B774-4475-99D3-86E402AE0CF0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7698e39a-fcd4-4b51-aec0-4ad1ea859386++3840" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GraduationProject",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GraduationProject.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.1.112\/weekly",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7698e39a-fcd4-4b51-aec0-4ad1ea859386++3840"
+    }
+  ]
+}
