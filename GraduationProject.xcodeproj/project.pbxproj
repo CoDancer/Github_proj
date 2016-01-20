@@ -420,6 +420,8 @@
 		E48F077E1C4E2AA7005A2513 /* EachItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48F077D1C4E2AA7005A2513 /* EachItemDetailViewController.m */; };
 		E4DE16971C4F24F500E00722 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DE16961C4F24F500E00722 /* Launch Screen.storyboard */; };
 		E4DE169A1C4F3ADF00E00722 /* SecondInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE16991C4F3ADF00E00722 /* SecondInfoCell.m */; };
+		E4DE169D1C4F417600E00722 /* SecondInfoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE169C1C4F417600E00722 /* SecondInfoCellModel.m */; };
+		E4DE169F1C4F522E00E00722 /* SecondDetailData.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4DE169E1C4F522E00E00722 /* SecondDetailData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -989,6 +991,9 @@
 		E4DE16961C4F24F500E00722 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E4DE16981C4F3ADF00E00722 /* SecondInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondInfoCell.h; path = SecondVCCell/SecondInfoCell.h; sourceTree = "<group>"; };
 		E4DE16991C4F3ADF00E00722 /* SecondInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondInfoCell.m; path = SecondVCCell/SecondInfoCell.m; sourceTree = "<group>"; };
+		E4DE169B1C4F417600E00722 /* SecondInfoCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondInfoCellModel.h; path = SecondVCModel/SecondInfoCellModel.h; sourceTree = "<group>"; };
+		E4DE169C1C4F417600E00722 /* SecondInfoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondInfoCellModel.m; path = SecondVCModel/SecondInfoCellModel.m; sourceTree = "<group>"; };
+		E4DE169E1C4F522E00E00722 /* SecondDetailData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SecondDetailData.plist; path = LocalData/SecondDetailData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1156,6 +1161,8 @@
 				928900261C38166000092A85 /* SecondViewModel.m */,
 				928900461C38205100092A85 /* SecondViewCellModel.h */,
 				928900471C38205100092A85 /* SecondViewCellModel.m */,
+				E4DE169B1C4F417600E00722 /* SecondInfoCellModel.h */,
+				E4DE169C1C4F417600E00722 /* SecondInfoCellModel.m */,
 			);
 			name = SecondVCModel;
 			sourceTree = "<group>";
@@ -1227,6 +1234,7 @@
 		9289FF3D1C37A6D300092A85 /* LocalData */ = {
 			isa = PBXGroup;
 			children = (
+				E4DE169E1C4F522E00E00722 /* SecondDetailData.plist */,
 				E436C2811C4CD76200B603FE /* BookGlideImg.plist */,
 				92479F481C4BA2DA00C73B06 /* BookListData.plist */,
 				9289001F1C38128A00092A85 /* HomeDatas.plist */,
@@ -3068,6 +3076,7 @@
 				E48F07041C4DF008005A2513 /* Contents.json in Resources */,
 				E48F07591C4DF008005A2513 /* loading_080.png in Resources */,
 				E48F07561C4DF008005A2513 /* Contents.json in Resources */,
+				E4DE169F1C4F522E00E00722 /* SecondDetailData.plist in Resources */,
 				E48F06DC1C4DF008005A2513 /* Contents.json in Resources */,
 				E48F07241C4DF008005A2513 /* Contents.json in Resources */,
 				E48F06E11C4DF008005A2513 /* loading_020.png in Resources */,
@@ -3274,6 +3283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E485727F1C06F68F0087E655 /* GPFirstController.m in Sources */,
+				E4DE169D1C4F417600E00722 /* SecondInfoCellModel.m in Sources */,
 				E48572731C06F2AC0087E655 /* YALFoldingTabBarController.m in Sources */,
 				E48F05871C4DEEE1005A2513 /* MJRefreshAutoNormalFooter.m in Sources */,
 				E485726D1C06F28C0087E655 /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */,

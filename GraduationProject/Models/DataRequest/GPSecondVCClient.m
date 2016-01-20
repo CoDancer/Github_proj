@@ -38,4 +38,12 @@
                                                 ofType:@"plist"]];
 }
 
+- (NSDictionary *)fetchLocalDataWithBookStoreDeteilInfo {
+    
+    return [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]
+                                                       pathForResource:@"SecondDetailData"
+                                                       ofType:@"plist"]];
+}
+
+
 @end

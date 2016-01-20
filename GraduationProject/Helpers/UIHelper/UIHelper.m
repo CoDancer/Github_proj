@@ -102,5 +102,19 @@
     return button;
 }
 
++ (CGSize)getAppropriateImageSizeWithSize:(CGSize)size {
+    
+    CGSize getSize = CGSizeZero;
+    CGFloat scale;
+    if (size.width >= SCREEN_WIDTH) {
+        getSize.width = SCREEN_WIDTH;
+        scale = SCREEN_WIDTH/size.width;
+        getSize.height = SCREEN_HEIGHT * scale;
+    }else {
+        getSize = size;
+    }
+    return getSize;
+}
+
 
 @end

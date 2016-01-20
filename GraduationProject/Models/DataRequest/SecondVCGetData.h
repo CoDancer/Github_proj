@@ -12,4 +12,6 @@
 
 + (NSArray *)getGlideImageArrWithSection:(NSInteger)section row:(NSInteger)row;
 
++ (NSDictionary *)getInfoContentWithSection:(NSInteger)section row:(NSInteger)row;
+
 @end

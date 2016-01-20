@@ -136,18 +136,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self getDetailVCGlideImageArrWithIndexPath:indexPath];
+    NSDictionary *infoDic = [SecondVCGetData getInfoContentWithSection:[self.sectionId integerValue]
+                                                                   row:indexPath.row];
     GPSecondDetailViewController *vc = [GPSecondDetailViewController new];
     vc.cellModel = [SecondViewCellModel cellModelWithDict:self.listModel.body[indexPath.row]];
-    vc.imageArray = self.glideImageArr;
+    vc.imageArray = [infoDic objectOrNilForKey:@"glideImages"];
+    vc.booksArr = [infoDic objectOrNilForKey:@"booksInfo"];
+    vc.infoCellArr = [infoDic objectOrNilForKey:@"storeInfo"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)getDetailVCGlideImageArrWithIndexPath:(NSIndexPath *)indexPath {
-    
-    self.glideImageArr = [SecondVCGetData getGlideImageArrWithSection:indexPath.section
-                                                                  row:indexPath.row];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

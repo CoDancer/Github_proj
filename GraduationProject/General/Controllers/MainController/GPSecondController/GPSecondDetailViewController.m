@@ -20,6 +20,8 @@
 #import "BookListModel.h"
 #import "ModalAnimaion.h"
 #import "EachItemDetailViewController.h"
+#import "SecondInfoCell.h"
+#import "SecondInfoCellModel.h"
 
 //绿色主题
 #define Color(r, g, b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1]
@@ -33,7 +35,9 @@
                                             UITableViewDataSource,
                                             UITableViewDelegate,
                                             CustromBookCellDelegate,
-                                            GPSelectedViewDelegate>
+GPSelectedViewDelegate>{
+    SecondInfoCell *infoCell;
+}
 
 @property (nonatomic, strong) UIView *topView;
 @property (nonatomic, strong) SDCycleScrollView *topScrollView;
@@ -65,6 +69,8 @@
 @property (nonatomic, strong) NSMutableArray *eachGroupModel;
 @property (nonatomic, strong) ModalAnimaion *modalAnimation;
 
+@property (nonatomic, assign) CGFloat cellHeight;
+
 @end
 
 @implementation GPSecondDetailViewController
@@ -74,7 +80,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.cellHeight = 400;
     [self.groomTableView registerClass:[CustomBookCell class] forCellReuseIdentifier:@"BookCell"];
+    [self.infoTableView registerClass:[SecondInfoCell class] forCellReuseIdentifier:@"InfoCell"];
     [self fetchLocalData];
     [self configView];
 }
@@ -83,6 +91,7 @@
     
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
+    [self dismissBottomView];
 }
 
 - (void)configView {
@@ -305,10 +314,9 @@
 
 - (void)fetchLocalData {
     
-    NSArray *dataArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BookListData" ofType:@"plist"]];
-    if (dataArray.count != 0) {
+    if (self.booksArr.count != 0) {
         NSMutableArray *models = [NSMutableArray array];
-        [dataArray enumerateObjectsUsingBlock:^(NSDictionary *obj,
+        [self.booksArr enumerateObjectsUsingBlock:^(NSDictionary *obj,
                                                 NSUInteger idx,
                                                 BOOL * _Nonnull stop) {
             BookListModel *bookListModel = [BookListModel bookListModelWithDict:obj];
@@ -466,9 +474,10 @@
     
     if (tableView == self.groomTableView) {
        return self.modelArray.count;
-    }else {
-        return 20;
+    }else if (tableView == self.infoTableView) {
+        return self.infoCellArr.count;
     }
+    return 0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -479,9 +488,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.groomTableView) {
         return 200.0f;
-    }else {
-        return 60.0f;
+    }else if (tableView == self.infoTableView){
+        infoCell.cellModel = [SecondInfoCellModel cellModelWithDict:self.infoCellArr[indexPath.row]];
+        return 300;
     }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -492,13 +503,13 @@
         cell.bookModels = self.modelArray[indexPath.row];
         cell.bookDelegate = self;
         return cell;
-    }else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        }
+    }else if (tableView == self.infoTableView){
+        
+        SecondInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InfoCell"];
+        cell.cellModel = [SecondInfoCellModel cellModelWithDict:self.infoCellArr[indexPath.row]];
         return cell;
     }
+    return nil;
 }
 
 #pragma mark - WNXSelectViewDelegate选择条的代理方法

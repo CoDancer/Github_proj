@@ -7,17 +7,13 @@
 //
 
 #import "SecondInfoCell.h"
-
-//[[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:model.imageURL] options:SDWebImageDownloaderLowPriority|SDWebImageDownloaderContinueInBackground progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-//    self.BGImageView.width = image.size.width;
-//    self.BGImageView.height = image.size.height;
-//    self.BGImageView.image = image;
-//}];
+#import "UIImageView+WebCache.h"
 
 @interface SecondInfoCell()
 
 @property (nonatomic, strong) UIImageView *dynamicIV;
 @property (nonatomic, strong) UILabel *dynamicLabel;
+
 
 @end
 
@@ -36,7 +32,8 @@
 - (void)layoutSubviews {
     
     [super layoutSubviews];
-    
+    self.dynamicIV.left = 0;
+    self.dynamicIV.top = 0;
 }
 
 - (UIImageView *)dynamicIV {
@@ -45,6 +42,9 @@
         _dynamicIV = [UIImageView new];
         _dynamicIV.userInteractionEnabled = YES;
         _dynamicIV.contentMode = UIViewContentModeScaleToFill;
+        [_dynamicIV addGestureRecognizer:[[UITapGestureRecognizer alloc]
+                                          initWithTarget:self
+                                          action:@selector(imageViewDidTap)]];
     }
     return _dynamicIV;
 }
@@ -55,8 +55,30 @@
         _dynamicLabel = [UILabel new];
         _dynamicLabel.textColor = [UIColor blackColor];
         _dynamicLabel.font = [UIFont systemFontOfSize:14.0f];
+        _dynamicLabel.numberOfLines = 0;
     }
     return _dynamicLabel;
+}
+
+- (void)setCellModel:(SecondInfoCellModel *)cellModel {
+    
+    _cellModel = cellModel;
+    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:cellModel.imageUrl] options:SDWebImageDownloaderLowPriority|SDWebImageDownloaderContinueInBackground progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+        self.dynamicIV.size = [UIHelper getAppropriateImageSizeWithSize:image.size];
+        self.dynamicIV.image = image;
+        self.dynamicLabel.text = cellModel.contentInfo;
+        self.dynamicLabel.top = self.dynamicIV.bottom;
+        self.dynamicLabel.left = 10;
+        self.dynamicLabel.width = self.contentView.width - 10 * 2;
+        [self.dynamicLabel sizeToFit];
+        self.cellHeight = self.dynamicIV.height + self.dynamicLabel.height;
+        self.flag = finished;
+    }];
+}
+
+- (void)imageViewDidTap {
+    
+    
 }
 
 @end

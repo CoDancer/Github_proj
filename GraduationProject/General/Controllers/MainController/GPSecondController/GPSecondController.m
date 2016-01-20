@@ -43,7 +43,6 @@
 @property (nonatomic, strong) UIImageView *rightImageView;
 
 @property (nonatomic, strong) NSArray *dataModels;
-@property (nonatomic, strong) NSArray *glideImageArr;
 @property (nonatomic, strong) UIButton *recoverBottomBtn;
 
 @end
@@ -125,14 +124,6 @@
         _dataModels = [NSArray array];
     }
     return _dataModels;
-}
-
-- (NSArray *)glideImageArr {
-    
-    if (!_glideImageArr) {
-        _glideImageArr = [NSArray array];
-    }
-    return _glideImageArr;
 }
 
 - (UIView *)currentView {
@@ -337,19 +328,17 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     SecondViewModel *model = self.dataModels[indexPath.section];
     SecondViewCellModel *cellModel = [SecondViewCellModel cellModelWithDict:(NSDictionary *)(model.body[indexPath.row])];
-    [self getDetailVCGlideImageArrWithIndexPath:indexPath];
     GPSecondDetailViewController *vc = [GPSecondDetailViewController new];
     vc.cellModel = cellModel;
-    vc.imageArray = self.glideImageArr;
+    NSDictionary *infoDic = [SecondVCGetData getInfoContentWithSection:indexPath.section
+                                                                   row:indexPath.row];
+    vc.imageArray = [infoDic objectOrNilForKey:@"glideImages"];
+    vc.booksArr = [infoDic objectOrNilForKey:@"booksInfo"];
+    vc.infoCellArr = [infoDic objectOrNilForKey:@"storeInfo"];
     [vc dismissBottomView];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)getDetailVCGlideImageArrWithIndexPath:(NSIndexPath *)indexPath {
-    
-    self.glideImageArr = [SecondVCGetData getGlideImageArrWithSection:indexPath.section
-                                                                  row:indexPath.row];
-}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     

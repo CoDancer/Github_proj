@@ -16,4 +16,6 @@
 
 - (NSDictionary *)fetchLocalDataWithBookStoreGlideImage;
 
+- (NSDictionary *)fetchLocalDataWithBookStoreDeteilInfo;
+
 @end

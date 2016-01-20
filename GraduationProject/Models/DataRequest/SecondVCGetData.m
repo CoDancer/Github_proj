@@ -29,4 +29,15 @@
     
 }
 
++ (NSDictionary *)getInfoContentWithSection:(NSInteger)section row:(NSInteger)row {
+    
+    NSDictionary *dic = [[GPSecondVCClient sharedClient]
+                                fetchLocalDataWithBookStoreDeteilInfo];
+    NSString *sectionKeyStr = [NSString stringWithFormat:@"section%d",section];
+    NSDictionary *sectionDic = [dic objectOrNilForKey:sectionKeyStr];
+    NSString *rowKeyStr = [NSString stringWithFormat:@"section%d%d",section,row];
+    NSDictionary *rowDic = [sectionDic objectOrNilForKey:rowKeyStr];
+    return rowDic;
+}
+
 @end
