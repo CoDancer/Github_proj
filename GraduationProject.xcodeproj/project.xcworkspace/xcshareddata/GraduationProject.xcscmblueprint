@@ -1,20 +1,28 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "47EEF2B6794809D7A6D10C016586E09CC2704F41",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "7698e39a-fcd4-4b51-aec0-4ad1ea859386++3840" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "47EEF2B6794809D7A6D10C016586E09CC2704F41" : 0,
     "7698e39a-fcd4-4b51-aec0-4ad1ea859386++3840" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "56D218E1-B774-4475-99D3-86E402AE0CF0",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "47EEF2B6794809D7A6D10C016586E09CC2704F41" : "Github_proj\/",
     "7698e39a-fcd4-4b51-aec0-4ad1ea859386++3840" : ""
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "GraduationProject",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GraduationProject.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CoDancer\/Github_proj.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "47EEF2B6794809D7A6D10C016586E09CC2704F41"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.1.112\/weekly",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",

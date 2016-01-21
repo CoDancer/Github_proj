@@ -15,9 +15,8 @@ typedef void(^getImageBlock) (UIImage *image);
 
 @property (nonatomic, strong) SecondInfoCellModel *cellModel;
 @property (nonatomic, strong) getImageBlock imageBlock;
-@property (nonatomic, assign) BOOL flag;
 
 
-@property (nonatomic, assign) CGFloat cellHeight;
+- (void)setCellImage:(UIImage *)image contentInfo:(NSString *)content;
 
 @end

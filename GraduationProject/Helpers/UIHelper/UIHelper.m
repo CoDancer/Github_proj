@@ -7,6 +7,7 @@
 //
 
 #import "UIHelper.h"
+#import "UIImageView+WebCache.h"
 
 
 @implementation UIHelper
@@ -109,7 +110,7 @@
     if (size.width >= SCREEN_WIDTH) {
         getSize.width = SCREEN_WIDTH;
         scale = SCREEN_WIDTH/size.width;
-        getSize.height = SCREEN_HEIGHT * scale;
+        getSize.height = size.height * scale;
     }else {
         getSize = size;
     }

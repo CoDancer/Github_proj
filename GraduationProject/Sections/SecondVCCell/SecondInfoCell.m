@@ -54,26 +54,21 @@
     if (!_dynamicLabel) {
         _dynamicLabel = [UILabel new];
         _dynamicLabel.textColor = [UIColor blackColor];
-        _dynamicLabel.font = [UIFont systemFontOfSize:14.0f];
+        _dynamicLabel.font = [UIFont systemFontOfSize:16.0f];
         _dynamicLabel.numberOfLines = 0;
     }
     return _dynamicLabel;
 }
 
-- (void)setCellModel:(SecondInfoCellModel *)cellModel {
+- (void)setCellImage:(UIImage *)image contentInfo:(NSString *)content {
     
-    _cellModel = cellModel;
-    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:cellModel.imageUrl] options:SDWebImageDownloaderLowPriority|SDWebImageDownloaderContinueInBackground progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-        self.dynamicIV.size = [UIHelper getAppropriateImageSizeWithSize:image.size];
-        self.dynamicIV.image = image;
-        self.dynamicLabel.text = cellModel.contentInfo;
-        self.dynamicLabel.top = self.dynamicIV.bottom;
-        self.dynamicLabel.left = 10;
-        self.dynamicLabel.width = self.contentView.width - 10 * 2;
-        [self.dynamicLabel sizeToFit];
-        self.cellHeight = self.dynamicIV.height + self.dynamicLabel.height;
-        self.flag = finished;
-    }];
+    self.dynamicIV.size = [UIHelper getAppropriateImageSizeWithSize:image.size];
+    self.dynamicIV.image = image;
+    self.dynamicLabel.text = content;
+    self.dynamicLabel.top = self.dynamicIV.bottom + 10;
+    self.dynamicLabel.left = 10;
+    self.dynamicLabel.width = self.contentView.width - 10 * 2;
+    [self.dynamicLabel sizeToFit];
 }
 
 - (void)imageViewDidTap {

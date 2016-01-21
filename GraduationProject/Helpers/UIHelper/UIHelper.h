@@ -22,6 +22,8 @@
 
 + (MBProgressHUD*)showHUDAddedTo:(UIView*)view animated:(BOOL)animated;
 
++ (void)hideAllMBProgressHUDsForView:(UIView*)view animated:(BOOL)animated;
+
 + (UIButton *)commomButtonWithFrame:(CGRect)frame title:(NSString*)title titleColor:(UIColor*)color titleFont:(UIFont*)font selectedImage:(UIImage*)selectedImage image:(UIImage*)image;
 
 + (CGSize)getAppropriateImageSizeWithSize:(CGSize)size;

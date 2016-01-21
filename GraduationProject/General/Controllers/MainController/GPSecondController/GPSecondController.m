@@ -96,11 +96,13 @@
 //下拉加载数据
 - (void)loadNewData {
     
+    self.leftMainTableView.userInteractionEnabled = NO;
     //模拟1秒后刷新表格UI
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 拿到当前的下拉刷新控件，结束刷新状态
         [self fetchDataWithRequest];
         [self.leftMainTableView.header endRefreshing];
+        self.leftMainTableView.userInteractionEnabled = YES;
     });
 }
 

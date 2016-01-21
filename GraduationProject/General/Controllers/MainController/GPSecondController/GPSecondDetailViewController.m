@@ -69,7 +69,8 @@ GPSelectedViewDelegate>{
 @property (nonatomic, strong) NSMutableArray *eachGroupModel;
 @property (nonatomic, strong) ModalAnimaion *modalAnimation;
 
-@property (nonatomic, assign) CGFloat cellHeight;
+@property (nonatomic, strong) NSDictionary *cellHeightDic;
+@property (nonatomic, strong) NSDictionary *cellImageDic;
 
 @end
 
@@ -78,9 +79,8 @@ GPSelectedViewDelegate>{
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.cellHeight = 400;
     [self.groomTableView registerClass:[CustomBookCell class] forCellReuseIdentifier:@"BookCell"];
     [self.infoTableView registerClass:[SecondInfoCell class] forCellReuseIdentifier:@"InfoCell"];
     [self fetchLocalData];
@@ -224,9 +224,16 @@ GPSelectedViewDelegate>{
         _infoTableView.delegate = self;
         _infoTableView.dataSource = self;
         _infoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        [self.backgroundScrollView addSubview:self.infoTableView];
     }
     return _infoTableView;
+}
+
+- (NSDictionary *)cellHeightDic {
+    
+    if (!_cellHeightDic) {
+        _cellHeightDic = [NSDictionary dictionary];
+    }
+    return _cellHeightDic;
 }
 
 - (NSArray *)dataArray {
@@ -439,23 +446,15 @@ GPSelectedViewDelegate>{
         }
     }else {
         CGFloat selectViewOffsetY = self.selectedView.top - TopViewHeight;
-        //让新出来的tableView的contentOffset正好卡在selectView的头上,还是有bug
         if (selectViewOffsetY != -TopViewHeight && selectViewOffsetY <= 0) {
-            
             if (self.showingTableView == self.groomTableView) {
-                
-                self.infoTableView.contentOffset = CGPointMake(0, -245 - selectViewOffsetY);
-                
-            } else {
-                
                 self.groomTableView.contentOffset = CGPointMake(0, -245 - selectViewOffsetY);
-                
+            } else {
+                self.infoTableView.contentOffset = CGPointMake(0, -245 - selectViewOffsetY);
             }
         }
-        
         CGFloat offsetX = self.backgroundScrollView.contentOffset.x;
         NSInteger index = offsetX / SCREEN_WIDTH;
-        
         CGFloat seleOffsetX = offsetX - self.scrollX;
         self.scrollX = offsetX;
         
@@ -466,6 +465,35 @@ GPSelectedViewDelegate>{
             [self.selectedView lineToIndex:index];
         }
     }
+}
+
+- (void)getDynamicCellHeight {
+    
+    NSMutableDictionary *cellHeightDic = [NSMutableDictionary dictionary];
+    NSMutableDictionary *cellImageDic = [NSMutableDictionary dictionary];
+    if (self.cellHeightDic.count == 0) {
+        MBProgressHUD *hud = [UIHelper showHUDAddedTo:self.backgroundScrollView animated:YES];
+        hud.yOffset = 100;
+    }
+    [self.infoCellArr enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        SecondInfoCellModel *model = [SecondInfoCellModel cellModelWithDict:obj];
+        [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:model.imageUrl] options:SDWebImageDownloaderLowPriority|SDWebImageDownloaderContinueInBackground progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+            CGSize size = [UIHelper getAppropriateImageSizeWithSize:image.size];
+            CGSize lableSize = CGSizeMake(SCREEN_WIDTH - 20, 0);
+            CGRect rect=[model.contentInfo boundingRectWithSize:lableSize
+                                                        options:NSStringDrawingUsesLineFragmentOrigin
+                                                     attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:16.0f],NSFontAttributeName, nil] context:nil];
+            CGFloat cellHeight = size.height + rect.size.height + 20;
+            [cellHeightDic setObject:@(cellHeight) forKey:@(idx)];
+            [cellImageDic setObject:image forKey:@(idx)];
+            if ([cellHeightDic count] == self.infoCellArr.count) {
+                self.cellHeightDic = [cellHeightDic copy];
+                self.cellImageDic = [cellImageDic copy];
+                [self.backgroundScrollView addSubview:self.infoTableView];
+                [self.infoTableView reloadData];
+            }
+        }];
+    }];
 }
 
 #pragma mark -- UITableViewDelegate And DataSource
@@ -489,8 +517,10 @@ GPSelectedViewDelegate>{
     if (tableView == self.groomTableView) {
         return 200.0f;
     }else if (tableView == self.infoTableView){
-        infoCell.cellModel = [SecondInfoCellModel cellModelWithDict:self.infoCellArr[indexPath.row]];
-        return 300;
+        if (self.cellHeightDic.count != 0) {
+            return [[self.cellHeightDic objectForKey:@(indexPath.row)] integerValue];
+        }
+        return 200;
     }
     return 0;
 }
@@ -506,21 +536,25 @@ GPSelectedViewDelegate>{
     }else if (tableView == self.infoTableView){
         
         SecondInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InfoCell"];
-        cell.cellModel = [SecondInfoCellModel cellModelWithDict:self.infoCellArr[indexPath.row]];
+        SecondInfoCellModel *model = [SecondInfoCellModel cellModelWithDict:self.infoCellArr[indexPath.row]];
+        [cell setCellImage:[self.cellImageDic objectForKey:@(indexPath.row)] contentInfo:model.contentInfo];
         return cell;
     }
     return nil;
 }
 
 #pragma mark - WNXSelectViewDelegate选择条的代理方法
-- (void)selectView:(GPSelectedView *)selectView didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to
-{
+- (void)selectView:(GPSelectedView *)selectView didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to {
+    
     switch (to) {
         case 0:
             self.showingTableView = self.groomTableView;
             break;
         case 1:
             self.showingTableView = self.infoTableView;
+            if ([self.cellImageDic count] == 0) {
+                [self getDynamicCellHeight];
+            }
             break;
         default:
             break;
@@ -538,12 +572,15 @@ GPSelectedViewDelegate>{
 }
 
 //当滑动scrollView切换tableView时通知
-- (void)selectView:(GPSelectedView *)selectView didChangeSelectedView:(NSInteger)to
-{
+- (void)selectView:(GPSelectedView *)selectView didChangeSelectedView:(NSInteger)to {
+    
     if (to == 0) {
         self.showingTableView = self.groomTableView;
     } else if (to == 1) {
         self.showingTableView = self.infoTableView;
+        if ([self.cellImageDic count] == 0) {
+            [self getDynamicCellHeight];
+        }
     }
 }
 
@@ -565,12 +602,13 @@ GPSelectedViewDelegate>{
 }
 
 -(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    
     self.modalAnimation.type = AnimationTypeDismiss;
     return self.modalAnimation;
 }
 
 - (void)dealloc {
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

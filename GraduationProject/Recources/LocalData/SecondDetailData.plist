@@ -179,7 +179,7 @@
 				</dict>
 				<dict>
 					<key>imageUrl</key>
-					<string>http://img4.duitang.com/uploads/item/201501/15/20150115201947_NnLJj.jpeg</string>
+					<string>http://img4.duitang.com/uploads/item/201511/27/20151127175348_VAxtn.thumb.700_0.jpeg</string>
 					<key>contentInfo</key>
 					<string>德芭与彩虹书店。原来兼职的时候做喜欢这个小角,,每次都要摆弄下。</string>
 				</dict>
@@ -201,13 +201,128 @@
 			</array>
 			<key>booksInfo</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<dict>
+					<key>bookId</key>
+					<string>01</string>
+					<key>author</key>
+					<string>安迪·威尔[美]</string>
+					<key>book_name</key>
+					<string>火星救援</string>
+					<key>fav_count</key>
+					<string>9.0</string>
+					<key>imageURL</key>
+					<string>http://img3.douban.com/lpic/s28315660.jpg</string>
+					<key>section_title</key>
+					<string>畅销小说</string>
+				</dict>
+				<dict>
+					<key>bookId</key>
+					<string>02</string>
+					<key>author</key>
+					<string>安东尼·德·圣-埃克苏佩里[法]</string>
+					<key>book_name</key>
+					<string>小王子</string>
+					<key>fav_count</key>
+					<string>9.3</string>
+					<key>imageURL</key>
+					<string>http://img3.douban.com/lpic/s28322662.jpg</string>
+					<key>section_title</key>
+					<string>畅销小说</string>
+				</dict>
+				<dict>
+					<key>bookId</key>
+					<string>03</string>
+					<key>author</key>
+					<string>加布瑞埃拉·泽文[美]</string>
+					<key>book_name</key>
+					<string>岛上书店</string>
+					<key>fav_count</key>
+					<string>7.9</string>
+					<key>imageURL</key>
+					<string>http://img3.douban.com/lpic/s28049685.jpg</string>
+					<key>section_title</key>
+					<string>畅销小说</string>
+				</dict>
+				<dict>
+					<key>bookId</key>
+					<string>04</string>
+					<key>author</key>
+					<string>加缪[法]</string>
+					<key>book_name</key>
+					<string>异乡人</string>
+					<key>fav_count</key>
+					<string>8.9</string>
+					<key>imageURL</key>
+					<string>http://img3.douban.com/lpic/s27980035.jpg</string>
+					<key>section_title</key>
+					<string>畅销小说</string>
+				</dict>
+				<dict>
+					<key>bookId</key>
+					<string>05</string>
+					<key>author</key>
+					<string>三浦紫苑[日]</string>
+					<key>book_name</key>
+					<string>强风吹拂</string>
+					<key>fav_count</key>
+					<string>9.0</string>
+					<key>imageURL</key>
+					<string>http://img3.doubanio.com/lpic/s27914268.jpg</string>
+					<key>section_title</key>
+					<string>文学小说</string>
+				</dict>
+				<dict>
+					<key>bookId</key>
+					<string>06</string>
+					<key>author</key>
+					<string>加西亚·马尔克斯[哥伦比亚]</string>
+					<key>book_name</key>
+					<string>霍乱时期的爱情</string>
+					<key>fav_count</key>
+					<string>9.0</string>
+					<key>imageURL</key>
+					<string>http://img3.douban.com/lpic/s11284102.jpg</string>
+					<key>section_title</key>
+					<string>文学小说</string>
+				</dict>
+				<dict>
+					<key>bookId</key>
+					<string>07</string>
+					<key>author</key>
+					<string>毛姆[英]</string>
+					<key>book_name</key>
+					<string>月亮和六便士</string>
+					<key>fav_count</key>
+					<string>9.0</string>
+					<key>imageURL</key>
+					<string>http://img3.doubanio.com/lpic/s2659208.jpg</string>
+					<key>section_title</key>
+					<string>文学小说</string>
+				</dict>
+				<dict/>
+				<dict/>
 			</array>
 			<key>storeInfo</key>
-			<array/>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img4.duitang.com/uploads/item/201507/07/20150707114354_eBKFX.jpeg</string>
+					<key>contentInfo</key>
+					<string>北京斑马书店 朝阳九剧场下沉广场 书店顶上摆放着一辆被重新彩绘过的“北京面的”，如果一时找不到书店，这辆醒目的黄色小车，绝对可以为你提示方向。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img4.duitang.com/uploads/item/201507/07/20150707114943_E2Pdw.jpeg</string>
+					<key>contentInfo</key>
+					<string>北京斑马书店 的主人除了Penny，还有自称“老板娘”的Penny男友黄山。从传媒大学的斑马开始，就是他们两人共同经营。准确的说，店主应该还包括他们养的两只猫“三花”与“小白”。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img4.duitang.com/uploads/item/201507/07/20150707114839_TUMVQ.jpeg</string>
+					<key>contentInfo</key>
+					<string>斑马书店 店主Penny谈起自家书店的时候，Penny总是一脸笑容，我问起书店的开业时间，她笑答：“2012年3月28日，我们是一家双鱼座的书店噢！”。Ps：应该是白羊座。</string>
+				</dict>
+			</array>
 		</dict>
 		<key>section02</key>
 		<dict>
@@ -223,7 +338,85 @@
 				<string></string>
 			</array>
 			<key>storeInfo</key>
-			<array/>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img4.duitang.com/uploads/item/201211/28/20121128140440_zCxsm.jpeg</string>
+					<key>contentInfo</key>
+					<string>小洲村令人流连忘返的咖啡店】 1、 邓小猫咖啡馆——时光隧道里的回忆；2、小兜圈魔术咖啡馆——可爱的童趣咖啡屋；3、鹊巢鸠占——超个性化的小馆；4、Mu Men Café——古旧的咖啡书屋；5、 理想病——文艺青年书吧。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img5.duitang.com/uploads/item/201503/14/20150314162906_ZZhhW.jpeg</string>
+					<key>contentInfo</key>
+					<string>Enjoy the little things in life ,for one day you may look back and realize they were the big things.享受生命中的小事情，因为有一天你回首往事，也许会发现它们其实是很重要的事情</string>
+				</dict>
+			</array>
+		</dict>
+		<key>section03</key>
+		<dict>
+			<key>glideImages</key>
+			<array>
+				<string>http://img4.duitang.com/uploads/item/201508/06/20150806115740_KRQFU.jpeg</string>
+				<string>http://img5.duitang.com/uploads/item/201405/02/20140502220413_E8XUf.jpeg</string>
+				<string>http://tupian.aladd.net/photo5/674.jpg</string>
+			</array>
+			<key>booksInfo</key>
+			<array>
+				<string></string>
+				<string></string>
+			</array>
+			<key>storeInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img3.douban.com/view/group_topic/large/public/30074639-1.jpg</string>
+					<key>contentInfo</key>
+					<string>开家书店，只闻花香，不谈悲喜，喝茶读书，不争朝夕，愿时光走得慢一些，再慢一些。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img3.douban.com/view/group_topic/large/public/30074639-2.jpg</string>
+					<key>contentInfo</key>
+					<string>这一家书店，更像是一家充满书香气息的咖啡厅，是文艺范青年的聚集地，可以在这里惬意的享受下午的时光，周末来这里看看书吧</string>
+				</dict>
+			</array>
+		</dict>
+		<key>section04</key>
+		<dict>
+			<key>glideImages</key>
+			<array>
+				<string>http://cdn.duitang.com/uploads/blog/201402/17/20140217112233_SyvhJ.thumb.700_0.jpeg</string>
+				<string>http://img4.duitang.com/uploads/blog/201309/01/20130901175339_EVnKY.thumb.700_0.jpeg</string>
+				<string>http://s3.sinaimg.cn/mw690/001jZ79wzy6PYnjaUmec2&amp;690</string>
+			</array>
+			<key>booksInfo</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>storeInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img5.duitang.com/uploads/item/201203/27/20120327180802_2Vj4A.thumb.700_0.jpeg</string>
+					<key>contentInfo</key>
+					<string>去一座温暖的小城开间店，那店可以是有着各式书籍的书店，是在午后飘出浓香的咖啡店，是烘焙美味的面包店，是播放动人旋律的音像店，是温暖美好有爱的饰品店，是间温馨的小饭店，是有着我喜欢的衣服款式的服装店。也或许是间杂货铺。各种东西全搜罗。在某个静静的午后又或是灯火阑珊的夜晚，你走进这间店，轻轻的一句：好久不见。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img4.duitang.com/uploads/item/201511/27/20151127175348_VAxtn.thumb.700_0.jpeg</string>
+					<key>contentInfo</key>
+					<string>屋外花香阵阵，屋内书香环绕，寻一本心仪的读物，收获精神上的满足。不知道你是否也喜欢这样的小书店呢？</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img4.duitang.com/uploads/item/201308/14/20130814224916_aYSvQ.thumb.700_0.jpeg</string>
+					<key>contentInfo</key>
+					<string>世事总是多变，你要去相信，那个穿越山水来到你身边的人，你们能否一路白首。看的是他愿不愿意为你披荆斩棘，而不是看他曾受过多少的风霜。</string>
+				</dict>
+			</array>
 		</dict>
 	</dict>
 </dict>
