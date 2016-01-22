@@ -497,7 +497,8 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
     if (self.selectedTabBarItemIndex != index && !self.isExpand) {
         
     }else if(self.selectedTabBarItemIndex == index) {
-    
+        YALTabBarItem *item = [self.allBarItems objectAtIndex:index];
+        self.selectedImage = item.itemImage;
         [self centerButtonPressed];
         return;
     }else if(self.isExpand) {

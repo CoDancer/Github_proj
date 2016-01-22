@@ -2,6 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>section1</key>
+	<dict>
+		<key>section10</key>
+		<dict>
+			<key>glideImages</key>
+			<array>
+				<string>http://img5.duitang.com/uploads/item/201601/18/20160118175218_mxWHv.png</string>
+				<string>http://cdn.duitang.com/uploads/item/201409/14/20140914190156_t2CLM.jpeg</string>
+				<string>http://img5.duitang.com/uploads/item/201201/30/20120130223103_WFfmu.jpg</string>
+			</array>
+			<key>groomInfo</key>
+			<array/>
+			<key>mainInfo</key>
+			<array/>
+		</dict>
+		<key>section11</key>
+		<dict/>
+		<key>section12</key>
+		<dict/>
+	</dict>
 	<key>section0</key>
 	<dict>
 		<key>section00</key>
