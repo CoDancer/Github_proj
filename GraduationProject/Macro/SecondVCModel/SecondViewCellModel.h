@@ -19,6 +19,8 @@
 /** 底部名称 */
 @property (nonatomic, copy) NSString *poi_name;
 
+@property (nonatomic, strong) NSString *itemId;
+
 + (instancetype)cellModelWithDict:(NSDictionary *)dict;
 
 @end

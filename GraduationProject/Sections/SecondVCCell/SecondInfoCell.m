@@ -73,7 +73,9 @@
 
 - (void)imageViewDidTap {
     
-    
+    if (self.imageBlock) {
+        self.imageBlock(self.dynamicIV);
+    }
 }
 
 @end

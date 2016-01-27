@@ -10,6 +10,8 @@
 
 @interface BookListModel : NSObject
 
+@property (nonatomic, strong) NSString *bookId;
+
 @property (nonatomic, copy) NSString *author;
 /** 图片地址 */
 @property (nonatomic, copy) NSString *imageURL;

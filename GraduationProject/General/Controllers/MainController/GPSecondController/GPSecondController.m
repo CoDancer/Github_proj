@@ -334,9 +334,19 @@
     vc.cellModel = cellModel;
     NSDictionary *infoDic = [SecondVCGetData getInfoContentWithSection:indexPath.section
                                                                    row:indexPath.row];
-    vc.imageArray = [infoDic objectOrNilForKey:@"glideImages"];
-    vc.booksArr = [infoDic objectOrNilForKey:@"booksInfo"];
-    vc.infoCellArr = [infoDic objectOrNilForKey:@"storeInfo"];
+    vc.placeDic = [infoDic objectOrNilForKey:@"coordinate"];
+    vc.whichRow = indexPath.row;
+    if (indexPath.section == 0) {
+        vc.imageArray = [infoDic objectOrNilForKey:@"glideImages"];
+        vc.booksArr = [infoDic objectOrNilForKey:@"booksInfo"];
+        vc.infoCellArr = [infoDic objectOrNilForKey:@"storeInfo"];
+        vc.isBottomScro = NO;
+    }else if(indexPath.section == 1) {
+        vc.imageArray = [infoDic objectOrNilForKey:@"glideImages"];
+        vc.booksArr = [infoDic objectOrNilForKey:@"groomInfo"];
+        vc.infoCellArr = [infoDic objectOrNilForKey:@"mainInfo"];
+        vc.isBottomScro = YES;
+    }
     [vc dismissBottomView];
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -14,8 +14,10 @@
 
 - (NSArray *)fetchLocalDataWithHomePlist;
 
-- (NSDictionary *)fetchLocalDataWithBookStoreGlideImage;
+- (NSDictionary *)fetchLocalDataWithMovieData;
 
 - (NSDictionary *)fetchLocalDataWithBookStoreDeteilInfo;
+
+- (NSDictionary *)fetchLocalDataWithBookDetailInfo;
 
 @end

@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "BookListModel.h"
+#import "SecondViewCellModel.h"
 
 @interface EachItemDetailViewController : UIViewController
 
 @property (nonatomic, strong) BookListModel *bookModel;
+@property (nonatomic, strong) SecondViewCellModel *itemModel;
 @property (nonatomic, strong) NSArray *imageArray;
+@property (nonatomic, strong) NSArray *infoCellArr;
 
 @end

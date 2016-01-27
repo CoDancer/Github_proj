@@ -22,6 +22,9 @@
 #import "EachItemDetailViewController.h"
 #import "SecondInfoCell.h"
 #import "SecondInfoCellModel.h"
+#import "SecondVCGetData.h"
+#import "CardWith3DView.h"
+#import "InfoFooterView.h"
 
 //绿色主题
 #define Color(r, g, b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1]
@@ -71,6 +74,11 @@ GPSelectedViewDelegate>{
 
 @property (nonatomic, strong) NSDictionary *cellHeightDic;
 @property (nonatomic, strong) NSDictionary *cellImageDic;
+@property (nonatomic, assign) BOOL isCellImage;
+@property (nonatomic, strong) CardWith3DView *headerView;
+@property (nonatomic, strong) UIView *infoHeaderView;
+@property (nonatomic, strong) InfoFooterView *infoFooterView;
+@property (nonatomic, strong) SecondInfoPlaceModel *placeModel;
 
 @end
 
@@ -110,6 +118,56 @@ GPSelectedViewDelegate>{
         [self.topScrollView.superview addSubview:self.ViewOnTopScrollView];
     }
     return _topView;
+}
+
+- (CardWith3DView *)headerView {
+    
+    if (!_headerView) {
+        CGRect frame = CGRectMake(0, 100*k_IOS_Scale, 320*k_IOS_Scale, 300*k_IOS_Scale);
+        _headerView = [[CardWith3DView alloc] initWithFrame:frame
+                                                  imageArr:self.booksArr
+                                                     index:self.booksArr.count/2];
+        __weak typeof(self) weakSelf = self;
+        _headerView.modelBlock = ^(SecondViewCellModel *model){
+            EachItemDetailViewController *vc = [EachItemDetailViewController new];
+            vc.itemModel = model;
+            vc.transitioningDelegate = weakSelf;
+            NSDictionary *dic = [SecondVCGetData getMovieDetailInfoWithRow:weakSelf.whichRow
+                                                                    number:model.itemId];
+            vc.imageArray = [dic objectOrNilForKey:@"movieGlideImg"];
+            vc.infoCellArr = [dic objectOrNilForKey:@"movieInfo"];
+            [weakSelf presentViewController:vc animated:YES completion:nil];
+        };
+    }
+    return _headerView;
+}
+
+- (UIView *)infoHeaderView {
+    
+    if (!_infoHeaderView) {
+        _infoHeaderView = [UIView new];
+        _infoHeaderView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
+        [_headerView setBackgroundColor:[UIColor colorWithHexString:@"2a3137"]];
+        UILabel *contentLabel = [UILabel new];
+        contentLabel.text = [NSString stringWithFormat:@"%@",self.cellModel.poi_name];
+        contentLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+        contentLabel.textColor = [UIColor blackColor];
+        [contentLabel sizeToFit];
+        contentLabel.centerX = self.view.centerX;
+        contentLabel.centerY = 25;
+        [_infoHeaderView addSubview:contentLabel];
+    }
+    return _infoHeaderView;
+}
+
+- (void)addInfoFooterView {
+
+    self.infoFooterView = [[InfoFooterView alloc]
+                       initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 55, SCREEN_WIDTH, 55)];
+    
+    self.placeModel = [SecondInfoPlaceModel viewModelWithDict:self.placeDic];
+    [self.infoFooterView initViewWithModel:self.placeModel titleName:self.cellModel.poi_name];
+    [self.view addSubview:self.infoFooterView];
 }
 
 - (UIView *)naviView {
@@ -169,8 +227,9 @@ GPSelectedViewDelegate>{
     if (!_backgroundScrollView) {
         _backgroundScrollView = [UIScrollView new];
         _backgroundScrollView.frame = self.view.bounds;
-        _backgroundScrollView.backgroundColor = [UIColor lightGrayColor];
+        _backgroundScrollView.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
         _backgroundScrollView.pagingEnabled = YES;
+        _backgroundScrollView.scrollEnabled = !self.isBottomScro;
         _backgroundScrollView.bounces = NO;
         _backgroundScrollView.showsHorizontalScrollIndicator = NO;
         _backgroundScrollView.delegate = self;
@@ -204,12 +263,13 @@ GPSelectedViewDelegate>{
     
     if (!_groomTableView) {
         _groomTableView = [UITableView new];
-        _groomTableView.backgroundColor = [UIColor lightGrayColor];
+        _groomTableView.backgroundColor = [UIColor colorWithHexString:@"2a3137"];
         _groomTableView.scrollEnabled = YES;
         _groomTableView.delegate = self;
         _groomTableView.dataSource = self;
         _groomTableView.frame = [UIScreen mainScreen].bounds;
         _groomTableView.contentInset = UIEdgeInsetsMake(self.selectedView.bottom, 0, 0, 0);
+        _groomTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _groomTableView;
 }
@@ -220,7 +280,7 @@ GPSelectedViewDelegate>{
         _infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 0,
                                                                        SCREEN_WIDTH, SCREEN_HEIGHT)
                                                       style:UITableViewStylePlain];
-        _infoTableView.contentInset = UIEdgeInsetsMake(self.selectedView.bottom, 0, 0, 0);
+        _infoTableView.contentInset = UIEdgeInsetsMake(self.selectedView.bottom, 0, 60, 0);
         _infoTableView.delegate = self;
         _infoTableView.dataSource = self;
         _infoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -311,6 +371,9 @@ GPSelectedViewDelegate>{
     
     [self.view addSubview:self.backgroundScrollView];
     [self.backgroundScrollView addSubview:self.groomTableView];
+    if (self.isBottomScro) {
+        self.groomTableView.tableHeaderView = self.headerView;
+    }
     [self.view addSubview:self.selectedView];
 }
 
@@ -321,7 +384,7 @@ GPSelectedViewDelegate>{
 
 - (void)fetchLocalData {
     
-    if (self.booksArr.count != 0) {
+    if (self.booksArr.count != 0 && !self.isBottomScro) {
         NSMutableArray *models = [NSMutableArray array];
         [self.booksArr enumerateObjectsUsingBlock:^(NSDictionary *obj,
                                                 NSUInteger idx,
@@ -343,20 +406,26 @@ GPSelectedViewDelegate>{
     
     self.whichPic = index;
     [[SDWebImageManager sharedManager] downloadImageWithURL:self.imageArray[index] options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        self.IVOnCoverView.image = image;
-        [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:0 animations:^{
-            self.IVOnCoverView.frame = CGRectMake(0, 0, self.view.width, 200);
-            self.IVOnCoverView.center = self.view.center;
-            self.buttonOnCoverView.size = CGSizeMake(50, 50);
-            self.buttonOnCoverView.bottom = self.view.height - 20;
-            self.buttonOnCoverView.centerX = self.view.centerX;
-            [self.view addSubview:self.coverView];
-            [self.view addSubview:self.IVOnCoverView];
-            [self.view addSubview:self.buttonOnCoverView];
-            self.coverView.alpha = 1.0;
-        } completion:^(BOOL finished) {
-            
-        }];
+        self.isCellImage = NO;
+        [self showDownloadImageViewWithImage:image imageFrame:CGRectMake(0, 0, self.view.width, 200)];
+    }];
+}
+
+- (void)showDownloadImageViewWithImage:(UIImage *)image imageFrame:(CGRect)frame{
+    
+    self.IVOnCoverView.image = image;
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:0 animations:^{
+        self.IVOnCoverView.frame = frame;
+        self.IVOnCoverView.center = self.view.center;
+        self.buttonOnCoverView.size = CGSizeMake(50, 50);
+        self.buttonOnCoverView.bottom = self.view.height - 20;
+        self.buttonOnCoverView.centerX = self.view.centerX;
+        [self.view addSubview:self.coverView];
+        [self.view addSubview:self.IVOnCoverView];
+        [self.view addSubview:self.buttonOnCoverView];
+        self.coverView.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        
     }];
 }
 
@@ -393,7 +462,7 @@ GPSelectedViewDelegate>{
         self.coverView.alpha = 0;
         self.buttonOnCoverView.size = CGSizeZero;
         self.IVOnCoverView.frame = CGRectMake(self.view.centerX,
-                                              100, 0, 0);
+                                              self.isCellImage ? self.view.centerY : 100, 0, 0);
     } completion:^(BOOL finished) {
         [self.coverView removeFromSuperview];
         [self.IVOnCoverView removeFromSuperview];
@@ -445,7 +514,13 @@ GPSelectedViewDelegate>{
                                                  SCREEN_WIDTH, SelectdViewHeight);
         }
     }else {
-        CGFloat selectViewOffsetY = self.selectedView.top - TopViewHeight;
+        CGFloat selectViewOffsetY = self.isBottomScro ? 0 : self.selectedView.top - TopViewHeight;
+        if (self.isBottomScro) {
+            self.topView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 200);
+            self.ViewOnTopScrollView.alpha = 0;
+            self.naviView.alpha = 0;
+            self.selectedView.frame = CGRectMake(0, 200, SCREEN_WIDTH, 45);
+        }
         if (selectViewOffsetY != -TopViewHeight && selectViewOffsetY <= 0) {
             if (self.showingTableView == self.groomTableView) {
                 self.groomTableView.contentOffset = CGPointMake(0, -245 - selectViewOffsetY);
@@ -478,19 +553,22 @@ GPSelectedViewDelegate>{
     [self.infoCellArr enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         SecondInfoCellModel *model = [SecondInfoCellModel cellModelWithDict:obj];
         [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:model.imageUrl] options:SDWebImageDownloaderLowPriority|SDWebImageDownloaderContinueInBackground progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-            CGSize size = [UIHelper getAppropriateImageSizeWithSize:image.size];
-            CGSize lableSize = CGSizeMake(SCREEN_WIDTH - 20, 0);
-            CGRect rect=[model.contentInfo boundingRectWithSize:lableSize
-                                                        options:NSStringDrawingUsesLineFragmentOrigin
-                                                     attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:16.0f],NSFontAttributeName, nil] context:nil];
-            CGFloat cellHeight = size.height + rect.size.height + 20;
-            [cellHeightDic setObject:@(cellHeight) forKey:@(idx)];
-            [cellImageDic setObject:image forKey:@(idx)];
-            if ([cellHeightDic count] == self.infoCellArr.count) {
-                self.cellHeightDic = [cellHeightDic copy];
-                self.cellImageDic = [cellImageDic copy];
-                [self.backgroundScrollView addSubview:self.infoTableView];
-                [self.infoTableView reloadData];
+            if (image != nil) {
+                CGSize size = [UIHelper getAppropriateImageSizeWithSize:image.size];
+                CGSize lableSize = CGSizeMake(SCREEN_WIDTH - 20, 0);
+                CGRect rect=[model.contentInfo boundingRectWithSize:lableSize
+                                                            options:NSStringDrawingUsesLineFragmentOrigin
+                                                         attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:16.0f],NSFontAttributeName, nil] context:nil];
+                CGFloat cellHeight = size.height + rect.size.height + 20;
+                [cellHeightDic setObject:@(cellHeight) forKey:@(idx)];
+                [cellImageDic setObject:image forKey:@(idx)];
+                if ([cellHeightDic count] == self.infoCellArr.count) {
+                    self.cellHeightDic = [cellHeightDic copy];
+                    self.cellImageDic = [cellImageDic copy];
+                    [self.backgroundScrollView addSubview:self.infoTableView];
+                    self.infoTableView.tableHeaderView = self.infoHeaderView;
+                    [self.infoTableView reloadData];
+                }
             }
         }];
     }];
@@ -500,7 +578,7 @@ GPSelectedViewDelegate>{
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (tableView == self.groomTableView) {
+    if (tableView == self.groomTableView && !self.isBottomScro) {
        return self.modelArray.count;
     }else if (tableView == self.infoTableView) {
         return self.infoCellArr.count;
@@ -514,7 +592,7 @@ GPSelectedViewDelegate>{
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (tableView == self.groomTableView) {
+    if (tableView == self.groomTableView && !self.isBottomScro) {
         return 200.0f;
     }else if (tableView == self.infoTableView){
         if (self.cellHeightDic.count != 0) {
@@ -528,29 +606,40 @@ GPSelectedViewDelegate>{
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (tableView == self.groomTableView) {
+    if (tableView == self.groomTableView && !self.isBottomScro) {
         CustomBookCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell"];
         cell.bookModels = self.modelArray[indexPath.row];
         cell.bookDelegate = self;
         return cell;
     }else if (tableView == self.infoTableView){
-        
         SecondInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InfoCell"];
         SecondInfoCellModel *model = [SecondInfoCellModel cellModelWithDict:self.infoCellArr[indexPath.row]];
         [cell setCellImage:[self.cellImageDic objectForKey:@(indexPath.row)] contentInfo:model.contentInfo];
+        
+        cell.imageBlock = ^(UIImageView *imageView){
+            self.isCellImage = YES;
+            CGRect imageFrame;
+            imageFrame = imageView.bounds;
+            if (imageView.height >= SCREEN_HEIGHT) {
+                imageFrame.size.height = SCREEN_HEIGHT;
+            }
+            [self showDownloadImageViewWithImage:imageView.image imageFrame:imageFrame];
+        };
         return cell;
     }
     return nil;
 }
 
-#pragma mark - WNXSelectViewDelegate选择条的代理方法
+#pragma mark - SelectViewDelegate选择条的代理方法
 - (void)selectView:(GPSelectedView *)selectView didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to {
     
     switch (to) {
         case 0:
             self.showingTableView = self.groomTableView;
+            [self.infoFooterView removeFromSuperview];
             break;
         case 1:
+            [self addInfoFooterView];
             self.showingTableView = self.infoTableView;
             if ([self.cellImageDic count] == 0) {
                 [self getDynamicCellHeight];
@@ -576,7 +665,9 @@ GPSelectedViewDelegate>{
     
     if (to == 0) {
         self.showingTableView = self.groomTableView;
+        [self.infoFooterView removeFromSuperview];
     } else if (to == 1) {
+        [self addInfoFooterView];
         self.showingTableView = self.infoTableView;
         if ([self.cellImageDic count] == 0) {
             [self getDynamicCellHeight];
@@ -588,7 +679,11 @@ GPSelectedViewDelegate>{
     
     EachItemDetailViewController *itemVC = [EachItemDetailViewController new];
     itemVC.bookModel = bookView.bookModel;
-    itemVC.imageArray = self.imageArray;
+    NSDictionary *dic = [SecondVCGetData getBookDetailInfoWithRow:
+                         [NSString stringWithFormat:@"%ld",(long)self.whichRow]
+                                                           number:bookView.bookModel.bookId];
+    itemVC.imageArray = [dic objectOrNilForKey:@"bookGlideImg"];
+    itemVC.infoCellArr = [dic objectOrNilForKey:@"bookInfo"];
     itemVC.transitioningDelegate = self;
     [self presentViewController:itemVC animated:YES completion:nil];
 }

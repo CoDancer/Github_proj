@@ -31,10 +31,10 @@
                                              ofType:@"plist"]];
 }
 
-- (NSDictionary *)fetchLocalDataWithBookStoreGlideImage {
+- (NSDictionary *)fetchLocalDataWithMovieData {
     
     return [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]
-                                                pathForResource:@"BookGlideImg"
+                                                pathForResource:@"MovieData"
                                                 ofType:@"plist"]];
 }
 
@@ -45,5 +45,11 @@
                                                        ofType:@"plist"]];
 }
 
+- (NSDictionary *)fetchLocalDataWithBookDetailInfo {
+    
+    return [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]
+                                                       pathForResource:@"BookData"
+                                                       ofType:@"plist"]];
+}
 
 @end

@@ -14,8 +14,13 @@
 
 @property (nonatomic, strong) BookListModel *bookModel;
 @property (nonatomic, strong) SecondViewCellModel *cellModel;
+
 @property (nonatomic, strong) NSArray *imageArray;
 @property (nonatomic, strong) NSArray *booksArr;
 @property (nonatomic, strong) NSArray *infoCellArr;
+@property (nonatomic, strong) NSDictionary *placeDic;
+
+@property (nonatomic, assign) BOOL isBottomScro;
+@property (nonatomic, assign) NSInteger whichRow;
 
 @end

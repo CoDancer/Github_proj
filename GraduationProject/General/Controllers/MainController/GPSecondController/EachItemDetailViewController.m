@@ -15,6 +15,8 @@
 #import "UIImage+Category.h"
 #import "NSString+Category.h"
 #import "SDImageCache.h"
+#import "SecondInfoCellModel.h"
+#import "SecondInfoCell.h"
 
 #define Color(r, g, b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1]
 #define GolbalGreen Color(33, 197, 180)
@@ -54,6 +56,12 @@
 @property (nonatomic, strong) UIImageView *bookImageView;
 @property (nonatomic, strong) NSString *titleName;
 
+
+@property (nonatomic, strong) NSDictionary *cellHeightDic;
+@property (nonatomic, strong) NSDictionary *cellImageDic;
+@property (nonatomic, assign) BOOL isCellImage;
+@property (nonatomic, strong) UIView *headerView;
+
 @end
 
 @implementation EachItemDetailViewController
@@ -62,8 +70,17 @@
     
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
+    
     self.titleName = @"精彩书评";
+    
     [self configView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [self.bottomTableView registerClass:[SecondInfoCell class] forCellReuseIdentifier:@"BookInfoCell"];
+    [self getDynamicCellHeight];
 }
 
 - (UIView *)upNaviView {
@@ -100,13 +117,35 @@
     return _backBtn;
 }
 
+- (UIView *)headerView {
+    
+    if (!_headerView) {
+        _headerView = [UIView new];
+        _headerView.frame = CGRectMake(0, 200, SCREEN_WIDTH, 50);
+        [_headerView setBackgroundColor:[UIColor whiteColor]];
+        UILabel *contentLabel = [UILabel new];
+        if (self.bookModel != nil) {
+            contentLabel.text = [NSString stringWithFormat:@"%@书评",self.bookModel.book_name];
+        }else {
+            contentLabel.text = [NSString stringWithFormat:@"%@",self.itemModel.poi_name];
+        }
+        contentLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+        contentLabel.textColor = [UIColor blackColor];
+        [contentLabel sizeToFit];
+        contentLabel.centerX = self.view.centerX;
+        contentLabel.centerY = 25;
+        [_headerView addSubview:contentLabel];
+    }
+    return _headerView;
+}
+
 - (UILabel *)naviTitle {
     
     if (!_naviTitle) {
         _naviTitle = [UILabel new];
         _naviTitle.textColor = [UIColor colorWithWhite:0.047 alpha:1.000];
         _naviTitle.font = [UIFont boldSystemFontOfSize:18.0];
-        _naviTitle.text = self.bookModel.book_name;
+        _naviTitle.text = self.bookModel != nil ? self.bookModel.book_name : self.itemModel.poi_name;
         [_naviTitle sizeToFit];
         _naviTitle.left = self.backBtn.right + 10;
         _naviTitle.centerY = self.backBtn.centerY;
@@ -137,13 +176,28 @@
     return _topBaseView;
 }
 
+- (NSDictionary *)cellHeightDic {
+    
+    if (!_cellHeightDic) {
+        _cellHeightDic = [NSDictionary dictionary];
+    }
+    return _cellHeightDic;
+}
+
 - (void)configView {
     
     [self addBottomScrollViewToView];
     [self addTopViewInHeaderView];
     [self addNaviViewToView];
     
-    [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:self.bookModel.imageURL] placeholderImage:nil];
+    if (self.bookModel != nil) {
+        [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:self.bookModel.imageURL]
+                              placeholderImage:nil];
+    }else {
+        [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:self.itemModel.imageURL]
+                              placeholderImage:nil];
+    }
+    
     [self.view addSubview:self.topBaseView];
     [self.topBaseView addSubview:self.upNaviView];
     [self.topBaseView addSubview:self.bookImageView];
@@ -304,8 +358,8 @@
 }
 
 - (void)addBottomScrollViewToView {
+    
     [self.view addSubview:self.backgroundScrollView];
-    [self.backgroundScrollView addSubview:self.bottomTableView];
 }
 
 #pragma mark - SDCycleScrollViewDelegate
@@ -314,20 +368,26 @@
     
     self.whichPic = index;
     [[SDWebImageManager sharedManager] downloadImageWithURL:self.imageArray[index] options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        self.IVOnCoverView.image = image;
-        [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:0 animations:^{
-            self.IVOnCoverView.frame = CGRectMake(0, 0, self.view.width, 200);
-            self.IVOnCoverView.center = self.view.center;
-            self.buttonOnCoverView.size = CGSizeMake(50, 50);
-            self.buttonOnCoverView.bottom = self.view.height - 20;
-            self.buttonOnCoverView.centerX = self.view.centerX;
-            [self.view addSubview:self.coverView];
-            [self.view addSubview:self.IVOnCoverView];
-            [self.view addSubview:self.buttonOnCoverView];
-            self.coverView.alpha = 1.0;
-        } completion:^(BOOL finished) {
-            
-        }];
+        self.isCellImage = NO;
+        [self showDownloadImageViewWithImage:image imageFrame:CGRectMake(0, 0, self.view.width, 200)];
+    }];
+}
+
+- (void)showDownloadImageViewWithImage:(UIImage *)image imageFrame:(CGRect)frame{
+    
+    self.IVOnCoverView.image = image;
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:0 animations:^{
+        self.IVOnCoverView.frame = frame;
+        self.IVOnCoverView.center = self.view.center;
+        self.buttonOnCoverView.size = CGSizeMake(50, 50);
+        self.buttonOnCoverView.bottom = self.view.height - 20;
+        self.buttonOnCoverView.centerX = self.view.centerX;
+        [self.view addSubview:self.coverView];
+        [self.view addSubview:self.IVOnCoverView];
+        [self.view addSubview:self.buttonOnCoverView];
+        self.coverView.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        
     }];
 }
 
@@ -364,7 +424,7 @@
         self.coverView.alpha = 0;
         self.buttonOnCoverView.size = CGSizeZero;
         self.IVOnCoverView.frame = CGRectMake(self.view.centerX,
-                                              100, 0, 0);
+                                              self.isCellImage ? self.view.centerY : 100, 0, 0);
     } completion:^(BOOL finished) {
         [self.coverView removeFromSuperview];
         [self.IVOnCoverView removeFromSuperview];
@@ -409,8 +469,43 @@
     
 }
 
+- (void)getDynamicCellHeight {
+    
+    NSMutableDictionary *cellHeightDic = [NSMutableDictionary dictionary];
+    NSMutableDictionary *cellImageDic = [NSMutableDictionary dictionary];
+    if (self.cellHeightDic.count == 0) {
+        MBProgressHUD *hud = [UIHelper showHUDAddedTo:self.backgroundScrollView animated:YES];
+        hud.yOffset = 100;
+    }
+    [self.infoCellArr enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        SecondInfoCellModel *model = [SecondInfoCellModel cellModelWithDict:obj];
+        [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:model.imageUrl] options:SDWebImageDownloaderLowPriority|SDWebImageDownloaderContinueInBackground progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+            if (image) {
+                CGSize size = [UIHelper getAppropriateImageSizeWithSize:image.size];
+                CGSize lableSize = CGSizeMake(SCREEN_WIDTH - 20, 0);
+                CGRect rect=[model.contentInfo boundingRectWithSize:lableSize
+                                                            options:NSStringDrawingUsesLineFragmentOrigin
+                                                         attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:16.0f],NSFontAttributeName, nil] context:nil];
+                CGFloat cellHeight = size.height + rect.size.height + 20;
+                [cellHeightDic setObject:@(cellHeight) forKey:@(idx)];
+                [cellImageDic setObject:image forKey:@(idx)];
+                if ([cellHeightDic count] == self.infoCellArr.count) {
+                    self.cellHeightDic = [cellHeightDic copy];
+                    self.cellImageDic = [cellImageDic copy];
+                    [self.backgroundScrollView addSubview:self.bottomTableView];
+                    self.bottomTableView.tableHeaderView = self.headerView;
+                    [self.bottomTableView reloadData];
+                }
+            }
+            [UIHelper hideAllMBProgressHUDsForView:self.backgroundScrollView animated:YES];
+        }];
+    }];
+}
+
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.infoCellArr.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -418,15 +513,26 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0f;
+    if (self.cellHeightDic.count != 0) {
+        return [[self.cellHeightDic objectForKey:@(indexPath.row)] integerValue];
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    }
+    SecondInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookInfoCell"];
+    SecondInfoCellModel *model = [SecondInfoCellModel cellModelWithDict:self.infoCellArr[indexPath.row]];
+    [cell setCellImage:[self.cellImageDic objectForKey:@(indexPath.row)] contentInfo:model.contentInfo];
+    cell.imageBlock = ^(UIImageView *imageView){
+        self.isCellImage = YES;
+        CGRect imageFrame;
+        imageFrame = imageView.bounds;
+        if (imageView.height >= SCREEN_HEIGHT) {
+            imageFrame.size.height = SCREEN_HEIGHT;
+        }
+        [self showDownloadImageViewWithImage:imageView.image imageFrame:imageFrame];
+    };
     return cell;
 }
 

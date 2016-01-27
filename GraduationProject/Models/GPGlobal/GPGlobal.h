@@ -23,6 +23,8 @@
 #define IMAGEWIDTH 120
 #define IMAGEHEIGHT 160
 
+#define k_IOS_Scale [[UIScreen mainScreen] bounds].size.width/320
+
 #define URL_ADD @"http://test.xbcx.com.cn/qiuchangapi"
 
 

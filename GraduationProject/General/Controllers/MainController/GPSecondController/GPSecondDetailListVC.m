@@ -140,9 +140,19 @@
                                                                    row:indexPath.row];
     GPSecondDetailViewController *vc = [GPSecondDetailViewController new];
     vc.cellModel = [SecondViewCellModel cellModelWithDict:self.listModel.body[indexPath.row]];
-    vc.imageArray = [infoDic objectOrNilForKey:@"glideImages"];
-    vc.booksArr = [infoDic objectOrNilForKey:@"booksInfo"];
-    vc.infoCellArr = [infoDic objectOrNilForKey:@"storeInfo"];
+    vc.placeDic = [infoDic objectOrNilForKey:@"coordinate"];
+    vc.whichRow = indexPath.row;
+    if ([self.sectionId integerValue] == 0) {
+        vc.imageArray = [infoDic objectOrNilForKey:@"glideImages"];
+        vc.booksArr = [infoDic objectOrNilForKey:@"booksInfo"];
+        vc.infoCellArr = [infoDic objectOrNilForKey:@"storeInfo"];
+        vc.isBottomScro = NO;
+    }else if([self.sectionId integerValue] == 1) {
+        vc.imageArray = [infoDic objectOrNilForKey:@"glideImages"];
+        vc.booksArr = [infoDic objectOrNilForKey:@"groomInfo"];
+        vc.infoCellArr = [infoDic objectOrNilForKey:@"mainInfo"];
+        vc.isBottomScro = YES;
+    }
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -10,8 +10,10 @@
 
 @interface SecondVCGetData : NSObject
 
-+ (NSArray *)getGlideImageArrWithSection:(NSInteger)section row:(NSInteger)row;
++ (NSDictionary *)getMovieDetailInfoWithRow:(NSInteger)row number:(NSString *)number;
 
 + (NSDictionary *)getInfoContentWithSection:(NSInteger)section row:(NSInteger)row;
+
++ (NSDictionary *)getBookDetailInfoWithRow:(NSString *)row number:(NSString *)number;
 
 @end

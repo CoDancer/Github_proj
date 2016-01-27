@@ -89,6 +89,59 @@
 		<key>ID</key>
 		<string>01</string>
 		<key>color</key>
+		<string>ef4136</string>
+		<key>tag_name</key>
+		<string>电影院</string>
+		<key>section_count</key>
+		<string>23个影片精选</string>
+		<key>body</key>
+		<array>
+			<dict>
+				<key>section_title</key>
+				<string>千与千寻</string>
+				<key>imageURL</key>
+				<string>http://img5.duitang.com/uploads/item/201601/16/20160116232846_t4YE8.jpeg</string>
+				<key>fav_count</key>
+				<string>5.0</string>
+				<key>poi_name</key>
+				<string>天堂电影院</string>
+			</dict>
+			<dict>
+				<key>section_title</key>
+				<string>小萝莉的猴神大叔</string>
+				<key>imageURL</key>
+				<string>http://img4.duitang.com/uploads/item/201601/16/20160116235720_cZGFu.thumb.700_0.jpeg</string>
+				<key>fav_count</key>
+				<string>5.0</string>
+				<key>poi_name</key>
+				<string>太平洋电影院</string>
+			</dict>
+			<dict>
+				<key>section_title</key>
+				<string>鬼吹灯之寻龙诀</string>
+				<key>imageURL</key>
+				<string>http://img5.duitang.com/uploads/item/201601/16/20160116230802_WhmeA.thumb.700_0.jpeg</string>
+				<key>fav_count</key>
+				<string>5.0</string>
+				<key>poi_name</key>
+				<string>万达电影院</string>
+			</dict>
+			<dict>
+				<key>section_title</key>
+				<string>云中行走</string>
+				<key>imageURL</key>
+				<string>http://img4.duitang.com/uploads/item/201601/16/20160116151104_ySQHF.thumb.700_0.jpeg</string>
+				<key>fav_count</key>
+				<string>4.9</string>
+				<key>poi_name</key>
+				<string>火星电影院</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>ID</key>
+		<string>02</string>
+		<key>color</key>
 		<string>f391a9</string>
 		<key>tag_name</key>
 		<string>动漫展</string>
@@ -140,7 +193,7 @@
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>02</string>
+		<string>03</string>
 		<key>color</key>
 		<string>36d4a2</string>
 		<key>tag_name</key>
@@ -188,59 +241,6 @@
 				<string>4.6</string>
 				<key>poi_name</key>
 				<string>成都展</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>ID</key>
-		<string>03</string>
-		<key>color</key>
-		<string>ef4136</string>
-		<key>tag_name</key>
-		<string>电影院</string>
-		<key>section_count</key>
-		<string>23个影片精选</string>
-		<key>body</key>
-		<array>
-			<dict>
-				<key>section_title</key>
-				<string>千与千寻</string>
-				<key>imageURL</key>
-				<string>http://img5.duitang.com/uploads/item/201601/16/20160116232846_t4YE8.jpeg</string>
-				<key>fav_count</key>
-				<string>5.0</string>
-				<key>poi_name</key>
-				<string>天堂电影院</string>
-			</dict>
-			<dict>
-				<key>section_title</key>
-				<string>小萝莉的猴神大叔</string>
-				<key>imageURL</key>
-				<string>http://img4.duitang.com/uploads/item/201601/16/20160116235720_cZGFu.thumb.700_0.jpeg</string>
-				<key>fav_count</key>
-				<string>5.0</string>
-				<key>poi_name</key>
-				<string>太平洋电影院</string>
-			</dict>
-			<dict>
-				<key>section_title</key>
-				<string>鬼吹灯之寻龙诀</string>
-				<key>imageURL</key>
-				<string>http://img5.duitang.com/uploads/item/201601/16/20160116230802_WhmeA.thumb.700_0.jpeg</string>
-				<key>fav_count</key>
-				<string>5.0</string>
-				<key>poi_name</key>
-				<string>万达电影院</string>
-			</dict>
-			<dict>
-				<key>section_title</key>
-				<string>云中行走</string>
-				<key>imageURL</key>
-				<string>http://img4.duitang.com/uploads/item/201601/16/20160116151104_ySQHF.thumb.700_0.jpeg</string>
-				<key>fav_count</key>
-				<string>4.9</string>
-				<key>poi_name</key>
-				<string>火星电影院</string>
 			</dict>
 		</array>
 	</dict>

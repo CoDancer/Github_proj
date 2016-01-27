@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SecondInfoCellModel.h"
 
-typedef void(^getImageBlock) (UIImage *image);
+typedef void(^getImageBlock) (UIImageView *imageView);
 
 @interface SecondInfoCell : UITableViewCell
 
