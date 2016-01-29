@@ -52,4 +52,11 @@
                                                        ofType:@"plist"]];
 }
 
+- (NSArray *)fetchLocalDataWithTasteFoodContent {
+    
+    return [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]
+                                                       pathForResource:@"TasteFood"
+                                                       ofType:@"plist"]];
+}
+
 @end

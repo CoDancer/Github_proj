@@ -393,7 +393,11 @@
 
 - (void)downloadPicture {
     
-    [self downloadPictureWithIndex:self.whichPic];
+    if (self.isCellImage) {
+        [self putImageToMyDirWithImage:self.IVOnCoverView.image];
+    }else {
+        [self downloadPictureWithIndex:self.whichPic];
+    }
 }
 
 - (void)downloadPictureWithIndex:(NSInteger)index {
@@ -403,18 +407,23 @@
     // NSString *urlOrPath = [self.imageArray[index] otherImageDownloadPath];
     if ([[NSFileManager defaultManager] fileExistsAtPath:savePath isDirectory:nil]) {
         UIImage *image = [UIImage imageWithContentsOfFile:savePath];
-        if (image) {
-            [image saveToAlbumWithMetadata:nil customAlbumName:@"FabLook" completionBlock:^{
-                //[UIHelper showAutoHideHUDforView:self title:@"保存成功" subTitle:nil];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"需要访问您的照片" message:@"请启用照片-设置/隐私/照片" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-                [alert show];
-            } failureBlock:^(NSError *error) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"需要访问您的照片" message:@"请启用照片-设置/隐私/照片" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-                [alert show];
-                
-            }];
+        [self putImageToMyDirWithImage:image];
+    }
+}
+
+- (void)putImageToMyDirWithImage:(UIImage *)image {
+    
+    if (image) {
+        [image saveToAlbumWithMetadata:nil customAlbumName:@"MyApp" completionBlock:^{
+            //[UIHelper showAutoHideHUDforView:self title:@"保存成功" subTitle:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"需要访问您的照片" message:@"请启用照片-设置/隐私/照片" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+            [alert show];
+        } failureBlock:^(NSError *error) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"需要访问您的照片" message:@"请启用照片-设置/隐私/照片" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+            [alert show];
             
-        }
+        }];
+        
     }
 }
 

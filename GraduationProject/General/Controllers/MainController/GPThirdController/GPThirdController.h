@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BYBaseVC.h"
 
-@interface GPThirdController : UIViewController
+@interface GPThirdController : BYBaseVC
 
 @end

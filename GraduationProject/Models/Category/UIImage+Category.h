@@ -17,4 +17,6 @@
 
 - (UIImage *)imageByScalingToSize:(CGSize)targetSize;
 
++ (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur;
+
 @end

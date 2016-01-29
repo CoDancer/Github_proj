@@ -20,4 +20,6 @@
 
 - (NSDictionary *)fetchLocalDataWithBookDetailInfo;
 
+- (NSArray *)fetchLocalDataWithTasteFoodContent;
+
 @end

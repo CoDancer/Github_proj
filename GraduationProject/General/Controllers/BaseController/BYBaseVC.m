@@ -23,8 +23,9 @@
     self.navigationItem.leftBarButtonItem = [self leftBarButton];
 
 }
-- (UIBarButtonItem *)leftBarButton
-{
+
+- (UIBarButtonItem *)leftBarButton {
+    
     if (self.navigationController.viewControllers.count > 1)
     {
         return [UIHelper navBackBarBtn:nil target:self action:@selector(leftNavButtonClicked:)];
@@ -34,9 +35,10 @@
         return nil;
 }
 
-- (void)leftNavButtonClicked:(UIButton *)button
-{
+- (void)leftNavButtonClicked:(UIButton *)button {
+    
     [self.navigationController popViewControllerAnimated:YES];
+    self.navigationController.delegate = nil;
     [self showBottomView];
 }
 

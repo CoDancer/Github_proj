@@ -84,4 +84,11 @@
     return muDic;
 }
 
++ (NSArray *)getTasteFoodContent {
+    
+    NSArray *array = [[GPSecondVCClient sharedClient]
+                         fetchLocalDataWithTasteFoodContent];
+    return array;
+}
+
 @end

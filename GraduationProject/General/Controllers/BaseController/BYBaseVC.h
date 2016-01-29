@@ -10,4 +10,6 @@
 
 @interface BYBaseVC : UIViewController
 
+- (void)leftNavButtonClicked:(UIButton *)button;
+
 @end
