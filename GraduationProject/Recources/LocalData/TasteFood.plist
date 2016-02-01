@@ -188,28 +188,67 @@
 			<array>
 				<dict>
 					<key>time</key>
-					<string></string>
+					<string>准备工作</string>
 					<key>howDo</key>
-					<string></string>
+					<string>1.牛肉切碎，大蒜、洋葱、胡萝卜全部切成碎粒，西红柿切丁</string>
 				</dict>
 				<dict>
 					<key>time</key>
-					<string></string>
+					<string>小火</string>
 					<key>howDo</key>
-					<string></string>
+					<string>2.热锅用小火融化黄油。然后放入蒜粒、洋葱炒出香味，并且颜色变为金黄。</string>
 				</dict>
 				<dict>
 					<key>time</key>
-					<string></string>
+					<string>半生</string>
 					<key>howDo</key>
-					<string></string>
+					<string>3.倒入牛肉末炒至半生。倒入胡萝卜粒、西红柿丁一起翻炒数下。加入番茄酱。翻炒均匀。加入干罗勒碎、黑胡椒、盐、味精。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>7-8分</string>
+					<key>howDo</key>
+					<string>4.用小火慢慢熬成香浓的蕃茄牛肉酱。另置一锅烧待水沸腾后放入意面，加少许盐煮约7-8分即可。</string>
 				</dict>
 			</array>
 			<key>ingredients</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
+				<dict>
+					<key>howMuch</key>
+					<string>100克</string>
+					<key>whatFood</key>
+					<string>意大利面</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>一块</string>
+					<key>whatFood</key>
+					<string>牛肉</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>1/4个</string>
+					<key>whatFood</key>
+					<string>洋葱</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>各半个</string>
+					<key>whatFood</key>
+					<string>蕃茄，胡萝卜</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>2瓣，2大匙</string>
+					<key>whatFood</key>
+					<string>蒜，蕃茄酱</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>适量</string>
+					<key>whatFood</key>
+					<string>黄油 盐 味精 黑胡椒粉</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>
@@ -228,34 +267,58 @@
 		<key>detailCell</key>
 		<dict>
 			<key>doWays</key>
-			<dict>
-				<key>wayTwo</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayOne</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayThree</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-			</dict>
-			<key>glideImage</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
+				<dict>
+					<key>time</key>
+					<string>泡水软化</string>
+					<key>howDo</key>
+					<string>1.消化饼用擀面杖擀碎。黄油放入微波炉里融化，吉利丁片泡水软化，奶油奶酪室温软化。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>搅拌均匀</string>
+					<key>howDo</key>
+					<string>2.把融化和黄油和压碎的饼干碎混合成饼底材料倒入模具，压实后放入冰箱冷藏备用。奶油奶酪、细砂糖放在容器里隔温水打发至光滑无颗粒状，加入蛋黄，朗姆酒，柠檬汁搅拌均匀。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>加热</string>
+					<key>howDo</key>
+					<string>3.加入酸奶，搅拌成芝士糊。将牛奶和淡奶油用微波炉加热，不要加热的太烫，将软化的吉利丁片沥干水，放入加热好的混合物中，搅拌融化。分三次倒入芝士糊中边搅拌均匀，再加入下一次。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>冷藏4个小时以上</string>
+					<key>howDo</key>
+					<string>4.最后将混合物倒入黄油饼底的蛋糕模中，轻轻震几下，可以让芝士糊的气泡消失，然后放入冰箱中冷藏4个小时以上，芝士糊凝结就可以了。</string>
+				</dict>
+			</array>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>howMuch</key>
+					<string>适量</string>
+					<key>whatFood</key>
+					<string>奶油奶酪，黄油</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>100克</string>
+					<key>whatFood</key>
+					<string>饼干</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>1勺</string>
+					<key>whatFood</key>
+					<string>细砂糖</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>200克</string>
+					<key>whatFood</key>
+					<string>温水</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>
@@ -274,48 +337,45 @@
 		<key>detailCell</key>
 		<dict>
 			<key>doWays</key>
-			<dict>
-				<key>wayTwo</key>
+			<array>
 				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
+					<key>time</key>
+					<string>准备工作</string>
+					<key>howDo</key>
+					<string>1.薏仁洗净</string>
 				</dict>
-				<key>wayOne</key>
 				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
+					<key>time</key>
+					<string>适量的水</string>
+					<key>howDo</key>
+					<string>2.将薏仁、大米倒入砂锅中，加入适量的水</string>
 				</dict>
-				<key>wayThree</key>
 				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
+					<key>time</key>
+					<string>慢煮</string>
+					<key>howDo</key>
+					<string>3.小火慢煮2-3小时即可。</string>
 				</dict>
-			</dict>
+			</array>
 			<key>ingredients</key>
 			<array>
 				<dict>
 					<key>howMuch</key>
-					<string></string>
+					<string>20克</string>
 					<key>whatFood</key>
-					<string></string>
+					<string>薏仁</string>
 				</dict>
 				<dict>
 					<key>howMuch</key>
-					<string></string>
+					<string>100克</string>
 					<key>whatFood</key>
-					<string></string>
+					<string>大米</string>
 				</dict>
 				<dict>
 					<key>howMuch</key>
-					<string></string>
+					<string>适量</string>
 					<key>whatFood</key>
-					<string></string>
+					<string>水</string>
 				</dict>
 			</array>
 		</dict>
@@ -335,34 +395,58 @@
 		<key>detailCell</key>
 		<dict>
 			<key>doWays</key>
-			<dict>
-				<key>wayTwo</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayOne</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayThree</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-			</dict>
-			<key>glideImage</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
+				<dict>
+					<key>time</key>
+					<string>准备工作</string>
+					<key>howDo</key>
+					<string>1.排骨用盐，适量生抽，料酒，适量生粉腌制半小时以上 ，柠檬取皮，切丝 ，姜切丝 ，柠檬取柠檬汁</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>5分钟左右</string>
+					<key>howDo</key>
+					<string>2.红茶用热水冲泡5分钟左右 ,锅内倒油烧热 ,倒入腌制好的排骨煎至两面金黄</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>过滤</string>
+					<key>howDo</key>
+					<string>3.倒入过滤掉茶叶的红茶，放入柠檬皮和姜丝，放入生抽，老抽，糖，适量盐调味，焖至汤汁快收干 ,倒入柠檬汁，翻炒片刻装盘即可</string>
+				</dict>
+			</array>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>howMuch</key>
+					<string>500克</string>
+					<key>whatFood</key>
+					<string>肋排</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>半个</string>
+					<key>whatFood</key>
+					<string>柠檬</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>适量</string>
+					<key>whatFood</key>
+					<string>红茶，姜，盐</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>适量</string>
+					<key>whatFood</key>
+					<string>生抽，老抽</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>适量</string>
+					<key>whatFood</key>
+					<string>料酒，白糖，生粉</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>
@@ -381,34 +465,46 @@
 		<key>detailCell</key>
 		<dict>
 			<key>doWays</key>
-			<dict>
-				<key>wayTwo</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayOne</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayThree</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-			</dict>
-			<key>glideImage</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
+				<dict>
+					<key>time</key>
+					<string>准备工作</string>
+					<key>howDo</key>
+					<string>1.红薯洗净去皮切1cm见方的小块，裹上少许淀粉，锅内少许油，放入红薯慢慢煎至表面焦黄盛出备用。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>融化</string>
+					<key>howDo</key>
+					<string>2.锅中放入冰糖和少许水，煮至冰糖融化，待糖上色，大火收汁。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>均匀裹住红薯</string>
+					<key>howDo</key>
+					<string>3.倒入煎好的红薯，晃动锅子让糖汁均匀裹住红薯，关火装盘，撒上芝麻即可</string>
+				</dict>
+			</array>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>howMuch</key>
+					<string>200g</string>
+					<key>whatFood</key>
+					<string>红薯</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>少许</string>
+					<key>whatFood</key>
+					<string>白芝麻</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>50g</string>
+					<key>whatFood</key>
+					<string>冰糖</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>
@@ -427,34 +523,76 @@
 		<key>detailCell</key>
 		<dict>
 			<key>doWays</key>
-			<dict>
-				<key>wayTwo</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayOne</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayThree</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-			</dict>
-			<key>glideImage</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
+				<dict>
+					<key>time</key>
+					<string>准备工作</string>
+					<key>howDo</key>
+					<string>1.将低筋面粉过筛后加入牛奶中，搅拌均匀至无颗粒。鸡蛋加入35克的砂糖搅拌均匀至砂糖溶化。将搅拌好的蛋液加入到面粉牛奶糊中，再加入油搅拌均匀，最后将面糊过筛待用。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>小火</string>
+					<key>howDo</key>
+					<string>2.将不沾平底锅烧热，转小火，不放油，将一勺（乘汤用的勺子）面糊倒入锅中，迅速转匀，一面煎好以后翻面。以此将所有面糊做成薄面饼，大约可做8个。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>凝固</string>
+					<key>howDo</key>
+					<string>3.将芒果去皮，沿果核切下果肉，再纵切成长条。鲜奶油加入40克砂糖用搅拌 器将奶油打发（奶油呈凝固的固体状）。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>面饼</string>
+					<key>howDo</key>
+					<string>4.取一张面饼，在中心铺上一层奶油糊， 再放一块芒果条，再铺一层奶油糊。最后将面饼包成四方形即可</string>
+				</dict>
+			</array>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>howMuch</key>
+					<string>2个</string>
+					<key>whatFood</key>
+					<string>芒果</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>80克</string>
+					<key>whatFood</key>
+					<string>低筋面粉</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>75克</string>
+					<key>whatFood</key>
+					<string>白砂糖</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>250克</string>
+					<key>whatFood</key>
+					<string>牛奶</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>2个</string>
+					<key>whatFood</key>
+					<string>鸡蛋</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>1汤匙</string>
+					<key>whatFood</key>
+					<string>食用油</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>300克</string>
+					<key>whatFood</key>
+					<string>鲜奶油</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>
@@ -473,34 +611,58 @@
 		<key>detailCell</key>
 		<dict>
 			<key>doWays</key>
-			<dict>
-				<key>wayTwo</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayOne</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayThree</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-			</dict>
-			<key>glideImage</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
+				<dict>
+					<key>time</key>
+					<string>准备工作</string>
+					<key>howDo</key>
+					<string>1.水果洗净去皮，用挖球器挖出球形果肉（没有挖球器的朋友可以切成块哦）。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>炖半个小时</string>
+					<key>howDo</key>
+					<string>2.将梨、冰糖、和适量水放进电饭煲炖半个小时（用煲汤的炖效果更好哦），大概等到雪梨炖软就行啦。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>加点蜂蜜</string>
+					<key>howDo</key>
+					<string>3.装入广口玻璃器皿加点蜂蜜就可以食用啦（加蜂蜜的时候温度不要太高）</string>
+				</dict>
+			</array>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>howMuch</key>
+					<string>2个</string>
+					<key>whatFood</key>
+					<string>雪梨</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>100克</string>
+					<key>whatFood</key>
+					<string>冰糖</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>30克</string>
+					<key>whatFood</key>
+					<string>蜂蜜</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>1个</string>
+					<key>whatFood</key>
+					<string>水果挖球器</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>1个</string>
+					<key>whatFood</key>
+					<string>广口玻璃器皿</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>
@@ -519,34 +681,64 @@
 		<key>detailCell</key>
 		<dict>
 			<key>doWays</key>
-			<dict>
-				<key>wayTwo</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayOne</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayThree</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-			</dict>
-			<key>glideImage</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
+				<dict>
+					<key>time</key>
+					<string>准备工作</string>
+					<key>howDo</key>
+					<string>1. 吉利丁片用冷水泡5-10分钟，待柔软后备用；咖啡粉用热水稀释成咖啡浓汁备用。奶酪切小块和15克糖混合，用打蛋器搅打至柔软，加入百利甜酒和咖啡浓汁，搅拌均匀。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>搅拌</string>
+					<key>howDo</key>
+					<string>2. 将上述材料隔水加热，放入泡软的吉利丁片，搅拌至其融化即可关火。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>搅拌均匀</string>
+					<key>howDo</key>
+					<string>3. 鲜奶油和10克糖打至六分发泡，跟以上咖啡奶酪糊混合后搅拌均匀，倒入模具，入冰箱冷藏至凝固即可。</string>
+				</dict>
+			</array>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>howMuch</key>
+					<string>1个</string>
+					<key>whatFood</key>
+					<string>吉利丁片</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>1袋</string>
+					<key>whatFood</key>
+					<string>速溶咖啡粉</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>80克</string>
+					<key>whatFood</key>
+					<string>奶酪</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>25克</string>
+					<key>whatFood</key>
+					<string>糖</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>50ml</string>
+					<key>whatFood</key>
+					<string>百利甜酒</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>80克</string>
+					<key>whatFood</key>
+					<string>鲜奶油</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>
@@ -565,34 +757,40 @@
 		<key>detailCell</key>
 		<dict>
 			<key>doWays</key>
-			<dict>
-				<key>wayTwo</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayOne</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayThree</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-			</dict>
-			<key>glideImage</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
+				<dict>
+					<key>time</key>
+					<string>准备工作</string>
+					<key>howDo</key>
+					<string>1.将红薯蒸熟放入食品袋压成泥状后，放少量牛奶拌匀。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>15到20分钟</string>
+					<key>howDo</key>
+					<string> 2.装入蛋挞批中，放上一层芝士，烤箱200度烤15到20分钟就好啦。</string>
+				</dict>
+			</array>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>howMuch</key>
+					<string>1个</string>
+					<key>whatFood</key>
+					<string>红薯</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>300ml</string>
+					<key>whatFood</key>
+					<string>牛奶</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>30g</string>
+					<key>whatFood</key>
+					<string>芝士</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>
@@ -611,34 +809,52 @@
 		<key>detailCell</key>
 		<dict>
 			<key>doWays</key>
-			<dict>
-				<key>wayTwo</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayOne</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-				<key>wayThree</key>
-				<dict>
-					<key>imageURL</key>
-					<string></string>
-					<key>contentInfo</key>
-					<string></string>
-				</dict>
-			</dict>
-			<key>glideImage</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
+				<dict>
+					<key>time</key>
+					<string>准备工作</string>
+					<key>howDo</key>
+					<string>1.猪五花肉煮至八成熟后捞出。把煮好的猪五花肉切成大块，并用刀在肉皮上切出花纹。取两块豆腐乳用勺子研成泥，冰糖用刀压碎，生姜切大片，葱切段。碗里倒入适量料酒，放入冰糖。倒入研碎的豆腐乳和腐乳汁、一汤匙老抽，调匀。</string>
+				</dict>
+				<dict>
+					<key>time</key>
+					<string>10分钟</string>
+					<key>howDo</key>
+					<string>2.砂锅里加适量清水，放入五花肉块，八角、桂皮、香叶、生姜，葱段 ，大火煮开后，倒入调好的腐乳料汁小火炖制1小时候，调入精盐再炖制10分钟即可。</string>
+				</dict>
+			</array>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>howMuch</key>
+					<string>500g</string>
+					<key>whatFood</key>
+					<string>猪五花肉</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>4块</string>
+					<key>whatFood</key>
+					<string>红豆腐乳</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>适量</string>
+					<key>whatFood</key>
+					<string>生姜、大葱、冰糖</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>适量</string>
+					<key>whatFood</key>
+					<string>料酒、老抽</string>
+				</dict>
+				<dict>
+					<key>howMuch</key>
+					<string>适量</string>
+					<key>whatFood</key>
+					<string>八角、桂皮、香叶</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>

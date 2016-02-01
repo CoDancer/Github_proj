@@ -67,6 +67,7 @@
     
     
 }
+
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString parameters:(NSDictionary *)parameters constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
 {
     __weak typeof(self) weakSelf = self;
@@ -89,6 +90,7 @@
         }
     }];
 }
+
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
 {
     NSMutableDictionary *parm = [NSMutableDictionary new];
@@ -108,6 +110,7 @@
         }
     }];
 }
+
 - (BOOL)isAvaiableWithResponse:(NSDictionary *)responseObject
 {
     BOOL availabel = responseObject && [responseObject[@"ok"] boolValue];

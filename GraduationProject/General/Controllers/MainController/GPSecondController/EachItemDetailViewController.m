@@ -504,9 +504,10 @@
                     [self.backgroundScrollView addSubview:self.bottomTableView];
                     self.bottomTableView.tableHeaderView = self.headerView;
                     [self.bottomTableView reloadData];
+                    [UIHelper hideAllMBProgressHUDsForView:self.backgroundScrollView animated:YES];
                 }
             }
-            [UIHelper hideAllMBProgressHUDsForView:self.backgroundScrollView animated:YES];
+            
         }];
     }];
 }

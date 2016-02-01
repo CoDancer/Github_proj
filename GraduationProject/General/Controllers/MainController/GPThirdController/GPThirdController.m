@@ -84,6 +84,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    [self showBottomView];
     [super viewWillAppear:animated];
 }
 

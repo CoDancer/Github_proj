@@ -1,19 +1,23 @@
 //
-//  NewsDetailInfoViewController.m
+//  FirstVCGetData.m
 //  GraduationProject
 //
-//  Created by CoDancer on 15/12/26.
-//  Copyright © 2015年 onwer. All rights reserved.
+//  Created by onwer on 16/2/1.
+//  Copyright © 2016年 onwer. All rights reserved.
 //
 
-#import "NewsDetailInfoViewController.h"
+#import "FirstVCGetData.h"
 
-@implementation NewsDetailInfoViewController
+@implementation FirstVCGetData
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.title = @"新闻分类";
-    [self configView];
++ (instancetype)sharedClient
+{
+    static dispatch_once_t once;
+    static FirstVCGetData *__singleton__;
+    dispatch_once(&once, ^ {
+        __singleton__ = [[self alloc] init];
+    });
+    return __singleton__;
 }
 
 - (void)configView {
@@ -43,5 +47,6 @@
                                }
                            }];
 }
+
 
 @end

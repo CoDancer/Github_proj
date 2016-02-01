@@ -402,9 +402,269 @@ Always. 我会永远爱你】
 			</array>
 		</dict>
 	</dict>
-	<key>section01</key>
-	<string></string>
+	<key>section11</key>
+	<dict>
+		<key>place10</key>
+		<dict>
+			<key>movieInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/item/201301/20/20130120135645_WHUzd.thumb.700_0.jpeg</string>
+					<key>contentInfo</key>
+					<string>唯有心灵能使人高贵。所有那些自命高贵而没有高贵的心灵的人，都像块污泥。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img5.duitang.com/uploads/blog/201410/19/20141019151002_5YEFw.thumb.700_0.jpeg</string>
+					<key>contentInfo</key>
+					<string>不管时代的潮流和社会的风尚怎样，人总可以凭着自己高尚的品质，超脱时代和社会，走自己正确的道路。现在，大家都为了电冰箱、汽车、房子而奔波、追逐、竞争。这就是我们这个时代的特征了。但是也还有不少人，他们不追求这些物质的东西，他们追求理想和真理，得到了内心的自由和安宁。</string>
+				</dict>
+			</array>
+			<key>movieGlideImg</key>
+			<array>
+				<string>http://img3.douban.com/view/photo/photo/public/p850644538.jpg</string>
+				<string>http://img5.imgtn.bdimg.com/it/u=2591443395,3893926188&amp;fm=21&amp;gp=0.jpg</string>
+				<string>http://img3.douban.com/view/photo/photo/public/p850644538.jpg</string>
+			</array>
+		</dict>
+		<key>place09</key>
+		<dict>
+			<key>movieInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/item/201111/23/20111123173919_FkUE4.thumb.700_0.jpg</string>
+					<key>contentInfo</key>
+					<string>每一项伟大魔术的完成，都与三个过程密不可分：一为“验证”，魔术师展示了看似平常、实则已经动过手脚的表演道具；二为“转移”，魔术师手中看似普通的事物，瞬间变得与众不同，这个时候，如果你想找魔术背后的秘密……那几乎是不可能的，这也是为什么还会有第三步；三为“蒙蔽”，这也是魔术中最关键的环节，是魔术师利用技巧进行掩饰的过程，一旦达成某种平衡，就会产生那种前所未见、让你无比震惊的现象--也就是魔术。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/item/201203/01/20120301130517_ryFrn.thumb.700_0.jpg</string>
+					<key>contentInfo</key>
+					<string>“你永远也不会明白，为什么我们做这些。观众知道真相!这个世界其实很简单，很可怜，很真实，从头到尾都是真实的。但是，如果可以愚弄他们，即使只有一秒，那么，你就可以让他们对你感兴趣。然后，你就可以看到一些东西，那就是、就是他们的表情…….”</string>
+				</dict>
+			</array>
+			<key>movieGlideImg</key>
+			<array>
+				<string>http://image.tmdb.org/t/p/original/gZiPZvBbr0Mgx8tUPzzOqQs78jz.jpg</string>
+				<string>http://img2.imgtn.bdimg.com/it/u=3473286257,2916260869&amp;fm=21&amp;gp=0.jpg</string>
+				<string>http://image.tmdb.org/t/p/original/gZiPZvBbr0Mgx8tUPzzOqQs78jz.jpg</string>
+			</array>
+		</dict>
+		<key>place08</key>
+		<dict>
+			<key>movieInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img4.duitang.com/uploads/item/201408/14/20140814222835_RZ5PA.jpeg</string>
+					<key>contentInfo</key>
+					<string>每一次告别，最好用力一点。多说一句，可能是最后一句。多看一眼，可能是最后一眼。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img4.duitang.com/uploads/item/201510/25/20151025124030_JMfmW.jpeg</string>
+					<key>contentInfo</key>
+					<string>当一艘船沉入海底，当一个人成了谜，你不知道，他们为何离去，那声再见竟是他最后一句。当一辆车消失天际，当一个人成了谜，你不知道，他们为何离去，就像你不知道这竟是结局。</string>
+				</dict>
+			</array>
+			<key>movieGlideImg</key>
+			<array>
+				<string>http://cdn.duitang.com/uploads/item/201601/10/20160110130406_Adcwj.thumb.700_0.jpeg</string>
+				<string>http://img4.duitang.com/uploads/item/201601/19/20160119234147_wWidP.jpeg</string>
+				<string>http://img5.duitang.com/uploads/item/201601/14/20160114104009_utveU.jpeg</string>
+			</array>
+		</dict>
+		<key>place07</key>
+		<dict>
+			<key>movieInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/blog/201407/28/20140728174127_mnCh2.thumb.700_0.jpeg</string>
+					<key>contentInfo</key>
+					<string>One day I’ll remember. Remember everything that happened: the good, the bad, those who survived… and those that did not. 
+日后我仍会记得所发生过的一切：好的，坏的，谁还在……和谁已经不在了。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img4.duitang.com/uploads/item/201501/30/20150130000747_SCZS8.jpeg</string>
+					<key>contentInfo</key>
+					<string>Go back to your books and your armchair, plant your trees and watch them grow. 
+你可以坐在扶手椅上继续读你的书，种你的树，看着它们长大。</string>
+				</dict>
+			</array>
+			<key>movieGlideImg</key>
+			<array>
+				<string>http://img5.duitang.com/uploads/item/201501/27/20150127222443_YLVk5.png</string>
+				<string>http://cdn.duitang.com/uploads/item/201501/27/20150127222743_4vYL8.png</string>
+				<string>http://cdn.duitang.com/uploads/item/201501/30/20150130000740_HssMX.jpeg</string>
+			</array>
+		</dict>
+		<key>place06</key>
+		<dict>
+			<key>movieInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/item/201411/05/20141105112703_2KhdG.jpeg</string>
+					<key>contentInfo</key>
+					<string>We laughed and kept saying &quot;See you soon&quot;. But inside we both knew we&apos;d never see each other again.
+虽然我们互相笑着说“回头见”，但是我们都心知肚明，分离即永别。
+
+陆上的人喜欢寻根问底，虚度了大好光阴。冬天忧虑夏天的姗姗来迟，夏天则担心冬天的将至。所以他们不停四处游走，追求一个遥不可及、四季如夏的地方—我并不羡慕。
+Why why why why why... I think land people waste a lot of time wondering why. Winter comes they can&apos;t wait for summer; summer comes they&apos;re living dread of winter. That&apos;s why
+                    </string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/item/201411/05/20141105112703_2KhdG.jpeg</string>
+					<key>contentInfo</key>
+					<string>陆地？陆地对我来说是一艘太大的船，一个太漂亮的女人，一段太长的旅行，一瓶太刺鼻的香水，一种我不会创作的音乐。 
+Land? Land is a ship too big for me. It&apos;s a woman too beautiful; it&apos;s a voyage too long, a perfume too strong. It&apos;s a music I don&apos;t know how to make.
+
+阻止了我的脚步的，并不是我所看见的东西，而是我所无法看见的那些东西。你明白么？我看不见的那些。在那个无限蔓延的城市里，什么东西都有，可惟独没有尽头。
+It wasn&apos;t what I saw that stopped me, Max. It was what I didn&apos;t see. You understand that? What I didn&apos;t see. In all that sprawling city there was everything except an end.</string>
+				</dict>
+			</array>
+			<key>movieGlideImg</key>
+			<array>
+				<string>http://cdn.duitang.com/uploads/item/201406/26/20140626093008_yhJGE.jpeg</string>
+				<string>http://cdn.duitang.com/uploads/item/201504/15/20150415H2441_E5tsj.jpeg</string>
+				<string>http://img5.duitang.com/uploads/item/201503/15/20150315171831_Q3tzG.png</string>
+			</array>
+		</dict>
+		<key>place05</key>
+		<dict>
+			<key>movieInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img5.duitang.com/uploads/blog/201410/12/20141012104311_Ls8uu.thumb.700_0.jpeg</string>
+					<key>contentInfo</key>
+					<string>克里帝国与新星军团的战争绵延千年，家族世代为主战派的指控者罗南不顾两国政府签订的休战条约，擅作主张的对新星军团实施不同规模的恐[哔]袭击。由于其家族在克里帝国内部地位尊崇，因此当局对他的行为也是睁一只眼闭一只眼。而实际上罗南还在酝酿着更大的计划。
+
+大帅哥李佩斯扮演的指控者罗南以一个蓝色大光头的造型，嘴里搅着屎一样的东西就一丝不挂的亮相了。很快意识到自己打扮有些欠妥的他匆忙穿上了一条黑色蕾丝内裤，不过是穿在了脸上。罗南妄图彻底消灭新星军团的总部战塔星来告慰自己战死的先人，因此求助于在《复仇者》电影彩蛋里有过短暂亮相的面霸。不好意思，有口音，应该是灭霸，整个美漫界名字最有港漫范儿的大反派。作为交换条件，灭霸要求罗南找到一个叫做Orb的银色跳蛋来献给他。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/item/201505/08/20150508184234_4QUAE.jpeg</string>
+					<key>contentInfo</key>
+					<string>被罗南派出去执行这项任务的跟班儿科拉斯很快回来汇报说被一个叫彼得·杰克森，不对，是彼得·杰森·奎尔，的地球人给捷足先登了。彼得·奎尔是宇宙黑帮掠夺者的成员，是要成为盗贼王的男人，还给自己起了个艺名叫“星爵”，不过他的艺名比他的本名更不出名。来自地球的星爵基本上是个麻瓜，不过却有一身酷炫的装备，特别是脚踩的风火轮和脸上戴的能防PM250的口罩。
+
+灭霸为了表达合作的诚意，把自己的两个女儿卡莫拉与星云派到霸道总裁罗南的身边当秘书。得知星爵会去战塔星将货物出手，卡莫拉自告奋勇去夺回跳蛋。
+
+星爵年幼丧母，之后就莫名其妙的被掠夺者的首领勇度给接到自己的太空贼窝了。勇度基本上扮演了星爵的干爹的角色，而他对星爵做过的最温馨的事就是忍了将近三十年都没有把他加入自己的超值午餐。干爹勇度也垂涎星爵偷到的这枚银色跳蛋，于是雇了两名专业人士到战塔星去伏击他。</string>
+				</dict>
+			</array>
+			<key>movieGlideImg</key>
+			<array>
+				<string>http://img.funshion.com/pictures/357/237/0/3572370.jpg</string>
+				<string>http://img32.mtime.cn/up/2015/01/03/125759.97753948_o.jpg</string>
+				<string>http://img32.mtime.cn/up/2015/01/03/125759.97753948_o.jpg</string>
+			</array>
+		</dict>
+		<key>place04</key>
+		<dict>
+			<key>movieInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/blog/201411/25/20141125175655_PdYXB.thumb.700_0.jpeg</string>
+					<key>contentInfo</key>
+					<string>童年的幸福，转瞬即逝，绚丽的金光，照耀在小路的尽头。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/blog/201401/18/20140118203203_XSPBk.thumb.700_0.jpeg</string>
+					<key>contentInfo</key>
+					<string>You can&apos;t say,there are things worth trying.Never give up,always have hope in front of waiting. 
+世事不能说死，有些事情总值得尝试。永不轻言放弃，前方总有希望在等待。</string>
+				</dict>
+			</array>
+			<key>movieGlideImg</key>
+			<array>
+				<string>http://img4.duitang.com/uploads/item/201510/07/20151007083128_iNauU.jpeg</string>
+				<string>http://img4.duitang.com/uploads/item/201511/25/20151125185230_5XcxR.jpeg</string>
+				<string>http://img4.duitang.com/uploads/item/201408/01/20140801012335_525eh.jpeg</string>
+			</array>
+		</dict>
+		<key>place03</key>
+		<dict>
+			<key>movieInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/item/201502/22/20150222141418_P8HP5.jpeg</string>
+					<key>contentInfo</key>
+					<string>时间带着鲜明的恶意，从我身上慢慢流走；我深知，这以后的将来，我们不可能一起走过。 
+对于命途多舛的人生，以及渺茫的时间，阻挡在我们之间这一事实，我们无可奈何。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/blog/201406/26/20140626162301_ckChK.thumb.700_0.jpeg</string>
+					<key>contentInfo</key>
+					<string>我们虽然没有在写给对方的信中发泄对这些日常生活的不满与牢骚，但是知道在这个世界之中有另外一个人能够理解自己，使我们都变得坚强起来。</string>
+				</dict>
+			</array>
+			<key>movieGlideImg</key>
+			<array>
+				<string>http://img5.duitang.com/uploads/item/201512/10/20151210233211_JFhrB.jpeg</string>
+				<string>http://cdn.duitang.com/uploads/item/201412/06/20141206134723_5tjJF.jpeg</string>
+				<string>http://img5.duitang.com/uploads/item/201601/01/20160101153727_uFtwX.jpeg</string>
+			</array>
+		</dict>
+		<key>place02</key>
+		<dict>
+			<key>movieInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/blog/201404/08/20140408230209_Lmd84.thumb.700_0.jpeg</string>
+					<key>contentInfo</key>
+					<string>人生本身是美好得就像桌盛宴，但你不过是个小小的女招待。总有一天，你盘子里所有的东西都会掉到地上，没人会帮你捡起来。总有一天，你只能靠你自己。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img5.duitang.com/uploads/item/201505/04/20150504162520_fF5m4.jpeg</string>
+					<key>contentInfo</key>
+					<string>整个宇宙中万物都是相互依存的，一旦某个环节崩塌，哪怕再微不足道，整个宇宙也会随之而崩塌。</string>
+				</dict>
+			</array>
+			<key>movieGlideImg</key>
+			<array>
+				<string>http://www.sfs-cn.com/node3/ypjs/node26870/node26875/images/00230700.jpg</string>
+				<string>http://img3.douban.com/view/photo/photo/public/p1696549187.jpg</string>
+				<string>http://img3.douban.com/view/photo/photo/public/p1696549187.jpg</string>
+			</array>
+		</dict>
+		<key>place01</key>
+		<dict>
+			<key>movieInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://img4.duitang.com/uploads/item/201510/08/20151008111319_vHKGF.jpeg</string>
+					<key>contentInfo</key>
+					<string>也许在你的生命里最初没有我的位置，在你悄然发觉的那一刻。</string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string>http://cdn.duitang.com/uploads/item/201601/28/20160128172550_8McsG.jpeg</string>
+					<key>contentInfo</key>
+					<string>我是夕阳与那屋檐汇聚的地方，你残留的涩伤。</string>
+				</dict>
+			</array>
+			<key>movieGlideImg</key>
+			<array>
+				<string>http://img5.duitang.com/uploads/item/201502/07/20150207153249_ii23y.jpeg</string>
+				<string>http://cdn.duitang.com/uploads/item/201502/12/20150212181850_HGzrH.jpeg</string>
+				<string>http://ww2.sinaimg.cn/large/629568e4jw1ett7c783fqj21hc0xc7dx.jpg</string>
+			</array>
+		</dict>
+	</dict>
 	<key>section02</key>
-	<string></string>
+	<array/>
 </dict>
 </plist>

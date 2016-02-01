@@ -446,6 +446,7 @@
 		E48F077E1C4E2AA7005A2513 /* EachItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48F077D1C4E2AA7005A2513 /* EachItemDetailViewController.m */; };
 		E49E0DD41C55F693004B8EE1 /* CardWith3DView.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E0DD31C55F693004B8EE1 /* CardWith3DView.m */; };
 		E49E0DD71C560259004B8EE1 /* MovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E0DD61C560259004B8EE1 /* MovieView.m */; };
+		E49E54961C5F4B190005A92B /* FirstVCGetData.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E54951C5F4B190005A92B /* FirstVCGetData.m */; };
 		E4DE16971C4F24F500E00722 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DE16961C4F24F500E00722 /* Launch Screen.storyboard */; };
 		E4DE169A1C4F3ADF00E00722 /* SecondInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE16991C4F3ADF00E00722 /* SecondInfoCell.m */; };
 		E4DE169D1C4F417600E00722 /* SecondInfoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE169C1C4F417600E00722 /* SecondInfoCellModel.m */; };
@@ -1062,6 +1063,8 @@
 		E49E0DD31C55F693004B8EE1 /* CardWith3DView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardWith3DView.m; path = View/SecondVCView/CardWith3DView.m; sourceTree = "<group>"; };
 		E49E0DD51C560259004B8EE1 /* MovieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieView.h; path = View/SecondVCView/MovieView.h; sourceTree = "<group>"; };
 		E49E0DD61C560259004B8EE1 /* MovieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieView.m; path = View/SecondVCView/MovieView.m; sourceTree = "<group>"; };
+		E49E54941C5F4B190005A92B /* FirstVCGetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstVCGetData.h; path = DataRequest/FirstVCGetData.h; sourceTree = "<group>"; };
+		E49E54951C5F4B190005A92B /* FirstVCGetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstVCGetData.m; path = DataRequest/FirstVCGetData.m; sourceTree = "<group>"; };
 		E4DE16961C4F24F500E00722 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E4DE16981C4F3ADF00E00722 /* SecondInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondInfoCell.h; path = SecondVCCell/SecondInfoCell.h; sourceTree = "<group>"; };
 		E4DE16991C4F3ADF00E00722 /* SecondInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondInfoCell.m; path = SecondVCCell/SecondInfoCell.m; sourceTree = "<group>"; };
@@ -1150,6 +1153,8 @@
 				928900221C38148F00092A85 /* GPSecondVCClient.m */,
 				E436C2831C4CDD3F00B603FE /* SecondVCGetData.h */,
 				E436C2841C4CDD3F00B603FE /* SecondVCGetData.m */,
+				E49E54941C5F4B190005A92B /* FirstVCGetData.h */,
+				E49E54951C5F4B190005A92B /* FirstVCGetData.m */,
 			);
 			name = DataRequest;
 			sourceTree = "<group>";
@@ -3476,6 +3481,7 @@
 				E46E1FA41C5B16FF00BA1167 /* ThirdDoFoodViewController.m in Sources */,
 				E48F058B1C4DEEE1005A2513 /* MJRefreshBackStateFooter.m in Sources */,
 				926FE5971C1C319E00AA5B31 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				E49E54961C5F4B190005A92B /* FirstVCGetData.m in Sources */,
 				9289FFCE1C37AB2700092A85 /* TAPageControl.m in Sources */,
 				E485723F1C06EDEC0087E655 /* NSData+Category.m in Sources */,
 				E46E1FA71C5B3D0200BA1167 /* ThirdDoFoodHeaderView.m in Sources */,
