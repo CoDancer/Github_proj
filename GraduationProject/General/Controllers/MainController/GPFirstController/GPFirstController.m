@@ -9,6 +9,8 @@
 #import "GPFirstController.h"
 #import "NewsCollectionViewCell.h"
 #import "NewsDetailInfoViewController.h"
+#import "NewsChannelIdModel.h"
+#import "NewsListViewController.h"
 
 #define kScreen_Height [UIScreen mainScreen].bounds.size.height
 #define kScreen_Width [UIScreen mainScreen].bounds.size.width
@@ -23,30 +25,64 @@
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, assign) CGFloat collectionViewHeight;
+@property (nonatomic, strong) NewsChannelIdModel *model;
 
 @end
 
 @implementation GPFirstController
 
 - (void)viewDidLoad{
-    [super viewDidLoad];
     
+    [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
     self.title = @"时事";
-    [self configView];
+    self.model = [NewsChannelIdModel new];
+    [self getDataAfterRequest];
+}
+
+- (void)getDataAfterRequest {
+    
+    NSString *httpUrl = @"http://apis.baidu.com/showapi_open_bus/channel_news/channel_news";
+    NSString *httpArg = @"";
+    [self request: httpUrl withHttpArg: httpArg];
+}
+
+-(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg {
+    
+    NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
+    NSURL *url = [NSURL URLWithString: urlStr];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
+    [request setHTTPMethod: @"GET"];
+    [request addValue: @"9309d411543b0b78392a309f0dcfa6b9" forHTTPHeaderField: @"apikey"];
+    [NSURLConnection sendAsynchronousRequest: request
+                                       queue: [NSOperationQueue mainQueue]
+                           completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error){
+                               if (error) {
+                                   NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                               } else {
+                                   NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
+                                   NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                   NSLog(@"HttpResponseCode:%ld", responseCode);
+                                   NSLog(@"HttpResponseBody %@",responseString);
+                                   [self configView];
+                               }
+                           }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
     [super viewWillAppear:animated];
     
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    
     [super viewDidAppear:animated];
     
 }
 
 - (void)configView {
+    
     UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 35)];
     [leftBtn setImage:[UIImage imageNamed:@"news"] forState:UIControlStateNormal];
     UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
@@ -58,6 +94,7 @@
 }
 
 - (CGFloat)collectionViewHeight {
+    
     if (!_collectionViewHeight) {
         CGFloat collectionViewHeight = 85 * 4 + 8 * 3 + 15;
         if (collectionViewHeight <= kScreen_Height) {
@@ -70,6 +107,7 @@
 }
 
 - (UICollectionView *)collectionView {
+    
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
         flowLayout.minimumInteritemSpacing = 8.0;
@@ -85,6 +123,7 @@
 }
 
 - (NSArray *)dataArray {
+    
     if (!_dataArray) {
         _dataArray = @[@"cars.jpg",@"entertainment.jpg",@"fashion.jpg",@"junshi.jpg",@"live.jpg",
                        @"money.jpg",@"renwen.jpg",@"society.jpg",@"sport.jpg",@"travel.jpg",
@@ -93,7 +132,8 @@
     return _dataArray;
 }
 
-- (void)prepareVisibleCellsForAnimationWithRow:(NSInteger )row andCell:(NewsCollectionViewCell *)cell{
+- (void)prepareVisibleCellsForAnimationWithRow:(NSInteger )row andCell:(NewsCollectionViewCell *)cell {
+    
     cell.frame = CGRectMake(cell.centerX, cell.centerY, 0, 0);
     cell.alpha = 0.f;
 }
@@ -115,6 +155,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     NewsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NewsCell" forIndexPath:indexPath];
     cell.model = self.dataArray[indexPath.row];
     CGRect cellFrame = cell.frame;
@@ -124,7 +165,10 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NewsDetailInfoViewController *vc = [NewsDetailInfoViewController new];
+    
+    NewsListViewController *vc = [NewsListViewController new];
+    vc.title = [[[self.model getDic] objectOrNilForKey:@"channelName"] objectAtIndex:indexPath.row];
+    vc.channelId = [[[self.model getDic] objectOrNilForKey:@"channelId"] objectAtIndex:indexPath.row];
     [vc dismissBottomView];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -140,6 +184,7 @@
 
 //定义每个UICollectionView 的 margin
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    
     return UIEdgeInsetsMake(5, 5, 5, 5);
 }
 

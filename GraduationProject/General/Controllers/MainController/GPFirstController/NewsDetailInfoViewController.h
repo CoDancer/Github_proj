@@ -6,8 +6,10 @@
 //  Copyright © 2015年 onwer. All rights reserved.
 //
 
-#import "BYBaseVC.h"
+#import "NewsDetailModel.h"
 
 @interface NewsDetailInfoViewController : BYBaseVC
+
+@property (nonatomic, strong) NewsDetailModel *detailModel;
 
 @end

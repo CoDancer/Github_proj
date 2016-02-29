@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FirstVCGetData : NSObject
+@interface FirstVCGetData : GPHTTPClient
+
+GP_DEFAULT_PARAMS_API(newsDetailDataWithParam:(NSDictionary *)params channelId:(NSString *)channelId);
 
 @end

@@ -111,6 +111,24 @@
     }];
 }
 
+- (AFHTTPRequestOperation *)NewsPOST:(NSString *)URLString parameters:(id)parameters success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
+{
+    NSMutableDictionary *parm = [NSMutableDictionary new];
+    [parameters enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [parm setObject:obj forKey:key];
+    }];
+    [WebApi tagParams:parm];
+    return [self.manager POST:URLString parameters:parm success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (success) {
+            success(operation, responseObject);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(operation, error);
+        }
+    }];
+}
+
 - (BOOL)isAvaiableWithResponse:(NSDictionary *)responseObject
 {
     BOOL availabel = responseObject && [responseObject[@"ok"] boolValue];
