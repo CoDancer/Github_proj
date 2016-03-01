@@ -10,6 +10,7 @@
 
 @interface NewsDetailInfoViewController : BYBaseVC
 
+@property (nonatomic, strong) NSArray *imageArray;
 @property (nonatomic, strong) NewsDetailModel *detailModel;
 
 @end

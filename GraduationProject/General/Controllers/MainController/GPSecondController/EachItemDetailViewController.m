@@ -24,7 +24,6 @@
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 #define ScreenBounds [UIScreen mainScreen].bounds
 #define TopViewHeight 200
-#define SelectdViewHeight 45
 #define HeaderViewHeight 200
 
 @interface EachItemDetailViewController()<SDCycleScrollViewDelegate,

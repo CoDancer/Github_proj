@@ -11,5 +11,6 @@
 @interface NewsListViewController : BYBaseVC
 
 @property (nonatomic, strong) NSString *channelId;
+@property (nonatomic, strong) NSArray *slideArr;
 
 @end

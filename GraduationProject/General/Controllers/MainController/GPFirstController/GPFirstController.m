@@ -11,6 +11,7 @@
 #import "NewsDetailInfoViewController.h"
 #import "NewsChannelIdModel.h"
 #import "NewsListViewController.h"
+#import "FirstVCGetData.h"
 
 #define kScreen_Height [UIScreen mainScreen].bounds.size.height
 #define kScreen_Width [UIScreen mainScreen].bounds.size.width
@@ -58,12 +59,9 @@
                                        queue: [NSOperationQueue mainQueue]
                            completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error){
                                if (error) {
-                                   NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
                                } else {
                                    NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
                                    NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                   NSLog(@"HttpResponseCode:%ld", responseCode);
-                                   NSLog(@"HttpResponseBody %@",responseString);
                                    [self configView];
                                }
                            }];
@@ -169,6 +167,7 @@
     NewsListViewController *vc = [NewsListViewController new];
     vc.title = [[[self.model getDic] objectOrNilForKey:@"channelName"] objectAtIndex:indexPath.row];
     vc.channelId = [[[self.model getDic] objectOrNilForKey:@"channelId"] objectAtIndex:indexPath.row];
+    vc.slideArr = [FirstVCGetData getNewsSlideImagesWithRow:indexPath.row];
     [vc dismissBottomView];
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -11,6 +11,5 @@
 @interface GPHTTPClient : AFHTTPRequestOperationManager
 
 + (instancetype)sharedClient;
-- (AFHTTPRequestOperation *)NewsPOST:(NSString *)URLString parameters:(id)parameters success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
 
 @end

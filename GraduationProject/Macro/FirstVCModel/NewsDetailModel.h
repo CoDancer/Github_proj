@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *sourceStr;
 @property (nonatomic, strong) NSString *timeStr;
 @property (nonatomic, assign) NSInteger textHeight;
+@property (nonatomic, strong) NSString *linkStr;
 
 + (instancetype)newsDetailModelWithDict:(NSDictionary *)dict;
 

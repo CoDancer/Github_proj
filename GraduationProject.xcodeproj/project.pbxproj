@@ -162,6 +162,8 @@
 		E4608F241C841E6E00314219 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = E4608F231C841E6E00314219 /* comments.png */; };
 		E4608F261C84322700314219 /* noImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4608F251C84322700314219 /* noImage.jpg */; };
 		E4608F291C844E9D00314219 /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4608F281C844E9D00314219 /* NewsListViewController.m */; };
+		E4624CBD1C858F89000B6655 /* NewsSlide.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4624CBC1C858F89000B6655 /* NewsSlide.plist */; };
+		E4624CC01C85949E000B6655 /* FirstVCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624CBF1C85949E000B6655 /* FirstVCClient.m */; };
 		E4628A5D1C59BDCF003B15BD /* ThirdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4628A5C1C59BDCF003B15BD /* ThirdDetailViewController.m */; };
 		E4628A611C59ECD4003B15BD /* ThirdDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4628A601C59ECD4003B15BD /* ThirdDetailHeaderView.m */; };
 		E4628A631C5A09A5003B15BD /* baseImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4628A621C5A09A5003B15BD /* baseImg.jpg */; };
@@ -713,6 +715,9 @@
 		E4608F251C84322700314219 /* noImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = noImage.jpg; path = Images/noImage.jpg; sourceTree = "<group>"; };
 		E4608F271C844E9D00314219 /* NewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsListViewController.h; path = Controllers/MainController/GPFirstController/NewsListViewController.h; sourceTree = "<group>"; };
 		E4608F281C844E9D00314219 /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsListViewController.m; path = Controllers/MainController/GPFirstController/NewsListViewController.m; sourceTree = "<group>"; };
+		E4624CBC1C858F89000B6655 /* NewsSlide.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NewsSlide.plist; path = LocalData/NewsSlide.plist; sourceTree = "<group>"; };
+		E4624CBE1C85949E000B6655 /* FirstVCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstVCClient.h; path = DataRequest/FirstVCClient.h; sourceTree = "<group>"; };
+		E4624CBF1C85949E000B6655 /* FirstVCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstVCClient.m; path = DataRequest/FirstVCClient.m; sourceTree = "<group>"; };
 		E4628A5B1C59BDCF003B15BD /* ThirdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThirdDetailViewController.h; path = Controllers/MainController/GPThirdController/ThirdDetailViewController.h; sourceTree = "<group>"; };
 		E4628A5C1C59BDCF003B15BD /* ThirdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThirdDetailViewController.m; path = Controllers/MainController/GPThirdController/ThirdDetailViewController.m; sourceTree = "<group>"; };
 		E4628A5F1C59ECD4003B15BD /* ThirdDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThirdDetailHeaderView.h; path = View/ThirdVCView/ThirdDetailHeaderView.h; sourceTree = "<group>"; };
@@ -1174,6 +1179,8 @@
 				928900221C38148F00092A85 /* GPSecondVCClient.m */,
 				E436C2831C4CDD3F00B603FE /* SecondVCGetData.h */,
 				E436C2841C4CDD3F00B603FE /* SecondVCGetData.m */,
+				E4624CBE1C85949E000B6655 /* FirstVCClient.h */,
+				E4624CBF1C85949E000B6655 /* FirstVCClient.m */,
 				E49E54941C5F4B190005A92B /* FirstVCGetData.h */,
 				E49E54951C5F4B190005A92B /* FirstVCGetData.m */,
 			);
@@ -1344,6 +1351,7 @@
 		9289FF3D1C37A6D300092A85 /* LocalData */ = {
 			isa = PBXGroup;
 			children = (
+				E4624CBC1C858F89000B6655 /* NewsSlide.plist */,
 				E47F97381C58AD02004DD8A4 /* TasteFood.plist */,
 				E4DE169E1C4F522E00E00722 /* SecondDetailData.plist */,
 				E436C2811C4CD76200B603FE /* MovieData.plist */,
@@ -3261,6 +3269,7 @@
 				E48F06CF1C4DF008005A2513 /* loading_011.png in Resources */,
 				E48F06F11C4DF008005A2513 /* loading_028.png in Resources */,
 				E48F07061C4DF008005A2513 /* Contents.json in Resources */,
+				E4624CBD1C858F89000B6655 /* NewsSlide.plist in Resources */,
 				E48F06DF1C4DF008005A2513 /* loading_019.png in Resources */,
 				E48F06CD1C4DF008005A2513 /* loading_010.png in Resources */,
 				E48F07371C4DF008005A2513 /* loading_063.png in Resources */,
@@ -3625,6 +3634,7 @@
 				E47799B31C0594370084E67D /* GPPrepareLogin.m in Sources */,
 				9289FFF51C37AC7300092A85 /* SDWebImageCompat.m in Sources */,
 				9289FFF91C37AC7300092A85 /* SDWebImageManager.m in Sources */,
+				E4624CC01C85949E000B6655 /* FirstVCClient.m in Sources */,
 				92479F4F1C4BA3EE00C73B06 /* CustomBookCell.m in Sources */,
 				E48F05921C4DEEE1005A2513 /* UIScrollView+MJRefresh.m in Sources */,
 				9289003C1C38170300092A85 /* MJProperty.m in Sources */,

@@ -39,6 +39,7 @@
                                                 options:NSStringDrawingUsesLineFragmentOrigin
                                              attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:16.0],NSFontAttributeName, nil] context:nil];
     model.textHeight = rect.size.height;
+    model.linkStr = [dict objectOrNilForKey:@"link"];
     return model;
 }
 

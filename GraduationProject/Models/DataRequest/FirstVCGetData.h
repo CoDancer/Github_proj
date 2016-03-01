@@ -10,6 +10,6 @@
 
 @interface FirstVCGetData : GPHTTPClient
 
-GP_DEFAULT_PARAMS_API(newsDetailDataWithParam:(NSDictionary *)params channelId:(NSString *)channelId);
++ (NSArray *)getNewsSlideImagesWithRow:(NSInteger)row;
 
 @end

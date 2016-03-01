@@ -10,6 +10,8 @@
 #import "NewsDetailCell.h"
 #import "FirstVCGetData.h"
 #import "NewsDetailInfoViewController.h"
+#import "CustomRefreshView.h"
+#import "MJRefresh.h"
 
 @interface NewsListViewController ()<UICollectionViewDataSource, UICollectionViewDelegate ,UICollectionViewDelegateFlowLayout>
 
@@ -26,8 +28,9 @@
     
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:0.369 green:0.357 blue:0.604 alpha:1.000];
-    [self requestData];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [self configView];
+    [self setHeadRefresh];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -36,7 +39,25 @@
     [self dismissBottomView];
 }
 
-- (void)requestData {
+- (void)setHeadRefresh {
+    
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    CustomRefreshView *header = [CustomRefreshView headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    
+    // 隐藏时间
+    header.lastUpdatedTimeLabel.hidden = YES;
+    
+    // 隐藏状态
+    header.stateLabel.hidden = YES;
+    
+    // 马上进入刷新状态
+    [header beginRefreshing];
+    
+    // 设置header
+    self.collectionView.header = header;
+}
+
+- (void)loadNewData {
     
     NSString *httpUrl = @"http://apis.baidu.com/showapi_open_bus/channel_news/search_news";
     NSString *channel = [NSString stringWithFormat:@"channelId=%@",self.channelId];
@@ -66,6 +87,7 @@
                                    }
                                    self.dataArray = [modelArr copy];
                                    [self.collectionView reloadData];
+                                   [self.collectionView.header endRefreshing];
                                }
                            }];
 }
@@ -141,8 +163,10 @@
     NewsDetailModel *model = self.dataArray[indexPath.row];
     vc.detailModel = model;
     vc.title = model.sourceStr;
+    vc.imageArray = self.slideArr;
     [vc dismissBottomView];
-    [self.navigationController pushViewController:vc animated:YES];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -153,5 +177,7 @@
     NewsDetailModel *model = self.dataArray[indexPath.row];
     return CGSizeMake(SCREEN_WIDTH - 20, 170 + model.textHeight);
 }
+
+
 
 @end
