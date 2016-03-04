@@ -170,6 +170,7 @@
 		E4628A651C5A1027003B15BD /* ingredients.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4628A641C5A1027003B15BD /* ingredients.jpg */; };
 		E4628A691C5A1118003B15BD /* IngredientsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4628A681C5A1118003B15BD /* IngredientsCell.m */; };
 		E4628A6C1C5A18DB003B15BD /* IngredientsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4628A6B1C5A18DB003B15BD /* IngredientsModel.m */; };
+		E4687B661C869DA400099B56 /* GroomView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4687B651C869DA400099B56 /* GroomView.m */; };
 		E46AC50B1C4C81D000A45790 /* news_blacklayer.png in Resources */ = {isa = PBXBuildFile; fileRef = E46AC5091C4C81D000A45790 /* news_blacklayer.png */; };
 		E46AC50C1C4C81D000A45790 /* news_blacklayer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E46AC50A1C4C81D000A45790 /* news_blacklayer@2x.png */; };
 		E46AC5181C4CB9E300A45790 /* entertainment.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46AC5171C4CB9E300A45790 /* entertainment.jpg */; };
@@ -728,6 +729,8 @@
 		E4628A681C5A1118003B15BD /* IngredientsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IngredientsCell.m; path = ThirdVCCell/IngredientsCell.m; sourceTree = "<group>"; };
 		E4628A6A1C5A18DB003B15BD /* IngredientsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IngredientsModel.h; path = ThirdVCModel/IngredientsModel.h; sourceTree = "<group>"; };
 		E4628A6B1C5A18DB003B15BD /* IngredientsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IngredientsModel.m; path = ThirdVCModel/IngredientsModel.m; sourceTree = "<group>"; };
+		E4687B641C869DA400099B56 /* GroomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroomView.h; path = View/SecondVCView/GroomView.h; sourceTree = "<group>"; };
+		E4687B651C869DA400099B56 /* GroomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroomView.m; path = View/SecondVCView/GroomView.m; sourceTree = "<group>"; };
 		E46AC5091C4C81D000A45790 /* news_blacklayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = news_blacklayer.png; path = Images/news_blacklayer.png; sourceTree = "<group>"; };
 		E46AC50A1C4C81D000A45790 /* news_blacklayer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "news_blacklayer@2x.png"; path = "Images/news_blacklayer@2x.png"; sourceTree = "<group>"; };
 		E46AC5171C4CB9E300A45790 /* entertainment.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = entertainment.jpg; path = Images/entertainment.jpg; sourceTree = "<group>"; };
@@ -1335,6 +1338,8 @@
 				E49E0DD61C560259004B8EE1 /* MovieView.m */,
 				E48933421C57297A002B5369 /* InfoFooterView.h */,
 				E48933431C57297A002B5369 /* InfoFooterView.m */,
+				E4687B641C869DA400099B56 /* GroomView.h */,
+				E4687B651C869DA400099B56 /* GroomView.m */,
 			);
 			name = SecondVCView;
 			sourceTree = "<group>";
@@ -3590,6 +3595,7 @@
 				9289FF391C37A4F900092A85 /* AddressPickerView.m in Sources */,
 				E47799C51C05A4A30084E67D /* GPFirstLaunchView.m in Sources */,
 				E48933441C57297A002B5369 /* InfoFooterView.m in Sources */,
+				E4687B661C869DA400099B56 /* GroomView.m in Sources */,
 				E48F05861C4DEEE1005A2513 /* MJRefreshAutoGifFooter.m in Sources */,
 				E48572361C06EDB80087E655 /* GPResetPasswordController.m in Sources */,
 				920F32751C2E7E6200BB2A62 /* NewsDetailInfoViewController.m in Sources */,

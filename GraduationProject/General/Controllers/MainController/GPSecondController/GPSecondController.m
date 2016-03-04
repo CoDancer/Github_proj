@@ -32,6 +32,7 @@
 #import "GPSecondDetailListVC.h"
 #import "CustomRefreshView.h"
 #import "MJRefresh.h"
+#import "GroomView.h"
 
 @interface GPSecondController()<UITableViewDataSource, UITableViewDelegate, SectionHeaderViewDelegate>
 
@@ -44,6 +45,7 @@
 
 @property (nonatomic, strong) NSArray *dataModels;
 @property (nonatomic, strong) UIButton *recoverBottomBtn;
+@property (nonatomic, strong) GroomView *groomView;
 
 @end
 
@@ -63,6 +65,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
@@ -158,9 +161,21 @@
     if (!_rightImageView) {
         _rightImageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         _rightImageView.top = 64;
-        _rightImageView.backgroundColor = [UIColor lightGrayColor];
+        _rightImageView.backgroundColor = [UIColor whiteColor];
     }
     return _rightImageView;
+}
+
+- (GroomView *)groomView {
+    
+    if (!_groomView) {
+        _groomView = [[GroomView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 120)
+                                           ModelArray:@[@"baseImg.jpg",@"baseImg.jpg",@"baseImg.jpg",
+                                                        @"baseImg.jpg",@"baseImg.jpg",@"baseImg.jpg",
+                                                        @"baseImg.jpg",@"baseImg.jpg",@"baseImg.jpg"]];
+        _groomView.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
+    }
+    return _groomView;
 }
 
 - (UIButton *)recoverBottomBtn {
@@ -259,8 +274,9 @@
         [self.currentView addSubview:self.leftMainTableView];
         [self.rightImageView removeFromSuperview];
     }else {
-        [self.currentView addSubview:self.rightImageView];
         [self.leftMainTableView removeFromSuperview];
+        [self.currentView addSubview:self.rightImageView];
+        [self.currentView addSubview:self.groomView];
     }
 }
 
