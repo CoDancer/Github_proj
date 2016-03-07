@@ -59,4 +59,11 @@
                                                        ofType:@"plist"]];
 }
 
+- (NSDictionary *)fetchLocalDataWithGroomData {
+    
+    return [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]
+                                                       pathForResource:@"GroomData"
+                                                       ofType:@"plist"]];
+}
+
 @end

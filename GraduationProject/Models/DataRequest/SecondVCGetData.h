@@ -15,7 +15,8 @@
 + (NSDictionary *)getInfoContentWithSection:(NSInteger)section row:(NSInteger)row;
 //获取书的详细信息
 + (NSDictionary *)getBookDetailInfoWithRow:(NSString *)row number:(NSString *)number;
-
+//获取美食做法的信息
 + (NSArray *)getTasteFoodContent;
-
+//获取推荐信息
++ (NSDictionary *)getGroomDataWithSection:(NSInteger)section row:(NSInteger)row;
 @end

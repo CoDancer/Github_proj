@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ActionBlock)(NSInteger idx);
+
 @interface GroomView : UIView
+
+@property (nonatomic, strong) ActionBlock actionBlock;
 
 - (instancetype)initWithFrame:(CGRect )frame ModelArray:(NSArray *)array;
 

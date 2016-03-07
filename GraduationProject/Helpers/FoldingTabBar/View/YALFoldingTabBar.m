@@ -149,15 +149,6 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
     
     self.centerButton.layer.cornerRadius = CGRectGetHeight(self.mainView.bounds) / 2.f;
     
-//    if ([self.dataSource respondsToSelector:@selector(centerImageInTabBarView:)]) {
-//        [self.centerButton setImage:[self.dataSource centerImageInTabBarView:self] forState:UIControlStateNormal];
-//    }
-    
-//    [self.centerButton addTarget:self action:@selector(centerButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-//    self.centerButton.adjustsImageWhenHighlighted = NO;
-    
-//    [self addSubview:self.centerButton];
-    
     NSArray *centerTabBarItems = [self.dataSource centerTabBarItemsInTabBarView:self];
     YALTabBarItem *item = [centerTabBarItems firstObject];
     UIImage *image = item.itemImage;
@@ -167,10 +158,6 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
     
     [button setImage:image forState:UIControlStateNormal];
     [button addTarget:self action:@selector(barItemDidTapped:) forControlEvents:UIControlEventTouchUpInside];
-    
-//    if (self.state == YALStateCollapsed) {
-//        button.hidden = YES;
-//    }
     button.adjustsImageWhenHighlighted = NO;
     [self addSubview:button];
     
@@ -285,7 +272,7 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
         
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(buttonOriginX, buttonOriginY, buttonWidth, buttonHeight)];
         button.tag = 100 + i;
-
+        
         if (numberOfLeftTabBarButtonItems == 1) {
             CGRect rect = button.frame;
             rect.size.width = CGRectGetHeight(self.mainView.frame);

@@ -22,4 +22,6 @@
 
 - (NSArray *)fetchLocalDataWithTasteFoodContent;
 
+- (NSDictionary *)fetchLocalDataWithGroomData;
+
 @end

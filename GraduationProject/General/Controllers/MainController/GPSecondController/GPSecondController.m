@@ -33,6 +33,7 @@
 #import "CustomRefreshView.h"
 #import "MJRefresh.h"
 #import "GroomView.h"
+#import "GroomModel.h"
 
 @interface GPSecondController()<UITableViewDataSource, UITableViewDelegate, SectionHeaderViewDelegate>
 
@@ -46,6 +47,7 @@
 @property (nonatomic, strong) NSArray *dataModels;
 @property (nonatomic, strong) UIButton *recoverBottomBtn;
 @property (nonatomic, strong) GroomView *groomView;
+@property (nonatomic, strong) NSArray *groomModels;
 
 @end
 
@@ -131,6 +133,14 @@
     return _dataModels;
 }
 
+- (NSArray *)groomModels {
+    
+    if (!_groomModels) {
+        _groomModels = [NSArray array];
+    }
+    return _groomModels;
+}
+
 - (UIView *)currentView {
     
     if (!_currentView) {
@@ -170,10 +180,11 @@
     
     if (!_groomView) {
         _groomView = [[GroomView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 120)
-                                           ModelArray:@[@"baseImg.jpg",@"baseImg.jpg",@"baseImg.jpg",
-                                                        @"baseImg.jpg",@"baseImg.jpg",@"baseImg.jpg",
-                                                        @"baseImg.jpg",@"baseImg.jpg",@"baseImg.jpg"]];
-        _groomView.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
+                                           ModelArray:self.groomModels];
+        _groomView.backgroundColor = [UIColor colorWithRed:0.369 green:0.357 blue:0.604 alpha:1.000];
+        _groomView.actionBlock = ^(NSInteger idx) {
+            NSLog(@"%ld",idx);
+        };
     }
     return _groomView;
 }
@@ -222,6 +233,18 @@
 
 - (void)addCurrentBodyView {
     [self.currentView addSubview:self.leftMainTableView];
+}
+
+- (void)fetchGroomData {
+    
+    NSDictionary *groomDic = [[GPSecondVCClient sharedClient] fetchLocalDataWithGroomData];
+    NSArray *groomArr = [groomDic objectOrNilForKey:@"itemData"];
+    NSMutableArray *modelArr = [NSMutableArray new];
+    [groomArr enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        GroomModel *model = [GroomModel groomModelWithDict:obj];
+        [modelArr addObject:model];
+    }];
+    self.groomModels = [modelArr copy];
 }
 
 # pragma mark -- tapMethods
@@ -275,7 +298,9 @@
         [self.rightImageView removeFromSuperview];
     }else {
         [self.leftMainTableView removeFromSuperview];
+        [self showBottomView];
         [self.currentView addSubview:self.rightImageView];
+        [self fetchGroomData];
         [self.currentView addSubview:self.groomView];
     }
 }

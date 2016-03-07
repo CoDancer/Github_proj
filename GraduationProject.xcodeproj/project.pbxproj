@@ -134,6 +134,8 @@
 		9289FFFF1C37AC7300092A85 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9289FFEF1C37AC7300092A85 /* UIImageView+WebCache.m */; };
 		9294DEA21C38D21D0057396B /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9294DEA11C38D21D0057396B /* SectionHeaderView.m */; };
 		9294DEA41C38D54B0057396B /* taoge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9294DEA31C38D54B0057396B /* taoge@2x.png */; };
+		9295BE031C8C2159001AD1C0 /* GroomData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9295BE021C8C2159001AD1C0 /* GroomData.plist */; };
+		9295BE061C8C2ACA001AD1C0 /* GroomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9295BE051C8C2ACA001AD1C0 /* GroomModel.m */; };
 		92A589991C2FD9DC00964A02 /* UserImageLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A589981C2FD9DC00964A02 /* UserImageLabelCell.m */; };
 		92ACA0FC1C2542BB00454048 /* WebApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ACA0FB1C2542BB00454048 /* WebApi.m */; };
 		92ACA1001C254BDA00454048 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ACA0FF1C254BDA00454048 /* MBProgressHUD.m */; };
@@ -675,6 +677,9 @@
 		9294DEA01C38D21D0057396B /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionHeaderView.h; path = View/SecondVCView/SectionHeaderView.h; sourceTree = "<group>"; };
 		9294DEA11C38D21D0057396B /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SectionHeaderView.m; path = View/SecondVCView/SectionHeaderView.m; sourceTree = "<group>"; };
 		9294DEA31C38D54B0057396B /* taoge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "taoge@2x.png"; path = "Images/taoge@2x.png"; sourceTree = "<group>"; };
+		9295BE021C8C2159001AD1C0 /* GroomData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = GroomData.plist; path = LocalData/GroomData.plist; sourceTree = "<group>"; };
+		9295BE041C8C2ACA001AD1C0 /* GroomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroomModel.h; path = SecondVCModel/GroomModel.h; sourceTree = "<group>"; };
+		9295BE051C8C2ACA001AD1C0 /* GroomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroomModel.m; path = SecondVCModel/GroomModel.m; sourceTree = "<group>"; };
 		92A589971C2FD9DC00964A02 /* UserImageLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserImageLabelCell.h; path = UserInfoCell/UserImageLabelCell.h; sourceTree = "<group>"; };
 		92A589981C2FD9DC00964A02 /* UserImageLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserImageLabelCell.m; path = UserInfoCell/UserImageLabelCell.m; sourceTree = "<group>"; };
 		92ACA0FA1C2542BB00454048 /* WebApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebApi.h; path = DataRequest/WebApi.h; sourceTree = "<group>"; };
@@ -1277,6 +1282,8 @@
 				E4DE169C1C4F417600E00722 /* SecondInfoCellModel.m */,
 				E48933451C5747FF002B5369 /* SecondInfoPlaceModel.h */,
 				E48933461C5747FF002B5369 /* SecondInfoPlaceModel.m */,
+				9295BE041C8C2ACA001AD1C0 /* GroomModel.h */,
+				9295BE051C8C2ACA001AD1C0 /* GroomModel.m */,
 			);
 			name = SecondVCModel;
 			sourceTree = "<group>";
@@ -1356,6 +1363,7 @@
 		9289FF3D1C37A6D300092A85 /* LocalData */ = {
 			isa = PBXGroup;
 			children = (
+				9295BE021C8C2159001AD1C0 /* GroomData.plist */,
 				E4624CBC1C858F89000B6655 /* NewsSlide.plist */,
 				E47F97381C58AD02004DD8A4 /* TasteFood.plist */,
 				E4DE169E1C4F522E00E00722 /* SecondDetailData.plist */,
@@ -3432,6 +3440,7 @@
 				E48F071E1C4DF008005A2513 /* Contents.json in Resources */,
 				E48F07011C4DF008005A2513 /* loading_036.png in Resources */,
 				E46E1FB11C5B516800BA1167 /* InfoTime.png in Resources */,
+				9295BE031C8C2159001AD1C0 /* GroomData.plist in Resources */,
 				E48F07261C4DF008005A2513 /* Contents.json in Resources */,
 				9289FF7D1C37A7E200092A85 /* gen_check_s@2x.png in Resources */,
 				E48F06BD1C4DF008005A2513 /* loading_002.png in Resources */,
@@ -3567,6 +3576,7 @@
 				E48572701C06F29D0087E655 /* YALAnimatingTabBarConstants.m in Sources */,
 				E48F05531C4DE5CF005A2513 /* GPSecondDetailListVC.m in Sources */,
 				E48F05831C4DEEE1005A2513 /* MJRefreshComponent.m in Sources */,
+				9295BE061C8C2ACA001AD1C0 /* GroomModel.m in Sources */,
 				E48572411C06EDEC0087E655 /* UIColor+Category.m in Sources */,
 				E4608F221C84195400314219 /* WZXDateToStrTool.m in Sources */,
 				926FE5941C1C319E00AA5B31 /* AFDownloadRequestOperation.m in Sources */,
@@ -3795,7 +3805,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/onwer/Desktop/Github_proj/GraduationProject/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/codancer/Downloads/Github_proj-master/GraduationProject/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = GraduationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -3814,7 +3824,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/onwer/Desktop/Github_proj/GraduationProject/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/codancer/Downloads/Github_proj-master/GraduationProject/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = GraduationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
