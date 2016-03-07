@@ -24,10 +24,8 @@
 @property (nonatomic, strong) UIImageView *lineImageView;
 @property (nonatomic, strong) UILabel *fastLoginLabel;
 @property (nonatomic, strong) UIImageView *userLogoImageView;
-@property (nonatomic, strong) UILabel *userLoginState;
-
-
-
+@property (nonatomic, strong) UIButton *userLoginState;
+@property (nonatomic, strong) UIButton *logout;
 
 @end
 
@@ -46,6 +44,7 @@
         [self addSubview:self.fastLoginLabel];
         [self addSubview:self.userLogoImageView];
         [self addSubview:self.userLoginState];
+        [self addSubview:self.logout];
     }
     return self;
 }
@@ -131,19 +130,40 @@
 - (UIImageView *)userLogoImageView {
     
     if (!_userLogoImageView) {
-        _userLogoImageView = [UIImageView new];
+        _userLogoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
+        _userLogoImageView.layer.cornerRadius = _userLogoImageView.height/2.0;
+        _userLogoImageView.clipsToBounds = YES;
+        _userLogoImageView.image = [UIImage imageNamed:@"mine_avatarDetail"];
     }
     return _userLogoImageView;
 }
 
-- (UILabel *)userLoginState {
+- (UIButton *)userLoginState {
     
     if (!_userLoginState) {
-        _userLoginState = [UILabel new];
-        [_userLoginState setFont:[UIFont systemFontOfSize:18.0f]];
-        _userLoginState.text = @"";
+        _userLoginState = [UIButton new];
+        [_userLoginState setTitle:@"未登录" forState:UIControlStateNormal];
+        _userLoginState.titleLabel.font = [UIFont systemFontOfSize:18.0f];
+        [_userLoginState addTarget:self action:@selector(userLogBtnDidTap:) forControlEvents:UIControlEventTouchUpInside];
+        _userLoginState.layer.cornerRadius = 4.0;
+        _userLoginState.layer.borderWidth = 1.0f;
+        _userLoginState.layer.borderColor = MainColor.CGColor;
     }
     return _userLoginState;
+}
+
+- (UIButton *)logout {
+    
+    if (!_logout) {
+        _logout = [UIButton new];
+        [_logout setTitle:@"注销" forState:UIControlStateNormal];
+        _logout.titleLabel.font = [UIFont systemFontOfSize:18.0f];
+        [_logout addTarget:self action:@selector(userLogBtnDidTap:) forControlEvents:UIControlEventTouchUpInside];
+        _logout.layer.cornerRadius = 4.0;
+        _logout.layer.borderWidth = 1.0f;
+        _logout.layer.borderColor = MainColor.CGColor;
+    }
+    return _logout;
 }
 
 - (void)layoutSubviews {
@@ -167,14 +187,28 @@
     [self.fastLoginLabel sizeToFit];
     self.fastLoginLabel.left = self.lineImageView.left;
     self.fastLoginLabel.top = self.lineImageView.bottom + 10;
-    self.userLogoImageView.left = self.choiceAddressBtn.left;
     
+    self.userLogoImageView.left = self.fastLoginLabel.left;
+    self.userLogoImageView.top = self.fastLoginLabel.bottom + 50;
+    
+    self.userLoginState.size = CGSizeMake(100, 30);
+    self.userLoginState.left = self.userLogoImageView.right + 20;
+    self.userLoginState.bottom = self.userLogoImageView.centerY - 5;
+    
+    self.logout.size = CGSizeMake(100, 30);
+    self.logout.left = self.userLoginState.left;
+    self.logout.top = self.userLogoImageView.centerY + 5;
 }
 
 - (void)choiceAddress {
     if ([self.hideViewDelegate respondsToSelector:@selector(choiceAddressBtnDidTapWithButton:)]) {
         [self.hideViewDelegate choiceAddressBtnDidTapWithButton:self.choiceAddressBtn];
     }
+}
+
+- (void)userLogBtnDidTap:(UIButton *)sender {
+    
+    
 }
 
 - (void)recoverBtnDidTap {

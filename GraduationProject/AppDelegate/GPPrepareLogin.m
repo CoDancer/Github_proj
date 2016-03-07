@@ -35,14 +35,14 @@
     if ([GPUserDefaults weatherCurrentVersionFirstLaunch]) {
         GPFirstLaunchViewController *fisrtLaunchController = [GPFirstLaunchViewController new];
         fisrtLaunchController.nextBlock = ^(){
-            [self showLoginViewController];
+            [self showMainTabBarViewController];
         };
         UIWindow *window = [UIApplication sharedApplication].delegate.window;
         window.rootViewController = fisrtLaunchController;
         [window makeKeyAndVisible];
         [GPUserDefaults setCurrentVersionAfterLaunch];
     }else{
-        [self showLoginViewController];
+        [self showMainTabBarViewController];
     }
 }
 

@@ -463,6 +463,7 @@
 		E4DE169A1C4F3ADF00E00722 /* SecondInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE16991C4F3ADF00E00722 /* SecondInfoCell.m */; };
 		E4DE169D1C4F417600E00722 /* SecondInfoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE169C1C4F417600E00722 /* SecondInfoCellModel.m */; };
 		E4DE169F1C4F522E00E00722 /* SecondDetailData.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4DE169E1C4F522E00E00722 /* SecondDetailData.plist */; };
+		E4F703961C8D349300D3BCFD /* mine_avatarDetail.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F703951C8D349300D3BCFD /* mine_avatarDetail.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1103,6 +1104,7 @@
 		E4DE169B1C4F417600E00722 /* SecondInfoCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondInfoCellModel.h; path = SecondVCModel/SecondInfoCellModel.h; sourceTree = "<group>"; };
 		E4DE169C1C4F417600E00722 /* SecondInfoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondInfoCellModel.m; path = SecondVCModel/SecondInfoCellModel.m; sourceTree = "<group>"; };
 		E4DE169E1C4F522E00E00722 /* SecondDetailData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SecondDetailData.plist; path = LocalData/SecondDetailData.plist; sourceTree = "<group>"; };
+		E4F703951C8D349300D3BCFD /* mine_avatarDetail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mine_avatarDetail.png; path = Images/mine_avatarDetail.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1739,6 +1741,7 @@
 		E47799CB1C05C3CF0084E67D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E4F703951C8D349300D3BCFD /* mine_avatarDetail.png */,
 				E4608F251C84322700314219 /* noImage.jpg */,
 				E4608F231C841E6E00314219 /* comments.png */,
 				E46E1FB21C5B77B300BA1167 /* doWayBG.jpg */,
@@ -3269,6 +3272,7 @@
 				E48F06F31C4DF008005A2513 /* loading_029.png in Resources */,
 				E48F07681C4DF008005A2513 /* Contents.json in Resources */,
 				E48F06FD1C4DF008005A2513 /* loading_034.png in Resources */,
+				E4F703961C8D349300D3BCFD /* mine_avatarDetail.png in Resources */,
 				E48F06C21C4DF008005A2513 /* Contents.json in Resources */,
 				E48F07771C4DF009005A2513 /* loading_095.png in Resources */,
 				9289FF751C37A7E200092A85 /* default_h960_3.png in Resources */,
@@ -3805,7 +3809,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/codancer/Downloads/Github_proj-master/GraduationProject/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/onwer/Desktop/Github_proj/GraduationProject/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = GraduationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -3824,7 +3828,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/codancer/Downloads/Github_proj-master/GraduationProject/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = /Users/onwer/Desktop/Github_proj/GraduationProject/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = GraduationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;

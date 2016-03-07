@@ -69,6 +69,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    [self showBottomView];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
@@ -145,7 +146,7 @@
     
     if (!_currentView) {
         _currentView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        _currentView.backgroundColor = [UIColor whiteColor];
+        _currentView.backgroundColor = [UIColor colorWithRed:0.369 green:0.357 blue:0.604 alpha:1.000];
         
     }
     return _currentView;
@@ -158,7 +159,7 @@
         _leftMainTableView.top = 64;
         _leftMainTableView.height = AppHeight - 64;
         _leftMainTableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        _leftMainTableView.backgroundColor = [UIColor colorWithWhite:0.953 alpha:1.000];
+        _leftMainTableView.backgroundColor = [UIColor colorWithRed:0.369 green:0.357 blue:0.604 alpha:1.000];
         _leftMainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _leftMainTableView.delegate = self;
         _leftMainTableView.dataSource = self;
@@ -171,7 +172,7 @@
     if (!_rightImageView) {
         _rightImageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         _rightImageView.top = 64;
-        _rightImageView.backgroundColor = [UIColor whiteColor];
+        _rightImageView.backgroundColor = [UIColor colorWithRed:0.369 green:0.357 blue:0.604 alpha:1.000];
     }
     return _rightImageView;
 }
@@ -182,11 +183,37 @@
         _groomView = [[GroomView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 120)
                                            ModelArray:self.groomModels];
         _groomView.backgroundColor = [UIColor colorWithRed:0.369 green:0.357 blue:0.604 alpha:1.000];
+        __weak __typeof(self)weakSelf = self;
         _groomView.actionBlock = ^(NSInteger idx) {
-            NSLog(@"%ld",idx);
+            [weakSelf pushDetailVCWithIdx:idx];
         };
     }
     return _groomView;
+}
+
+- (void)pushDetailVCWithIdx:(NSInteger)idx {
+    
+    GroomModel *groomModel = self.groomModels[idx];
+    SecondViewModel *model = self.dataModels[[groomModel.sectionStr integerValue]];
+    NSDictionary *infoDic = [SecondVCGetData getInfoContentWithSection:[groomModel.sectionStr integerValue]
+                                                                   row:[groomModel.rowStr integerValue]];
+    GPSecondDetailViewController *vc = [GPSecondDetailViewController new];
+    SecondViewCellModel *cellModel = [SecondViewCellModel cellModelWithDict:(NSDictionary *)(model.body[[groomModel.rowStr integerValue]])];
+    vc.cellModel = cellModel;
+    vc.placeDic = [infoDic objectOrNilForKey:@"coordinate"];
+    vc.whichRow = [groomModel.rowStr integerValue];
+    if ([groomModel.sectionStr integerValue] == 0) {
+        vc.imageArray = [infoDic objectOrNilForKey:@"glideImages"];
+        vc.booksArr = [infoDic objectOrNilForKey:@"booksInfo"];
+        vc.infoCellArr = [infoDic objectOrNilForKey:@"storeInfo"];
+        vc.isBottomScro = NO;
+    }else if([groomModel.sectionStr integerValue] == 1) {
+        vc.imageArray = [infoDic objectOrNilForKey:@"glideImages"];
+        vc.booksArr = [infoDic objectOrNilForKey:@"groomInfo"];
+        vc.infoCellArr = [infoDic objectOrNilForKey:@"mainInfo"];
+        vc.isBottomScro = YES;
+    }
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (UIButton *)recoverBottomBtn {

@@ -48,7 +48,7 @@
     
     if (!_listTableView) {
         _listTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-        _listTableView.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
+        _listTableView.backgroundColor = [UIColor colorWithRed:0.369 green:0.357 blue:0.604 alpha:1.000];
         _listTableView.delegate = self;
         _listTableView.dataSource = self;
         _listTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);

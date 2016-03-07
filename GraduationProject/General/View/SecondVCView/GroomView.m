@@ -50,7 +50,7 @@
     for (int i = 0; i < self.array.count; i++) {
         GroomModel *model = self.array[i];
         self.dynamicView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
-        self.dynamicView.clipsToBounds = YES;
+        //self.dynamicView.contentMode = UIViewContentModeScaleAspectFit;
         self.dynamicView.tag = i;
         self.dynamicView.userInteractionEnabled = YES;
         if (i%3 == 0) {
@@ -63,7 +63,6 @@
         self.dynamicView.layer.cornerRadius = self.dynamicView.height/2.0;
         self.dynamicView.clipsToBounds = YES;
         [self.dynamicView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl]];
-        self.dynamicView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:self.dynamicView];
         [self addTapGesOnDynamicView:self.dynamicView];
         UIGravityBehavior *gravityBehaviour = [[UIGravityBehavior alloc] initWithItems:@[self.dynamicView]];
