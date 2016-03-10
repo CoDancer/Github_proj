@@ -142,6 +142,7 @@
     
     if (!_userLoginState) {
         _userLoginState = [UIButton new];
+        _userLoginState.tag = 100;
         [_userLoginState setTitle:@"未登录" forState:UIControlStateNormal];
         _userLoginState.titleLabel.font = [UIFont systemFontOfSize:18.0f];
         [_userLoginState addTarget:self action:@selector(userLogBtnDidTap:) forControlEvents:UIControlEventTouchUpInside];
@@ -156,6 +157,7 @@
     
     if (!_logout) {
         _logout = [UIButton new];
+        _logout.tag = 101;
         [_logout setTitle:@"注销" forState:UIControlStateNormal];
         _logout.titleLabel.font = [UIFont systemFontOfSize:18.0f];
         [_logout addTarget:self action:@selector(userLogBtnDidTap:) forControlEvents:UIControlEventTouchUpInside];
@@ -208,7 +210,9 @@
 
 - (void)userLogBtnDidTap:(UIButton *)sender {
     
-    
+    if ([self.hideViewDelegate respondsToSelector:@selector(userLogBtn:)]) {
+        [self.hideViewDelegate userLogBtn:sender];
+    }
 }
 
 - (void)recoverBtnDidTap {
@@ -219,6 +223,26 @@
     
     if ([self.hideViewDelegate respondsToSelector:@selector(mainViewBtnOrFoundBtnDidTapWithButton:)]) {
         [self.hideViewDelegate mainViewBtnOrFoundBtnDidTapWithButton:sender];
+    }
+}
+
+- (void)setIsAllUnselected:(BOOL)isAllUnselected {
+    
+    _isAllUnselected = isAllUnselected;
+    self.mainViewBtn.selected = !isAllUnselected;
+    self.foundViewBtn.selected = !isAllUnselected;
+}
+
+- (void)setIsUserLogin:(BOOL)isUserLogin {
+    
+    _isUserLogin = isUserLogin;
+    [self.userLoginState setTitle:isUserLogin ? @"已登录" : @"未登录" forState:UIControlStateNormal];
+    self.userLoginState.enabled = !isUserLogin;
+    self.logout.enabled = isUserLogin;
+    if (isUserLogin) {
+        self.userLogoImageView.image = [UIImage imageNamed:@"mylogo.jpg"];
+    }else {
+        self.userLogoImageView.image = [UIImage imageNamed:@"mine_avatarDetail"];
     }
 }
 

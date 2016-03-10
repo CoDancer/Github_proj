@@ -102,10 +102,13 @@
 - (void)setBookModel:(BookListModel *)bookModel {
     
     _bookModel = bookModel;
-    [self.bookPic sd_setImageWithURL:[NSURL URLWithString:bookModel.imageURL] placeholderImage:nil];
-    self.bookName.text = bookModel.book_name;
-    self.bookScore.text = bookModel.fav_count;
-    self.anthor.text = bookModel.author;
+    if (bookModel != nil) {
+        [self.bookPic sd_setImageWithURL:[NSURL URLWithString:bookModel.imageURL] placeholderImage:nil];
+        self.bookName.text = bookModel.book_name;
+        self.bookScore.text = bookModel.fav_count;
+        self.anthor.text = bookModel.author;
+    }
+    
 }
 
 

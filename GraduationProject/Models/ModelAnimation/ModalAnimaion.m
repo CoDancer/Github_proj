@@ -35,7 +35,7 @@
         
         [containView bringSubviewToFront:modalView];
         
-        modalView.frame = CGRectMake(containView.centerX, containView.centerY, 0, 0);
+        modalView.frame = CGRectMake(0, containView.height, 0, 0);
         [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:1.0 options:0 animations:^{
             modalView.frame = CGRectMake(0, 0, containView.width, containView.height);
             //modalView.center = containView.center;

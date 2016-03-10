@@ -100,6 +100,7 @@
     [button setImage:selectedImage forState:UIControlStateSelected];
     [button setImage:image forState:UIControlStateNormal];
     button.exclusiveTouch = YES;
+    button.adjustsImageWhenHighlighted = NO;
     return button;
 }
 

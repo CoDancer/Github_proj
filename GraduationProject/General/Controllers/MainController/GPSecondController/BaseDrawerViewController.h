@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LeftHiddenView.h"
 
 @interface BaseDrawerViewController : UIViewController
+
+@property (nonatomic, strong) LeftHiddenView *hiddenView;
 
 - (void)configView;
 - (UIView *)getCustomNaviView;

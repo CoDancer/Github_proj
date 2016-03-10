@@ -64,9 +64,9 @@
 }
 
 - (void)addLeftHiddenView {
-    LeftHiddenView *leftView = [[LeftHiddenView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    leftView.hideViewDelegate = self;
-    [self.view addSubview:leftView];
+    self.hiddenView = [[LeftHiddenView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.hiddenView.hideViewDelegate = self;
+    [self.view addSubview:self.hiddenView];
 }
 
 - (void)showDrawerView {
@@ -79,6 +79,9 @@
 }
 
 - (void)mainViewBtnOrFoundBtnDidTapWithButton:(UIButton *)button {
+}
+
+- (void)userLogBtn:(UIButton *)button {
 }
 
 @end

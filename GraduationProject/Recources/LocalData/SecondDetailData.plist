@@ -323,9 +323,9 @@
 				<key>placeName</key>
 				<string>西部智谷D区</string>
 				<key>longitude</key>
-				<string>105</string>
+				<string>104.035568</string>
 				<key>latitude</key>
-				<string>123</string>
+				<string>30.574469 </string>
 			</dict>
 			<key>glideImages</key>
 			<array>
@@ -514,6 +514,17 @@
 		</dict>
 		<key>section01</key>
 		<dict>
+			<key>coordinate</key>
+			<dict>
+				<key>time</key>
+				<string>周一 —— 周末</string>
+				<key>placeName</key>
+				<string>郫县</string>
+				<key>longitude</key>
+				<string>104.121756</string>
+				<key>latitude</key>
+				<string>30.666865</string>
+			</dict>
 			<key>glideImages</key>
 			<array>
 				<string>http://i2.s1.dpfile.com/pc/4544149f94862c42847fd4510a1e956c%28700x700%29/thumb.jpg</string>
@@ -647,6 +658,17 @@
 		</dict>
 		<key>section02</key>
 		<dict>
+			<key>coordinate</key>
+			<dict>
+				<key>time</key>
+				<string>周一 —— 周末</string>
+				<key>placeName</key>
+				<string>武侯区肖家河街道</string>
+				<key>longitude</key>
+				<string>104.047585</string>
+				<key>latitude</key>
+				<string>30.636259</string>
+			</dict>
 			<key>glideImages</key>
 			<array>
 				<string>http://pic.58pic.com/58pic/17/00/14/35P58PICbNm_1024.jpg</string>
@@ -655,8 +677,62 @@
 			</array>
 			<key>booksInfo</key>
 			<array>
-				<string></string>
-				<string></string>
+				<dict>
+					<key>bookId</key>
+					<string>01</string>
+					<key>author</key>
+					<string>奥尔罕·帕慕克[土耳其]</string>
+					<key>book_name</key>
+					<string>我脑袋里的怪东西</string>
+					<key>fav_count</key>
+					<string>4.4</string>
+					<key>imageURL</key>
+					<string>https://img1.doubanio.com/lpic/s28380707.jpg</string>
+					<key>section_title</key>
+					<string>文学名著</string>
+				</dict>
+				<dict>
+					<key>bookId</key>
+					<string>02</string>
+					<key>author</key>
+					<string>普里莫·莱维[意]</string>
+					<key>book_name</key>
+					<string>再度觉醒</string>
+					<key>fav_count</key>
+					<string>4.5</string>
+					<key>imageURL</key>
+					<string>https://img1.doubanio.com/lpic/s28333394.jpg</string>
+					<key>section_title</key>
+					<string>畅销小说</string>
+				</dict>
+				<dict>
+					<key>bookId</key>
+					<string>03</string>
+					<key>author</key>
+					<string>约翰·威廉斯[美]</string>
+					<key>book_name</key>
+					<string>斯通纳</string>
+					<key>fav_count</key>
+					<string>4.4</string>
+					<key>imageURL</key>
+					<string>https://img3.doubanio.com/lpic/s28332051.jpg</string>
+					<key>section_title</key>
+					<string>畅销小说</string>
+				</dict>
+				<dict>
+					<key>bookId</key>
+					<string>04</string>
+					<key>author</key>
+					<string>奥斯卡•王尔德[英]</string>
+					<key>book_name</key>
+					<string>自深深处</string>
+					<key>fav_count</key>
+					<string>4.5</string>
+					<key>imageURL</key>
+					<string>https://img1.doubanio.com/lpic/s28496222.jpg</string>
+					<key>section_title</key>
+					<string>文学名著</string>
+				</dict>
 			</array>
 			<key>storeInfo</key>
 			<array>
@@ -676,6 +752,17 @@
 		</dict>
 		<key>section03</key>
 		<dict>
+			<key>coordinate</key>
+			<dict>
+				<key>longitude</key>
+				<string>104.027410000000</string>
+				<key>latitude</key>
+				<string>30.691080000000</string>
+				<key>time</key>
+				<string>周一 —— 周末</string>
+				<key>placeName</key>
+				<string>金牛区茶店子街道</string>
+			</dict>
 			<key>glideImages</key>
 			<array>
 				<string>http://img4.duitang.com/uploads/item/201508/06/20150806115740_KRQFU.jpeg</string>
@@ -705,6 +792,17 @@
 		</dict>
 		<key>section04</key>
 		<dict>
+			<key>coordinate</key>
+			<dict>
+				<key>time</key>
+				<string>周一 —— 周末</string>
+				<key>placeName</key>
+				<string>青羊区文家街道</string>
+				<key>latitude</key>
+				<string>30.669094000000</string>
+				<key>longitude</key>
+				<string>103.943943000000</string>
+			</dict>
 			<key>glideImages</key>
 			<array>
 				<string>http://cdn.duitang.com/uploads/blog/201402/17/20140217112233_SyvhJ.thumb.700_0.jpeg</string>
@@ -713,9 +811,9 @@
 			</array>
 			<key>booksInfo</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
+				<dict/>
+				<dict/>
+				<dict/>
 			</array>
 			<key>storeInfo</key>
 			<array>
@@ -736,6 +834,306 @@
 					<string>http://img4.duitang.com/uploads/item/201308/14/20130814224916_aYSvQ.thumb.700_0.jpeg</string>
 					<key>contentInfo</key>
 					<string>世事总是多变，你要去相信，那个穿越山水来到你身边的人，你们能否一路白首。看的是他愿不愿意为你披荆斩棘，而不是看他曾受过多少的风霜。</string>
+				</dict>
+			</array>
+		</dict>
+		<key>section05</key>
+		<dict>
+			<key>coordinate</key>
+			<dict>
+				<key>time</key>
+				<string>周一 —— 周末</string>
+				<key>placeName</key>
+				<string>金牛区九里堤街道</string>
+				<key>latitude</key>
+				<string>30.702830000000</string>
+				<key>longitude</key>
+				<string>104.044002000000</string>
+			</dict>
+			<key>glideImages</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>booksInfo</key>
+			<array>
+				<dict>
+					<key>bookId</key>
+					<string></string>
+					<key>author</key>
+					<string></string>
+					<key>book_name</key>
+					<string></string>
+					<key>fav_count</key>
+					<string></string>
+					<key>imageURL</key>
+					<string></string>
+					<key>section_title</key>
+					<string></string>
+				</dict>
+				<dict/>
+				<dict/>
+			</array>
+			<key>storeInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+			</array>
+		</dict>
+		<key>section06</key>
+		<dict>
+			<key>coordinate</key>
+			<dict>
+				<key>time</key>
+				<string>周一 —— 周末</string>
+				<key>placeName</key>
+				<string>金牛区人民北路街道</string>
+				<key>latitude</key>
+				<string>30.682117000000</string>
+				<key>longitude</key>
+				<string>104.049913000000</string>
+			</dict>
+			<key>glideImages</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>booksInfo</key>
+			<array>
+				<dict>
+					<key>bookId</key>
+					<string></string>
+					<key>author</key>
+					<string></string>
+					<key>book_name</key>
+					<string></string>
+					<key>fav_count</key>
+					<string></string>
+					<key>imageURL</key>
+					<string></string>
+					<key>section_title</key>
+					<string></string>
+				</dict>
+				<dict/>
+				<dict/>
+			</array>
+			<key>storeInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+			</array>
+		</dict>
+		<key>section07</key>
+		<dict>
+			<key>coordinate</key>
+			<dict>
+				<key>time</key>
+				<string>周一 —— 周末</string>
+				<key>placeName</key>
+				<string>龙泉驿区大面街道</string>
+				<key>latitude</key>
+				<string>30.652496000000</string>
+				<key>longitude</key>
+				<string>104.124439000000</string>
+			</dict>
+			<key>glideImages</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>booksInfo</key>
+			<array>
+				<dict>
+					<key>bookId</key>
+					<string></string>
+					<key>author</key>
+					<string></string>
+					<key>book_name</key>
+					<string></string>
+					<key>fav_count</key>
+					<string></string>
+					<key>imageURL</key>
+					<string></string>
+					<key>section_title</key>
+					<string></string>
+				</dict>
+				<dict/>
+				<dict/>
+			</array>
+			<key>storeInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+			</array>
+		</dict>
+		<key>section08</key>
+		<dict>
+			<key>coordinate</key>
+			<dict>
+				<key>time</key>
+				<string>周一 —— 周末</string>
+				<key>placeName</key>
+				<string>龙泉驿区大面街道</string>
+				<key>latitude</key>
+				<string>30.615618000000</string>
+				<key>longitude</key>
+				<string>104.152935000000</string>
+			</dict>
+			<key>glideImages</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>booksInfo</key>
+			<array>
+				<dict>
+					<key>bookId</key>
+					<string></string>
+					<key>author</key>
+					<string></string>
+					<key>book_name</key>
+					<string></string>
+					<key>fav_count</key>
+					<string></string>
+					<key>imageURL</key>
+					<string></string>
+					<key>section_title</key>
+					<string></string>
+				</dict>
+				<dict/>
+				<dict/>
+			</array>
+			<key>storeInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+			</array>
+		</dict>
+		<key>section09</key>
+		<dict>
+			<key>coordinate</key>
+			<dict>
+				<key>time</key>
+				<string>周一 —— 周末</string>
+				<key>placeName</key>
+				<string>青白江区红阳街道</string>
+				<key>latitude</key>
+				<string>30.894140000000</string>
+				<key>longitude</key>
+				<string>104.248381000000</string>
+			</dict>
+			<key>glideImages</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>booksInfo</key>
+			<array>
+				<dict>
+					<key>bookId</key>
+					<string></string>
+					<key>author</key>
+					<string></string>
+					<key>book_name</key>
+					<string></string>
+					<key>fav_count</key>
+					<string></string>
+					<key>imageURL</key>
+					<string></string>
+					<key>section_title</key>
+					<string></string>
+				</dict>
+				<dict/>
+				<dict/>
+			</array>
+			<key>storeInfo</key>
+			<array>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>imageUrl</key>
+					<string></string>
+					<key>contentInfo</key>
+					<string></string>
 				</dict>
 			</array>
 		</dict>

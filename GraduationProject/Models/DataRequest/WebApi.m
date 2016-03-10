@@ -21,8 +21,7 @@
     NSString *uuid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     NSDictionary *dictionary = [[NSBundle mainBundle] infoDictionary];
     NSString *ver = [dictionary objectForKey:@"CFBundleShortVersionString"];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *userID = [userDefaults objectForKey:@"user_id"];
+    NSString *userID = [UserDefaults objectForKey:@"user_id"];
     params[@"timesign"] = [NSString stringWithFormat:@"%ld", utcTime];
     params[@"device"] = @"ios";
     params[@"key"] = KEY;

@@ -25,6 +25,7 @@
 #import "SecondVCGetData.h"
 #import "CardWith3DView.h"
 #import "InfoFooterView.h"
+#import "TribePlaceViewController.h"
 
 //绿色主题
 #define Color(r, g, b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1]
@@ -164,7 +165,8 @@ GPSelectedViewDelegate>{
 
     self.infoFooterView = [[InfoFooterView alloc]
                        initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 55, SCREEN_WIDTH, 55)];
-    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(footerViewDidTap)];
+    [self.infoFooterView addGestureRecognizer:tap];
     self.placeModel = [SecondInfoPlaceModel viewModelWithDict:self.placeDic];
     [self.infoFooterView initViewWithModel:self.placeModel titleName:self.cellModel.poi_name];
     [self.view addSubview:self.infoFooterView];
@@ -666,8 +668,11 @@ GPSelectedViewDelegate>{
     if (to == 0) {
         self.showingTableView = self.groomTableView;
         [self.infoFooterView removeFromSuperview];
+        self.infoFooterView = nil;
     } else if (to == 1) {
-        [self addInfoFooterView];
+        if (self.infoFooterView == nil) {
+            [self addInfoFooterView];
+        }
         self.showingTableView = self.infoTableView;
         if ([self.cellImageDic count] == 0) {
             [self getDynamicCellHeight];
@@ -686,6 +691,20 @@ GPSelectedViewDelegate>{
     itemVC.infoCellArr = [dic objectOrNilForKey:@"bookInfo"];
     itemVC.transitioningDelegate = self;
     [self presentViewController:itemVC animated:YES completion:nil];
+}
+
+- (void)footerViewDidTap {
+    
+    TribePlaceViewController *vc = [TribePlaceViewController new];
+    vc.placeModel = self.placeModel;
+    vc.subTitle = self.cellModel.poi_name;
+    UIImageView *view = [UIImageView new];
+    [view sd_setImageWithURL:[NSURL URLWithString:self.cellModel.imageURL] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        vc.image = image;
+        [self presentViewController:vc animated:YES completion:nil];
+    }];
+    vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
 }
 
 #pragma mark -- presentVC Animation

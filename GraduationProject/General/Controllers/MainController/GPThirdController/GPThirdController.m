@@ -18,6 +18,8 @@
 #import "CustomRefreshView.h"
 #import "MJRefresh.h"
 #import "ThirdDetailViewController.h"
+#import "GPAlertView.h"
+#import "GPSigninViewController.h"
 
 @interface GPThirdController()<YALTabBarInteracting,ZBWaterViewDatasource, ZBWaterViewDelegate>
 
@@ -122,9 +124,16 @@
 
 - (void)extraRightItemDidPressed {
     
-    GPUserCenterViewController *vc = [GPUserCenterViewController new];
-    [vc dismissBottomView];
-    [self.navigationController pushViewController:vc animated:YES];
+    NSString *userlogin = [UserDefaults objectForKey:@"userLogin"];
+    if ([userlogin boolValue]) {
+        GPUserCenterViewController *vc = [GPUserCenterViewController new];
+        [vc dismissBottomView];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        GPSigninViewController *vc = [GPSigninViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
 }
 
 - (void)rightBarItemDidTap {

@@ -12,11 +12,14 @@
 
 - (void)choiceAddressBtnDidTapWithButton:(UIButton *)button;
 - (void)mainViewBtnOrFoundBtnDidTapWithButton:(UIButton *)button;
+- (void)userLogBtn:(UIButton *)button;
 
 @end
 
 @interface LeftHiddenView : UIView
 
 @property (nonatomic, weak) id<LeftHiddenViewDelegate> hideViewDelegate;
+@property (nonatomic, assign) BOOL isAllUnselected;
+@property (nonatomic, assign) BOOL isUserLogin;
 
 @end

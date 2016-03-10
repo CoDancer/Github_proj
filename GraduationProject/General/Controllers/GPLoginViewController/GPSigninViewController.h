@@ -30,6 +30,6 @@ typedef enum
     lookFirstTag
 } ViewTag;
 
-@interface GPSigninViewController : UIViewController
+@interface GPSigninViewController : BYBaseVC
 
 @end

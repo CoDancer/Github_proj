@@ -39,12 +39,19 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [self dismissBottomView];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (void)config{
-    self.hidesBottomBarWhenPushed = YES;
+    
     self.title = @"登录";
     UIView *topContainer = [self topContainerView];
     UIView *bottomContainer = [UIView new];
@@ -77,22 +84,11 @@
         [weiboButton sizeToFit];
         weiboButton.tag = weiboLoginBtTag;
         
-        UIButton *lookFirstBt = [UIButton new];
-        lookFirstBt.tag = lookFirstTag;
-        [lookFirstBt setTitle:@"先睹为快 >>" forState:UIControlStateNormal];
-        [lookFirstBt setTitleColor:MainColor forState:UIControlStateNormal];
-        [lookFirstBt.titleLabel setFont:[UIFont systemFontOfSize:16.0f]];
-        [lookFirstBt addTarget:self action:@selector(loginViewButtonTap:) forControlEvents:UIControlEventTouchUpInside];
-        [lookFirstBt sizeToFit];
-        
         NSInteger margen = (SCREEN_WIDTH - 3*60 - 40*2)/2;
         qqButton.left = margen - 10;
         wechatButton.left = qqButton.right + 40;
         weiboButton.left = wechatButton.right + 40;
         qqButton.centerY = wechatButton.centerY = weiboButton.centerY = loginBottomView.size.height/2;
-        
-        lookFirstBt.top = loginBottomView.bottom + 5;
-        lookFirstBt.right = bottomView.right - 10;
         
         [qqButton addTarget:self action:@selector(loginViewButtonTap:) forControlEvents:UIControlEventTouchUpInside];
         [wechatButton addTarget:self action:@selector(loginViewButtonTap:) forControlEvents:UIControlEventTouchUpInside];
@@ -102,7 +98,6 @@
         [loginBottomView addSubview:wechatButton];
         [loginBottomView addSubview:weiboButton];
         [bottomView addSubview:loginBottomView];
-        [bottomView addSubview:lookFirstBt];
         
         UILabel *thirdLabel = [UILabel new];
         thirdLabel.text = @"第三方登录";
@@ -269,7 +264,8 @@
     __weak typeof(self) weakSelf = self;
     [UIHelper showHUDAddedTo:weakSelf.view animated:YES];
     [[GPSignInClient sharedClient] userLoginWithParam:params success:^(id responseObject) {
-        [GPPrepareLogin showMainTabBarViewController];
+        [UserDefaults setObject:@"1" forKey:@"userLogin"];
+        [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
         [UIHelper showAutoHideErrorHUDforView:weakSelf.view error:error defaultNotice:@"登录失败"];
     }];

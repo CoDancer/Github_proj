@@ -10,7 +10,7 @@
 
 @interface FirstVCClient : GPHTTPClient
 
-+ (instancetype)sharedClient;
+//+ (instancetype)sharedClient;
 
 - (NSDictionary *)fetchLocalDataWithNewsSlidePlist;
 

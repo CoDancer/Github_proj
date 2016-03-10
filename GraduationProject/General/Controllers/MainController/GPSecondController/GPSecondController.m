@@ -34,6 +34,8 @@
 #import "MJRefresh.h"
 #import "GroomView.h"
 #import "GroomModel.h"
+#import "GPSigninViewController.h"
+#import "GPAlertView.h"
 
 @interface GPSecondController()<UITableViewDataSource, UITableViewDelegate, SectionHeaderViewDelegate>
 
@@ -69,6 +71,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    NSString *userlogin = [UserDefaults objectForKey:@"userLogin"];
+    self.hiddenView.isUserLogin = [userlogin boolValue];
     [self showBottomView];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
@@ -278,6 +282,7 @@
 
 - (void)showDrawerView {
     
+    self.hiddenView.isAllUnselected = YES;
     if (!self.weatherShowHiddenView) {
         //缩放比例
         CGFloat zoomScale = (AppHeight - 64  - ScaleTopMargin * 2) / (AppHeight);
@@ -348,6 +353,25 @@
     
     NSLog(@"Ok");
     button.selected = !button.selected;
+    [self recoverCurrentView];
+}
+
+- (void)userLogBtn:(UIButton *)button {
+    
+    if (button.tag == 100) {
+        GPSigninViewController *vc = [GPSigninViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        GPAlertView *alertView = [[GPAlertView alloc] initWithTitle:@"提示" message:@"是否注销登录?" buttons:@[@"取消",@"确定"]];
+        alertView.actionBlock = ^(NSInteger idx) {
+            if (idx == 1) {
+                [UserDefaults setObject:@"0" forKey:@"userLogin"];
+                GPSigninViewController *vc = [GPSigninViewController new];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        };
+        [alertView show];
+    }
 }
 
 #pragma mark -- UITableViewDelegate
