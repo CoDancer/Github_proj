@@ -142,16 +142,4 @@
     return [simpleCell getCellHeightWithCellContent:model.howDo];
 }
 
-//- (void)leftNavButtonClicked:(UIButton *)button {
-//    
-//    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-//    UITabBarController __weak *tabVc = (UITabBarController*)window.rootViewController;
-//    UINavigationController __weak *vcNav = tabVc.viewControllers[2];
-//    for (UIViewController *temp in vcNav.viewControllers) {
-//        if ([temp isKindOfClass:[GPThirdController class]]) {
-//            [self.navigationController popToViewController:temp animated:YES];
-//        }
-//    }
-//}
-
 @end

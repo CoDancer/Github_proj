@@ -36,6 +36,7 @@
 #import "GroomModel.h"
 #import "GPSigninViewController.h"
 #import "GPAlertView.h"
+#import <ShareSDKExtension/SSEThirdPartyLoginHelper.h>
 
 @interface GPSecondController()<UITableViewDataSource, UITableViewDelegate, SectionHeaderViewDelegate>
 
@@ -366,7 +367,9 @@
         alertView.actionBlock = ^(NSInteger idx) {
             if (idx == 1) {
                 [UserDefaults setObject:@"0" forKey:@"userLogin"];
+                [SSEThirdPartyLoginHelper logout:nil];
                 GPSigninViewController *vc = [GPSigninViewController new];
+                vc.isLogout = YES;
                 [self.navigationController pushViewController:vc animated:YES];
             }
         };

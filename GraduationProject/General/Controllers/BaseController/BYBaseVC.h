@@ -10,6 +10,8 @@
 
 @interface BYBaseVC : UIViewController
 
+@property (nonatomic, assign) BOOL isLogout;
+
 - (void)leftNavButtonClicked:(UIButton *)button;
 
 @end

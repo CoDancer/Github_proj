@@ -44,6 +44,13 @@
 #define UserDefaults [NSUserDefaults standardUserDefaults]
 
 #define URL_ADD @"http://test.xbcx.com.cn/qiuchangapi"
+#define WEIXIN_APPID          @"wx2a679e2c997b1972"
+#define WEIXIN_APPSECRET      @"8dfa59d9ff34164026d661dd9e388762"
+#define QQ_APPID              @"1104637846"
+#define QQ_APPKEY             @"8UG4CUUtma1UV8KO"
+#define WEIBO_APKEY           @"670624923"
+#define WEIBO_APPSECRET       @"f27bcef01dbd08827b399bde8082ce7f"
+#define WEIBO_REDIRECTURI     @"http://sns.whalecloud.com/sina2/callback"
 
 
 @protocol BYGlobalDelegate;

@@ -13,6 +13,7 @@
 #import "LeftHiddenView.h"
 #import "UIHelper.h"
 #import "UIView+Category.h"
+#import "UIImageView+WebCache.h"
 
 @interface LeftHiddenView()
 
@@ -240,7 +241,12 @@
     self.userLoginState.enabled = !isUserLogin;
     self.logout.enabled = isUserLogin;
     if (isUserLogin) {
-        self.userLogoImageView.image = [UIImage imageNamed:@"mylogo.jpg"];
+        if ([UserDefaults objectForKey:@"iconImg"] != nil) {
+            [self.userLogoImageView sd_setImageWithURL:[UserDefaults objectForKey:@"iconImg"]];
+            [self.userLoginState setTitle:[UserDefaults objectForKey:@"nickName"] forState:UIControlStateNormal];
+        }else {
+            self.userLogoImageView.image = [UIImage imageNamed:@"mylogo.jpg"];
+        }
     }else {
         self.userLogoImageView.image = [UIImage imageNamed:@"mine_avatarDetail"];
     }

@@ -8,6 +8,12 @@
 
 #import "AppDelegate.h"
 #import "GPPrepareLogin.h"
+#import <ShareSDK/ShareSDK.h>
+#import "WXApi.h"
+#import "WeiboSDK.h"
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
 
 @interface AppDelegate ()
 
@@ -23,9 +29,65 @@
     if (!ret) {
         NSLog(@"manager start failed!");
     }
+    [self configKey];
     [NSThread sleepForTimeInterval:1.0];
     [GPPrepareLogin run];
     [[UINavigationBar appearance] setBarTintColor:MainColor];
+    return YES;
+}
+
+- (void)configKey {
+    
+    [ShareSDK registerApp:@"a1f6eb7cb730"
+          activePlatforms:@[@(SSDKPlatformTypeSinaWeibo),
+                            @(SSDKPlatformTypeQQ),
+                            @(SSDKPlatformTypeWechat)]
+                 onImport:^(SSDKPlatformType platformType){
+                     switch (platformType)
+                     {
+                         case SSDKPlatformTypeSinaWeibo:
+                             [ShareSDKConnector connectWeibo:[WeiboSDK class]];
+                             break;
+                         case SSDKPlatformTypeQQ:
+                             [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
+                             break;
+                         case SSDKPlatformTypeWechat:
+                             [ShareSDKConnector connectWeChat:[WXApi class]];
+                             break;
+                         default:
+                             break;
+                     }
+                 }
+          onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+                     
+                     switch (platformType)
+                     {
+                         case SSDKPlatformTypeSinaWeibo:
+                             //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                             [appInfo SSDKSetupSinaWeiboByAppKey:WEIBO_APKEY
+                                                       appSecret:WEIBO_APPSECRET
+                                                     redirectUri:WEIBO_REDIRECTURI
+                                                        authType:SSDKAuthTypeBoth];
+                             break;
+                         case SSDKPlatformTypeQQ:
+                             [appInfo SSDKSetupQQByAppId:QQ_APPID appKey:QQ_APPKEY authType:SSDKAuthTypeBoth];
+                             break;
+                         case SSDKPlatformTypeWechat:
+                             [appInfo SSDKSetupWeChatByAppId:WEIXIN_APPID appSecret:WEIXIN_APPSECRET];
+                             break;
+                         default:
+                             break;
+                     }
+                 }];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+
     return YES;
 }
 

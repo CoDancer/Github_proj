@@ -11,6 +11,9 @@
 #import "GPPrepareLogin.h"
 #import "GPRegisterController.h"
 #import "GPResetPasswordController.h"
+#import "ShareSDK/ShareSDK.h"
+#import "ShareButton.h"
+#import <ShareSDKExtension/SSEThirdPartyLoginHelper.h>
 
 #define offsetLeftHand      60
 
@@ -36,14 +39,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self config];
-    
+    if (self.isLogout) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[UIView new]];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+
     [self dismissBottomView];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,19 +74,22 @@
         bottomView.height = self.view.size.height - topContainer.size.height - 64;
         
         UIView *loginBottomView = [UIView new];
-        UIButton *qqButton = [UIButton new];
+        ShareButton *qqButton = [ShareButton new];
+        qqButton.shareType = SSDKPlatformSubTypeQZone;
         [qqButton setImage:[UIImage imageNamed:@"gen_share_qq"] forState:UIControlStateNormal];
         [qqButton sizeToFit];
         qqButton.tag = qqLoginBtTag;
         loginBottomView.frame = CGRectMake(10, 0, SCREEN_WIDTH - 10*2, qqButton.size.height + 20);
         loginBottomView.bottom = bottomView.size.height - 40;
         
-        UIButton *wechatButton = [UIButton new];
+        ShareButton *wechatButton = [ShareButton new];
+        wechatButton.shareType = SSDKPlatformSubTypeWechatSession;
         [wechatButton setImage:[UIImage imageNamed:@"gen_share_wechat"] forState:UIControlStateNormal];
         [wechatButton sizeToFit];
         wechatButton.tag = wechatLoginBtTag;
         
-        UIButton *weiboButton = [UIButton new];
+        ShareButton *weiboButton = [ShareButton new];
+        weiboButton.shareType = SSDKPlatformTypeSinaWeibo;
         [weiboButton setImage:[UIImage imageNamed:@"gen_share_weibo"] forState:UIControlStateNormal];
         [weiboButton sizeToFit];
         weiboButton.tag = weiboLoginBtTag;
@@ -230,7 +240,7 @@
     return topContainer;
 }
 #pragma custom Method
-- (void)loginViewButtonTap:(UIButton *)sender{
+- (void)loginViewButtonTap:(ShareButton *)sender{
     if (sender.tag == commitBtTag) {
         [self.view endEditing:YES];
         [self putDownHands];
@@ -250,15 +260,41 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == qqLoginBtTag){
         //qq_login
+        [self otherLoginMethodWithBtn:sender];
     }else if (sender.tag == wechatLoginBtTag){
         //wechat_login
+        [self otherLoginMethodWithBtn:sender];
     }else if (sender.tag == weiboLoginBtTag){
         //weibo_login
+        [self otherLoginMethodWithBtn:sender];
     }else if (sender.tag == lookFirstTag){
         [GPPrepareLogin showMainTabBarViewController];
     }
     
 }
+
+- (void)otherLoginMethodWithBtn:(ShareButton *)button {
+    
+    [SSEThirdPartyLoginHelper loginByPlatform:button.shareType
+                                   onUserSync:^(SSDKUser *user, SSEUserAssociateHandler associateHandler) {
+                                       
+                                       associateHandler (user.uid, user, user);
+                                    [UserDefaults setObject:@"1" forKey:@"userLogin"];
+                                    [UserDefaults setObject:user.icon forKey:@"iconImg"];
+                                    [UserDefaults setObject:user.nickname forKey:@"nickName"];
+                                   }
+                                onLoginResult:^(SSDKResponseState state, SSEBaseUser *user, NSError *error) {
+                                    
+                                    if (state == SSDKResponseStateSuccess)
+                                    {
+                                        //判断是否已经在用户列表中，避免用户使用同一账号进行重复登录
+                                        [self.navigationController popViewControllerAnimated:YES];
+                                        
+                                    }
+                                    
+                                }];
+}
+
 - (void)userLogin {
     NSDictionary *params = @{@"phone":_telePhone,@"password":_password};
     __weak typeof(self) weakSelf = self;

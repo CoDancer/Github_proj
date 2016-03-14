@@ -69,6 +69,8 @@
     
     // 设置header
     self.waterView.header = header;
+    MJRefreshFooter *footer = [MJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.waterView.footer = footer;
 }
 
 //下拉加载数据
@@ -187,7 +189,6 @@
                     self.cellImageDic = [cellImageDic copy];
                     [self.waterView removeFromSuperview];
                     [self.view addSubview:self.waterView];
-//                    [self.waterView scrollToIndex:_tapIndex animated:YES];
                     [UIHelper hideAllMBProgressHUDsForView:self.view animated:YES];
                     [self.waterView reloadData];
                 }
