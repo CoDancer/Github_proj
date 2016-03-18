@@ -17,7 +17,7 @@
 #define TopViewHeight 200
 #define HeaderViewHeight 200
 
-@interface NewsDetailInfoViewController()<SDCycleScrollViewDelegate, UIScrollViewDelegate ,UIWebViewDelegate>
+@interface NewsDetailInfoViewController()<SDCycleScrollViewDelegate, UIScrollViewDelegate ,WKNavigationDelegate>
 
 @property (nonatomic, strong) UIView *topView;
 @property (nonatomic, strong) SDCycleScrollView *topScrollView;
@@ -33,7 +33,7 @@
 @property (nonatomic, strong) UILabel *naviTitle;
 @property (nonatomic, assign) CGFloat scrollY;
 
-@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) MBProgressHUD *hud;
 @property (nonatomic, assign) BOOL isFirstLoad;
 
@@ -111,14 +111,14 @@
     return _buttonOnCoverView;
 }
 
-- (UIWebView *)webView {
+- (WKWebView *)webView {
     
     if (!_webView) {
-        _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, self.ViewOnTopScrollView.bottom, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
-        _webView.scalesPageToFit = YES;
-        _webView.delegate = self;
+        WKWebViewConfiguration * configuration = [WKWebViewConfiguration new];
+        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, self.ViewOnTopScrollView.bottom, SCREEN_WIDTH, SCREEN_HEIGHT - 64) configuration:configuration];
+        _webView.navigationDelegate = self;
+        _webView.allowsBackForwardNavigationGestures = YES;
         _webView.scrollView.delegate = self;
-        [(UIScrollView *)[[_webView subviews] objectAtIndex:0] setBounces:NO];
     }
     return _webView;
 }
@@ -335,19 +335,24 @@
     }
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     
     if (self.isFirstLoad) {
         self.hud = [UIHelper showHUDAddedTo:self.backgroundScrollView animated:YES];
         self.hud.yOffset = 100;
         self.isFirstLoad = NO;
     }
-    
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     
     [UIHelper hideAllMBProgressHUDsForView:self.backgroundScrollView animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    _webView.scrollView.delegate = nil;
 }
 
 @end

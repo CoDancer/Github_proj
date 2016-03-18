@@ -49,21 +49,29 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithHexString:@"f3f3f3"];
     [self configView];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
+
     [self.mapView viewWillAppear];
     self.mapView.delegate = self;
     self.locotionSer.delegate = self;
     self.routeSearch.delegate = self;
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
+-(void)viewWillDisappear:(BOOL)animated {
     
-    self.mapView.delegate = nil;
-    self.locotionSer.delegate = nil;
     self.routeSearch.delegate = nil;
+    self.locotionSer.delegate = nil;
+    self.mapView.delegate = nil;
+}
+
+- (void)dealloc {
+    
+    self.routeSearch = nil;
+    self.locotionSer = nil;
+    self.mapView = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -111,15 +119,16 @@
     naviView.BGColor = MainColor;
     naviView.text = self.placeModel.placeName;
     [self.view addSubview:naviView];
-    naviView.backBlock = ^(){
-        [self dismissViewControllerAnimated:YES completion:nil];
-    };
     
+    __weak typeof(self) weakself = self;
+    naviView.backBlock = ^(){
+        [weakself dismissViewControllerAnimated:YES completion:nil];
+    };
     self.mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT)];
     BMKCoordinateSpan span = BMKCoordinateSpanMake(0.02, 0.02);
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([self.placeModel.latitude floatValue], [self.placeModel.longitude floatValue]);
     BMKCoordinateRegion region = BMKCoordinateRegionMake(coordinate,span);
-    [_mapView setRegion:region animated:NO];
+    [self.mapView setRegion:region animated:NO];
     self.mapView.mapType = BMKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
     self.mapView.userTrackingMode = BMKUserTrackingModeFollowWithHeading;

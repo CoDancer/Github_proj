@@ -279,9 +279,11 @@
                                    onUserSync:^(SSDKUser *user, SSEUserAssociateHandler associateHandler) {
                                        
                                        associateHandler (user.uid, user, user);
-                                    [UserDefaults setObject:@"1" forKey:@"userLogin"];
-                                    [UserDefaults setObject:user.icon forKey:@"iconImg"];
-                                    [UserDefaults setObject:user.nickname forKey:@"nickName"];
+                                        [UserDefaults setObject:@"1" forKey:@"userLogin"];
+                                        [UserDefaults setObject:user.icon forKey:@"iconImg"];
+                                        [UserDefaults setObject:user.nickname forKey:@"nickName"];
+                                       [UserDefaults setObject:user.rawData[@"gender"] forKey:@"sex"];
+                                       [UserDefaults setObject:user.rawData[@"msg"] forKey:@"message"];
                                    }
                                 onLoginResult:^(SSDKResponseState state, SSEBaseUser *user, NSError *error) {
                                     
@@ -308,11 +310,13 @@
     
 }
 - (void)initPhoneAndPWWithBlockController:(GPRegisterController *)vc {
+    
+    __weak typeof(self) weakSelf = self;
     vc.telePwBlock = ^(NSString *teleStr, NSString *password){
         _telePhone = teleStr;
         _password = password;
-        UITextField *teleField = (UITextField *)[self.view viewWithTag:teleNumInputFieldTag];
-        UITextField *pwField = (UITextField *)[self.view viewWithTag:pwInputFieldTag];
+        UITextField *teleField = (UITextField *)[weakSelf.view viewWithTag:teleNumInputFieldTag];
+        UITextField *pwField = (UITextField *)[weakSelf.view viewWithTag:pwInputFieldTag];
         teleField.text = teleStr;
         pwField.text = password;
     };

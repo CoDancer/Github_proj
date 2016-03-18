@@ -386,6 +386,7 @@ GPSelectedViewDelegate>{
 
 - (void)fetchLocalData {
     
+    __weak typeof(self) weakSelf = self;
     if (self.booksArr.count != 0 && !self.isBottomScro) {
         NSMutableArray *models = [NSMutableArray array];
         [self.booksArr enumerateObjectsUsingBlock:^(NSDictionary *obj,
@@ -393,10 +394,10 @@ GPSelectedViewDelegate>{
                                                 BOOL * _Nonnull stop) {
             BookListModel *bookListModel = [BookListModel bookListModelWithDict:obj];
             if (idx % 3 == 0) {
-                self.eachGroupModel = [NSMutableArray new];
+                weakSelf.eachGroupModel = [NSMutableArray new];
                 [models addObject:self.eachGroupModel];
             }
-            [self.eachGroupModel addObject:bookListModel];
+            [weakSelf.eachGroupModel addObject:bookListModel];
         }];
         self.modelArray = [models copy];
     }
@@ -552,6 +553,7 @@ GPSelectedViewDelegate>{
         MBProgressHUD *hud = [UIHelper showHUDAddedTo:self.backgroundScrollView animated:YES];
         hud.yOffset = 100;
     }
+    __weak typeof(self) weakSelf = self;
     [self.infoCellArr enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         SecondInfoCellModel *model = [SecondInfoCellModel cellModelWithDict:obj];
         [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:model.imageUrl] options:SDWebImageDownloaderLowPriority|SDWebImageDownloaderContinueInBackground progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
@@ -565,11 +567,11 @@ GPSelectedViewDelegate>{
                 [cellHeightDic setObject:@(cellHeight) forKey:@(idx)];
                 [cellImageDic setObject:image forKey:@(idx)];
                 if ([cellHeightDic count] == self.infoCellArr.count) {
-                    self.cellHeightDic = [cellHeightDic copy];
-                    self.cellImageDic = [cellImageDic copy];
-                    [self.backgroundScrollView addSubview:self.infoTableView];
-                    self.infoTableView.tableHeaderView = self.infoHeaderView;
-                    [self.infoTableView reloadData];
+                    weakSelf.cellHeightDic = [cellHeightDic copy];
+                    weakSelf.cellImageDic = [cellImageDic copy];
+                    [weakSelf.backgroundScrollView addSubview:weakSelf.infoTableView];
+                    weakSelf.infoTableView.tableHeaderView = weakSelf.infoHeaderView;
+                    [weakSelf.infoTableView reloadData];
                 }
             }
         }];
@@ -618,14 +620,15 @@ GPSelectedViewDelegate>{
         SecondInfoCellModel *model = [SecondInfoCellModel cellModelWithDict:self.infoCellArr[indexPath.row]];
         [cell setCellImage:[self.cellImageDic objectForKey:@(indexPath.row)] contentInfo:model.contentInfo];
         
+        __weak typeof(self) weakSelf = self;
         cell.imageBlock = ^(UIImageView *imageView){
-            self.isCellImage = YES;
+            weakSelf.isCellImage = YES;
             CGRect imageFrame;
             imageFrame = imageView.bounds;
             if (imageView.height >= SCREEN_HEIGHT) {
                 imageFrame.size.height = SCREEN_HEIGHT;
             }
-            [self showDownloadImageViewWithImage:imageView.image imageFrame:imageFrame];
+            [weakSelf showDownloadImageViewWithImage:imageView.image imageFrame:imageFrame];
         };
         return cell;
     }

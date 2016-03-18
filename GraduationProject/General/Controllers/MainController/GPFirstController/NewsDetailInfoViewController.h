@@ -7,6 +7,7 @@
 //
 
 #import "NewsDetailModel.h"
+#import <WebKit/WebKit.h>
 
 @interface NewsDetailInfoViewController : BYBaseVC
 

@@ -90,6 +90,7 @@
     
     [self showBottomView];
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (NSArray *)dataArr {
@@ -174,23 +175,24 @@
         MBProgressHUD *hud = [UIHelper showHUDAddedTo:self.view animated:YES];
         hud.yOffset = 0;
     }
+    __weak typeof(self) weakSelf = self;
     [self.dataArr enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSDictionary *cellInfoDic = [obj objectOrNilForKey:@"cellInfo"];
         ThirdWaterViewModel *model = [ThirdWaterViewModel foodListModelWithDict:cellInfoDic];
         [modelArr addObject:model];
         [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:model.imageURL] options:SDWebImageDownloaderLowPriority|SDWebImageDownloaderContinueInBackground progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
             if (image) {
-                CGSize size = [self appropriateSizeWithImageSize:image.size];
+                CGSize size = [weakSelf appropriateSizeWithImageSize:image.size];
                 CGFloat cellHeight = size.height;
                 [cellHeightDic setObject:@(cellHeight) forKey:@(idx)];
                 [cellImageDic setObject:image forKey:@(idx)];
-                if ([cellHeightDic count] == self.dataArr.count) {
-                    self.cellHeightDic = [cellHeightDic copy];
-                    self.cellImageDic = [cellImageDic copy];
-                    [self.waterView removeFromSuperview];
-                    [self.view addSubview:self.waterView];
-                    [UIHelper hideAllMBProgressHUDsForView:self.view animated:YES];
-                    [self.waterView reloadData];
+                if ([cellHeightDic count] == weakSelf.dataArr.count) {
+                    weakSelf.cellHeightDic = [cellHeightDic copy];
+                    weakSelf.cellImageDic = [cellImageDic copy];
+                    [weakSelf.waterView removeFromSuperview];
+                    [weakSelf.view addSubview:self.waterView];
+                    [UIHelper hideAllMBProgressHUDsForView:weakSelf.view animated:YES];
+                    [weakSelf.waterView reloadData];
                 }
             }
             

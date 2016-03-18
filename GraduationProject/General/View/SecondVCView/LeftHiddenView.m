@@ -245,7 +245,12 @@
             [self.userLogoImageView sd_setImageWithURL:[UserDefaults objectForKey:@"iconImg"]];
             [self.userLoginState setTitle:[UserDefaults objectForKey:@"nickName"] forState:UIControlStateNormal];
         }else {
-            self.userLogoImageView.image = [UIImage imageNamed:@"mylogo.jpg"];
+            if ([UserDefaults objectForKey:@"logoImageData"] == nil) {
+                self.userLogoImageView.image = [UIImage imageNamed:@"mylogo.jpg"];
+            }else {
+                UIImage *image = [UIImage imageWithData:[UserDefaults objectForKey:@"logoImageData"]];
+                self.userLogoImageView.image = image;
+            }
         }
     }else {
         self.userLogoImageView.image = [UIImage imageNamed:@"mine_avatarDetail"];

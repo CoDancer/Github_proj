@@ -178,6 +178,11 @@
     return CGSizeMake(SCREEN_WIDTH - 20, 170 + model.textHeight);
 }
 
+- (void)dealloc {
+    
+    NSLog(@"newsListVC dealloc!");
+}
+
 
 
 @end

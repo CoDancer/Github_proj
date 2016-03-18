@@ -101,6 +101,7 @@
     self.rightBtn.centerY = self.leftBtn.centerY;
     
     self.centerBtn.size = CGSizeMake(80, 30);
+    self.centerBtn.layer.cornerRadius = 3.0f;
     self.centerBtn.centerX = self.width/2.0;
     self.centerBtn.bottom = self.height - 10;
 }

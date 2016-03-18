@@ -32,10 +32,11 @@
     appDelegate.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     appDelegate.window.backgroundColor = [UIColor blackColor];
     
+    __weak typeof(self) weakSelf = self;
     if ([GPUserDefaults weatherCurrentVersionFirstLaunch]) {
         GPFirstLaunchViewController *fisrtLaunchController = [GPFirstLaunchViewController new];
         fisrtLaunchController.nextBlock = ^(){
-            [self showMainTabBarViewController];
+            [weakSelf showMainTabBarViewController];
         };
         UIWindow *window = [UIApplication sharedApplication].delegate.window;
         window.rootViewController = fisrtLaunchController;

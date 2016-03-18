@@ -366,8 +366,8 @@
         GPAlertView *alertView = [[GPAlertView alloc] initWithTitle:@"提示" message:@"是否注销登录?" buttons:@[@"取消",@"确定"]];
         alertView.actionBlock = ^(NSInteger idx) {
             if (idx == 1) {
-                [UserDefaults setObject:@"0" forKey:@"userLogin"];
                 [SSEThirdPartyLoginHelper logout:nil];
+                [UserDefaults setObject:nil forKey:@"iconImg"];
                 GPSigninViewController *vc = [GPSigninViewController new];
                 vc.isLogout = YES;
                 [self.navigationController pushViewController:vc animated:YES];
