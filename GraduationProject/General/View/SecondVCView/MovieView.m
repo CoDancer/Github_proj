@@ -95,7 +95,7 @@
 - (void)setModel:(SecondViewCellModel *)model {
     
     _model = model;
-    [self.movieImageView sd_setImageWithURL:[NSURL URLWithString:model.imageURL] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [self.movieImageView sd_setImageWithURL:[NSURL URLWithString:model.imageURL] placeholderImage:[UIImage imageNamed:@"movie.jpeg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         self.movieImageView.layer.cornerRadius = 5.0;
     }];
     self.baseImageView.image = [UIImage imageNamed:@"news_blacklayer"];

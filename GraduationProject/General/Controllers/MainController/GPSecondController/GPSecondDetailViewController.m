@@ -26,6 +26,7 @@
 #import "CardWith3DView.h"
 #import "InfoFooterView.h"
 #import "TribePlaceViewController.h"
+#import "GPAlertView.h"
 
 //绿色主题
 #define Color(r, g, b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1]
@@ -692,8 +693,14 @@ GPSelectedViewDelegate>{
                                                            number:bookView.bookModel.bookId];
     itemVC.imageArray = [dic objectOrNilForKey:@"bookGlideImg"];
     itemVC.infoCellArr = [dic objectOrNilForKey:@"bookInfo"];
-    itemVC.transitioningDelegate = self;
-    [self presentViewController:itemVC animated:YES completion:nil];
+    if ([dic objectOrNilForKey:@"bookGlideImg"] == nil) {
+        GPAlertView *alert = [[GPAlertView alloc] initWithTitle:@"提示" message:@"暂无数据!" buttons:@[@"确定"]];
+        [alert show];
+        return;
+    }else {
+        itemVC.transitioningDelegate = self;
+        [self presentViewController:itemVC animated:YES completion:nil];
+    }
 }
 
 - (void)footerViewDidTap {

@@ -341,7 +341,7 @@
             }else if(i==size-1){
                 RouteAnnotation* item = [[RouteAnnotation alloc]init];
                 item.coordinate = plan.terminal.location;
-                item.title = @"终点";
+                item.title = self.subTitle;
                 item.type = 1;
                 [_mapView addAnnotation:item]; // 添加起点标注
             }
@@ -410,7 +410,7 @@
             }else if(i==size-1){
                 RouteAnnotation* item = [[RouteAnnotation alloc]init];
                 item.coordinate = plan.terminal.location;
-                item.title = @"终点";
+                item.title = self.subTitle;
                 item.type = 1;
                 [_mapView addAnnotation:item]; // 添加起点标注
             }

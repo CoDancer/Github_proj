@@ -30,6 +30,7 @@
 @property (nonatomic, strong) DisperseBtn *disperseBtn;
 @property (nonatomic, assign) BOOL isModifyBGI;
 @property (nonatomic, strong) NSArray *logoImageArr;
+@property (nonatomic, strong) CADisplayLink *displayLink;
 
 @end
 
@@ -48,6 +49,11 @@
         weakSelf.isModifyBGI = YES;
         [weakSelf userPageHeaderViewDidTapedWithTitle:@"更改背景图片"];
     };
+    
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleAction:)];
+    self.displayLink.frameInterval = 3;
+    [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    
     [self.tableView registerClass:[UserCell class] forCellReuseIdentifier:@"userCell"];
     [self.view addSubview:self.logoView];
     [self.view addSubview:self.tableView];
@@ -307,6 +313,37 @@
     
     if ([navigationController isKindOfClass:[UIImagePickerController class]] && [UIDevice currentDevice].systemVersion.floatValue >= 7.0) {
     }
+}
+
+- (void)handleAction:(CADisplayLink *)displayLink {
+    
+    UIImage *image = [UIImage imageNamed:@"leaf"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    CGFloat scale = arc4random_uniform(70) / 100.0;
+    imageView.transform = CGAffineTransformMakeScale(scale, scale);
+    CGSize winSize = self.logoView.bounds.size;
+    CGFloat x = arc4random_uniform(winSize.width);
+    CGFloat y = - imageView.frame.size.height;
+    imageView.center = CGPointMake(x, y);
+    
+    [self.view addSubview:imageView];
+    [UIView animateWithDuration:arc4random_uniform(5) animations:^{
+        CGFloat toX = arc4random_uniform(winSize.width);
+        CGFloat toY = winSize.height - 10;
+        
+        imageView.center = CGPointMake(toX, toY);
+        imageView.transform = CGAffineTransformRotate(imageView.transform, arc4random_uniform(M_PI * 2));
+        
+        imageView.alpha = 0.2;
+    } completion:^(BOOL finished) {
+        [imageView removeFromSuperview];
+    }];
+}
+
+- (void)dealloc {
+    
+    [self.displayLink invalidate];
+    self.displayLink = nil;
 }
 
 @end

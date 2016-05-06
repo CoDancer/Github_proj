@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, assign) CGFloat collectionViewY;
 @property (nonatomic, assign) float lastY;
+@property (nonatomic, strong) UILabel *noDataLabel;
 
 @end
 
@@ -37,6 +38,18 @@
     
     [super viewWillAppear:animated];
     [self dismissBottomView];
+}
+
+- (UILabel *)noDataLabel {
+    
+    if (!_noDataLabel) {
+        _noDataLabel = [UILabel new];
+        _noDataLabel.text = @"Oh God! No Data";
+        _noDataLabel.font = [UIFont systemFontOfSize:18.0f];
+        _noDataLabel.textColor = [UIColor whiteColor];
+        [_noDataLabel sizeToFit];
+    }
+    return _noDataLabel;
 }
 
 - (void)setHeadRefresh {
@@ -84,6 +97,13 @@
                                    for (NSDictionary *dic in listArr) {
                                        NewsDetailModel *model = [NewsDetailModel newsDetailModelWithDict:dic];
                                        [modelArr addObject:model];
+                                   }
+                                   if (dict == nil) {
+                                       [self.view addSubview:self.noDataLabel];
+                                       self.noDataLabel.center = self.view.center;
+                                   }else {
+                                       [self.noDataLabel removeFromSuperview];
+                                       self.noDataLabel = nil;
                                    }
                                    self.dataArray = [modelArr copy];
                                    [self.collectionView reloadData];

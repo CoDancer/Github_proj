@@ -18,7 +18,7 @@
 - (NSArray *)channelIdArray {
     
     if (!_channelIdArray) {
-        _channelIdArray = @[@"5572a109b3cdc86cf39001e5",@"5572a108b3cdc86cf39001d5",
+        _channelIdArray = @[@"5572a109b3cdc86cf39001e5",@"5572a10ab3cdc86cf39001eb",
                             @"5572a108b3cdc86cf39001d7",@"5572a109b3cdc86cf39001df",
                             @"5572a108b3cdc86cf39001d1",@"5572a109b3cdc86cf39001e1",
                             @"5572a109b3cdc86cf39001db",@"5572a10bb3cdc86cf39001f8",

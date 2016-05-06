@@ -44,7 +44,7 @@
 - (void)setDrawAnimationWithPath:(UIBezierPath *)path StrokeColor:(UIColor *)strokeColor {
     
     CAShapeLayer *lineLayer = [ CAShapeLayer layer];
-    lineLayer. frame = CGRectZero;
+    //lineLayer. frame = CGRectZero;
     lineLayer. fillColor = [ UIColor clearColor ]. CGColor ;
     lineLayer. path = path. CGPath ;
     lineLayer. strokeColor = strokeColor. CGColor ;

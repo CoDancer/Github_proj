@@ -159,6 +159,7 @@
 		E436C2821C4CD76200B603FE /* MovieData.plist in Resources */ = {isa = PBXBuildFile; fileRef = E436C2811C4CD76200B603FE /* MovieData.plist */; };
 		E436C2851C4CDD3F00B603FE /* SecondVCGetData.m in Sources */ = {isa = PBXBuildFile; fileRef = E436C2841C4CDD3F00B603FE /* SecondVCGetData.m */; };
 		E436C2891C4CF98600B603FE /* renwen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E436C2881C4CF98600B603FE /* renwen.jpg */; };
+		E44E96CD1C9C082E00C7E4D6 /* movie.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E44E96CC1C9C082E00C7E4D6 /* movie.jpeg */; };
 		E44F18F71C8FB90100901EB0 /* meishi.png in Resources */ = {isa = PBXBuildFile; fileRef = E44F18F61C8FB90100901EB0 /* meishi.png */; };
 		E44F18FA1C8FBDBE00901EB0 /* Coordinate+Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F18F91C8FBDBE00901EB0 /* Coordinate+Annotation.m */; };
 		E44F18FD1C8FD13B00901EB0 /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F18FC1C8FD13B00901EB0 /* MyLocation.m */; };
@@ -515,6 +516,7 @@
 		E49E0DD71C560259004B8EE1 /* MovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E0DD61C560259004B8EE1 /* MovieView.m */; };
 		E49E54961C5F4B190005A92B /* FirstVCGetData.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E54951C5F4B190005A92B /* FirstVCGetData.m */; };
 		E4A030931C784E2F00829346 /* NewsChannelIdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A030921C784E2F00829346 /* NewsChannelIdModel.m */; };
+		E4A3D0CC1C9FF1F000BE5651 /* leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A3D0CB1C9FF1F000BE5651 /* leaf.png */; };
 		E4DE16971C4F24F500E00722 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DE16961C4F24F500E00722 /* Launch Screen.storyboard */; };
 		E4DE169A1C4F3ADF00E00722 /* SecondInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE16991C4F3ADF00E00722 /* SecondInfoCell.m */; };
 		E4DE169D1C4F417600E00722 /* SecondInfoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE169C1C4F417600E00722 /* SecondInfoCellModel.m */; };
@@ -785,6 +787,7 @@
 		E436C2831C4CDD3F00B603FE /* SecondVCGetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondVCGetData.h; path = DataRequest/SecondVCGetData.h; sourceTree = "<group>"; };
 		E436C2841C4CDD3F00B603FE /* SecondVCGetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondVCGetData.m; path = DataRequest/SecondVCGetData.m; sourceTree = "<group>"; };
 		E436C2881C4CF98600B603FE /* renwen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = renwen.jpg; path = Images/renwen.jpg; sourceTree = "<group>"; };
+		E44E96CC1C9C082E00C7E4D6 /* movie.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = movie.jpeg; path = Images/movie.jpeg; sourceTree = "<group>"; };
 		E44F18F61C8FB90100901EB0 /* meishi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = meishi.png; path = Images/meishi.png; sourceTree = "<group>"; };
 		E44F18F81C8FBDBE00901EB0 /* Coordinate+Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Coordinate+Annotation.h"; path = "View/SecondVCView/Coordinate+Annotation.h"; sourceTree = "<group>"; };
 		E44F18F91C8FBDBE00901EB0 /* Coordinate+Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Coordinate+Annotation.m"; path = "View/SecondVCView/Coordinate+Annotation.m"; sourceTree = "<group>"; };
@@ -1241,6 +1244,7 @@
 		E49E54951C5F4B190005A92B /* FirstVCGetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstVCGetData.m; path = DataRequest/FirstVCGetData.m; sourceTree = "<group>"; };
 		E4A030911C784E2F00829346 /* NewsChannelIdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsChannelIdModel.h; path = FirstVCModel/NewsChannelIdModel.h; sourceTree = "<group>"; };
 		E4A030921C784E2F00829346 /* NewsChannelIdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsChannelIdModel.m; path = FirstVCModel/NewsChannelIdModel.m; sourceTree = "<group>"; };
+		E4A3D0CB1C9FF1F000BE5651 /* leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leaf.png; path = Images/leaf.png; sourceTree = "<group>"; };
 		E4DE16961C4F24F500E00722 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E4DE16981C4F3ADF00E00722 /* SecondInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondInfoCell.h; path = SecondVCCell/SecondInfoCell.h; sourceTree = "<group>"; };
 		E4DE16991C4F3ADF00E00722 /* SecondInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondInfoCell.m; path = SecondVCCell/SecondInfoCell.m; sourceTree = "<group>"; };
@@ -2029,6 +2033,8 @@
 		E47799CB1C05C3CF0084E67D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E4A3D0CB1C9FF1F000BE5651 /* leaf.png */,
+				E44E96CC1C9C082E00C7E4D6 /* movie.jpeg */,
 				E481BF921C990E4400CF7EF2 /* clear.png */,
 				E466F66C1C982873002D6CF1 /* modifyGender.png */,
 				E466F66A1C9825C9002D6CF1 /* star.png */,
@@ -3825,6 +3831,7 @@
 				E48F070E1C4DF008005A2513 /* Contents.json in Resources */,
 				E46E1FB31C5B77B300BA1167 /* doWayBG.jpg in Resources */,
 				E436C27C1C4CD0F700B603FE /* money.jpg in Resources */,
+				E44E96CD1C9C082E00C7E4D6 /* movie.jpeg in Resources */,
 				E436C2771C4CD0F700B603FE /* cars.jpg in Resources */,
 				E48F07351C4DF008005A2513 /* loading_062.png in Resources */,
 				9289FF741C37A7E200092A85 /* default_h960_2.png in Resources */,
@@ -3872,6 +3879,7 @@
 				E48F07511C4DF008005A2513 /* loading_076.png in Resources */,
 				E48F06D91C4DF008005A2513 /* loading_016.png in Resources */,
 				E48F06DB1C4DF008005A2513 /* loading_017.png in Resources */,
+				E4A3D0CC1C9FF1F000BE5651 /* leaf.png in Resources */,
 				E452E5BE1C96964800D1BD13 /* bgImage.jpg in Resources */,
 				928900051C37BEDE00092A85 /* found@2x.png in Resources */,
 				E48F071E1C4DF008005A2513 /* Contents.json in Resources */,

@@ -109,6 +109,16 @@
     self.leftBookView.bookModel = [bookModels objectOrNilAtIndex:0];
     self.centerBookView.bookModel = [bookModels objectOrNilAtIndex:1];
     self.rightBookView.bookModel = [bookModels objectOrNilAtIndex:2];
+    
+    if (self.leftBookView.bookModel.bookId == nil) {
+        self.leftBookView.userInteractionEnabled = NO;
+    }
+    if (self.centerBookView.bookModel.bookId == nil) {
+        self.centerBookView.userInteractionEnabled = NO;
+    }
+    if (self.rightBookView.bookModel.bookId == nil) {
+        self.rightBookView.userInteractionEnabled = NO;
+    }
 }
 
 @end
