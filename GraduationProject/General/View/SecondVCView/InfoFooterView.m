@@ -72,7 +72,7 @@
     if (!_titleName) {
         _titleName = [UILabel new];
         _titleName.textColor = [UIColor whiteColor];
-        _titleName.font = [UIFont boldSystemFontOfSize:20.0f];
+        _titleName.font = [UIFont systemFontOfSize:20.0f];
     }
     return _titleName;
 }
@@ -82,7 +82,7 @@
     if (!_address) {
         _address = [UILabel new];
         _address.textColor = [UIColor whiteColor];
-        _address.font = [UIFont boldSystemFontOfSize:15.0f];
+        _address.font = [UIFont systemFontOfSize:15.0f];
     }
     return _address;
 }
@@ -92,7 +92,7 @@
     if (!_detailTime) {
         _detailTime = [UILabel new];
         _detailTime.textColor = [UIColor whiteColor];
-        _detailTime.font = [UIFont boldSystemFontOfSize:15.0f];
+        _detailTime.font = [UIFont systemFontOfSize:15.0f];
     }
     return _detailTime;
 }

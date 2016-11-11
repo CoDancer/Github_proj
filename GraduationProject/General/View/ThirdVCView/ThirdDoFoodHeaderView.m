@@ -77,7 +77,7 @@
         _nameLabel = [UILabel new];
         _nameLabel.textColor = MainColor;
         _nameLabel.textAlignment = NSTextAlignmentCenter;
-        _nameLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+        _nameLabel.font = [UIFont systemFontOfSize:18.0f];
     }
     return _nameLabel;
 }

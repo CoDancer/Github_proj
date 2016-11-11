@@ -298,15 +298,20 @@
 }
 
 - (void)userLogin {
+    //这是公司服务器的API，之后因为注销了，所以这些接口没用了。为了方便测试，
     NSDictionary *params = @{@"phone":_telePhone,@"password":_password};
     __weak typeof(self) weakSelf = self;
     [UIHelper showHUDAddedTo:weakSelf.view animated:YES];
-    [[GPSignInClient sharedClient] userLoginWithParam:params success:^(id responseObject) {
+//    [[GPSignInClient sharedClient] userLoginWithParam:params success:^(id responseObject) {
+//        [UserDefaults setObject:@"1" forKey:@"userLogin"];
+//        [self.navigationController popViewControllerAnimated:YES];
+//    } failure:^(NSError *error) {
+//        [UIHelper showAutoHideErrorHUDforView:weakSelf.view error:error defaultNotice:@"登录失败"];
+//    }];
+    if ([_telePhone isEqualToString:@"18482115396"]) {
         [UserDefaults setObject:@"1" forKey:@"userLogin"];
         [self.navigationController popViewControllerAnimated:YES];
-    } failure:^(NSError *error) {
-        [UIHelper showAutoHideErrorHUDforView:weakSelf.view error:error defaultNotice:@"登录失败"];
-    }];
+    }
     
 }
 - (void)initPhoneAndPWWithBlockController:(GPRegisterController *)vc {

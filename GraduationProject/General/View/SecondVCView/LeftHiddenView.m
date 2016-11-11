@@ -122,7 +122,7 @@
     if (!_fastLoginLabel) {
         _fastLoginLabel = [UILabel new];
         _fastLoginLabel.text = @"快速登录";
-        _fastLoginLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+        _fastLoginLabel.font = [UIFont systemFontOfSize:18.0f];
         _fastLoginLabel.textColor = [UIColor lightGrayColor];
     }
     return _fastLoginLabel;

@@ -24,6 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     _mapManager = [BMKMapManager new];
     BOOL ret = [_mapManager start:@"u2zEoMqqBGlRk9W6wO2XPmDi" generalDelegate:nil];
     if (!ret) {
@@ -33,6 +34,8 @@
     [NSThread sleepForTimeInterval:1.0];
     [GPPrepareLogin run];
     [[UINavigationBar appearance] setBarTintColor:MainColor];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent
+                                                animated:NO];
     return YES;
 }
 

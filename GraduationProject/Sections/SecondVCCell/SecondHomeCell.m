@@ -125,7 +125,7 @@
     if (!_addressLabel) {
         
         _addressLabel = [UILabel new];
-        _addressLabel.font = [UIFont boldSystemFontOfSize:14.0f];
+        _addressLabel.font = [UIFont systemFontOfSize:14.0f];
         _addressLabel.textColor = [UIColor whiteColor];
     }
     return _addressLabel;

@@ -152,7 +152,7 @@ GPSelectedViewDelegate>{
         [_headerView setBackgroundColor:[UIColor colorWithHexString:@"2a3137"]];
         UILabel *contentLabel = [UILabel new];
         contentLabel.text = [NSString stringWithFormat:@"%@",self.cellModel.poi_name];
-        contentLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+        contentLabel.font = [UIFont systemFontOfSize:17.0f];
         contentLabel.textColor = [UIColor blackColor];
         [contentLabel sizeToFit];
         contentLabel.centerX = self.view.centerX;
@@ -202,7 +202,7 @@ GPSelectedViewDelegate>{
     if (!_naviTitle) {
         _naviTitle = [UILabel new];
         _naviTitle.textColor = [UIColor colorWithWhite:0.047 alpha:1.000];
-        _naviTitle.font = [UIFont boldSystemFontOfSize:18.0];
+        _naviTitle.font = [UIFont systemFontOfSize:18.0];
         _naviTitle.text = self.cellModel.poi_name;
         [_naviTitle sizeToFit];
         _naviTitle.left = self.backBtn.right + 10;
@@ -216,7 +216,7 @@ GPSelectedViewDelegate>{
     if (!_naviSubTitle) {
         _naviSubTitle = [UILabel new];
         _naviSubTitle.textColor = [UIColor colorWithWhite:0.021 alpha:1.000];
-        _naviSubTitle.font = [UIFont boldSystemFontOfSize:14.0];
+        _naviSubTitle.font = [UIFont systemFontOfSize:14.0];
         _naviSubTitle.text = self.cellModel.section_title;
         [_naviSubTitle sizeToFit];
         _naviSubTitle.left = 10;

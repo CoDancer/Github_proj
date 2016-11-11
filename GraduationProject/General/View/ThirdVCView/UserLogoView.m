@@ -141,7 +141,7 @@
     if (!_nickName) {
         _nickName = [UILabel new];
         _nickName.textColor = [UIColor blackColor];
-        _nickName.font = [UIFont boldSystemFontOfSize:18.0f];
+        _nickName.font = [UIFont systemFontOfSize:18.0f];
         _nickName.textAlignment = NSTextAlignmentCenter;
         if ([UserDefaults objectForKey:@"iconImg"] != nil) {
             _nickName.text = [UserDefaults objectForKey:@"nickName"];

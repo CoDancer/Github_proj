@@ -128,7 +128,7 @@
     if (!_naviTitle) {
         _naviTitle = [UILabel new];
         _naviTitle.textColor = [UIColor colorWithWhite:0.047 alpha:1.000];
-        _naviTitle.font = [UIFont boldSystemFontOfSize:18.0];
+        _naviTitle.font = [UIFont systemFontOfSize:18.0];
         _naviTitle.text = self.detailModel.sourceStr;
         [_naviTitle sizeToFit];
         _naviTitle.left = self.backBtn.right + 10;

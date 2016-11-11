@@ -40,7 +40,7 @@
     
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
-        _titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+        _titleLabel.font = [UIFont systemFontOfSize:18.0f];
         _titleLabel.textColor = [UIColor whiteColor];
     }
     return _titleLabel;
@@ -50,7 +50,7 @@
     
     if (!_subTitleLabel) {
         _subTitleLabel = [UILabel new];
-        _subTitleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
+        _subTitleLabel.font = [UIFont systemFontOfSize:14.0f];
         _subTitleLabel.textColor = [UIColor whiteColor];
     }
     return _subTitleLabel;

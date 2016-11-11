@@ -101,7 +101,7 @@
         _titleLabel = [UILabel new];
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+        _titleLabel.font = [UIFont systemFontOfSize:15.0];
     }
     return _titleLabel;
 }
@@ -112,7 +112,7 @@
         _introLabel = [UILabel new];
         _introLabel.textColor = [UIColor whiteColor];
         _introLabel.textAlignment = NSTextAlignmentCenter;
-        _introLabel.font = [UIFont boldSystemFontOfSize:15.0f];
+        _introLabel.font = [UIFont systemFontOfSize:15.0f];
     }
     return _introLabel;
 }
@@ -132,7 +132,7 @@
         _numberLabel = [UILabel new];
         _numberLabel.textColor = [UIColor blackColor];
         _numberLabel.textAlignment = NSTextAlignmentCenter;
-        _numberLabel.font = [UIFont boldSystemFontOfSize:15.0f];
+        _numberLabel.font = [UIFont systemFontOfSize:15.0f];
     }
     return _numberLabel;
 }
@@ -143,7 +143,7 @@
         _lineLabel = [UILabel new];
         _lineLabel.textColor = [UIColor blackColor];
         _lineLabel.textAlignment = NSTextAlignmentCenter;
-        _lineLabel.font = [UIFont boldSystemFontOfSize:15.0f];
+        _lineLabel.font = [UIFont systemFontOfSize:15.0f];
     }
     return _lineLabel;
 }
@@ -154,7 +154,7 @@
         _kindsLabel = [UILabel new];
         _kindsLabel.textColor = [UIColor blackColor];
         _kindsLabel.textAlignment = NSTextAlignmentCenter;
-        _kindsLabel.font = [UIFont boldSystemFontOfSize:15.0f];
+        _kindsLabel.font = [UIFont systemFontOfSize:15.0f];
     }
     return _kindsLabel;
 }

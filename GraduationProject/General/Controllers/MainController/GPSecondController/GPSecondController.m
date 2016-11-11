@@ -248,7 +248,7 @@
         segmentControl.height = 30.0f;
         
         NSMutableDictionary *textAttribute = [NSMutableDictionary dictionary];
-        textAttribute[NSFontAttributeName] = [UIFont boldSystemFontOfSize:16.0f];
+        textAttribute[NSFontAttributeName] = [UIFont systemFontOfSize:16.0f];
         textAttribute[NSForegroundColorAttributeName] = [UIColor whiteColor];
         [segmentControl setTitleTextAttributes:textAttribute forState:UIControlStateNormal];
         [segmentControl setTitleTextAttributes:textAttribute forState:UIControlStateSelected];
@@ -396,7 +396,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
-    return 60;
+    return 45;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

@@ -4318,8 +4318,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4340,7 +4340,7 @@
 					"$(PROJECT_DIR)/GraduationProject/Vendors/GPThirdParty/ShareSDK/Support/Core",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/onwer/Desktop/Github_proj/GraduationProject/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/GraduationProject/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = GraduationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -4393,7 +4393,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xb.qz;
+				PRODUCT_BUNDLE_IDENTIFIER = by.test.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -4406,8 +4406,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pengju Zeng (JQ2NS2XX2K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4428,7 +4428,7 @@
 					"$(PROJECT_DIR)/GraduationProject/Vendors/GPThirdParty/ShareSDK/Support/Core",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/onwer/Desktop/Github_proj/GraduationProject/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/GraduationProject/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				INFOPLIST_FILE = GraduationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -4481,7 +4481,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xb.qz;
+				PRODUCT_BUNDLE_IDENTIFIER = by.test.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
