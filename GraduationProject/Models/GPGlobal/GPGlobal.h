@@ -43,14 +43,17 @@
 #define k_IOS_Scale [[UIScreen mainScreen] bounds].size.width/320
 #define UserDefaults [NSUserDefaults standardUserDefaults]
 
-#define URL_ADD @"http://test.xbcx.com.cn/qiuchangapi"
-#define WEIXIN_APPID          @"wx2a679e2c997b1972"
-#define WEIXIN_APPSECRET      @"8dfa59d9ff34164026d661dd9e388762"
-#define QQ_APPID              @"1104637846"
-#define QQ_APPKEY             @"8UG4CUUtma1UV8KO"
-#define WEIBO_APKEY           @"670624923"
-#define WEIBO_APPSECRET       @"f27bcef01dbd08827b399bde8082ce7f"
-#define WEIBO_REDIRECTURI     @"http://sns.whalecloud.com/sina2/callback"
+//这些需要你自己的appkey，需要你在各平台下创建应用。
+#define URL_ADD @"server_ip"
+#define WEIXIN_APPID          @"WEIXIN_APPID"
+#define WEIXIN_APPSECRET      @"WEIXIN_APPSECRET"
+#define QQ_APPID              @"QQ_APPID"
+#define QQ_APPKEY             @"QQ_APPKEY"
+#define WEIBO_APKEY           @"WEIBO_APKEY"
+#define WEIBO_APPSECRET       @"WEIBO_APPSECRET"
+#define WEIBO_REDIRECTURI     @"WEIBO_REDIRECTURI"
+
+
 
 
 @protocol BYGlobalDelegate;
